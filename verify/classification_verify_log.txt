@@ -1,0 +1,320 @@
+classification_verify.py  --  305 checks passed, 0 failed
+tags: S1:57, S2:9, S3:1, M1:1, M2:4, M3:2, D1:4, L0:1, L1:1, L2:2, L3:3, K1:3, K2:2, E1:18, E2:9, G0:60, G1:112, G2:2, I1:14
+
+     === 1. single objects ===
+PASS [S1] raw point RR: observed ['P1'] within predicted ['P1']
+PASS [S1] raw point RI: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point RC: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point IR: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point II: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point IC: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point CR: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point CI: observed ['P2'] within predicted ['P2']
+PASS [S1] raw point CC: observed ['P2'] within predicted ['P2']
+PASS [S1] raw line RR: observed ['M1'] within predicted ['M1']
+PASS [S1] raw line RI: observed ['M4'] within predicted ['M4']
+PASS [S1] raw line RC: observed ['M4'] within predicted ['M4']
+PASS [S1] raw line IR: observed ['M3', 'iso'] within predicted ['M3', 'iso']
+PASS [S1] raw line II: observed ['M3', 'iso'] within predicted ['M3', 'iso']
+PASS [S1] raw line IC: observed ['M3', 'iso'] within predicted ['M3', 'iso']
+PASS [S1] raw line CR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw line CI: observed ['M3'] within predicted ['M3']
+PASS [S1] raw line CC: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle RRR: observed ['M1'] within predicted ['M1']
+PASS [S1] raw circle RRI: observed ['M2'] within predicted ['M2']
+PASS [S1] raw circle RRC: observed ['M5'] within predicted ['M5']
+PASS [S1] raw circle RIR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle RII: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle RIC: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle RCR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle RCI: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle RCC: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle IRR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle IRI: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle IRC: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle IIR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle III: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle IIC: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle ICR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle ICI: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle ICC: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle CRR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle CRI: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle CRC: observed ['M3', 'M4', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle CIR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle CII: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle CIC: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle CCR: observed ['M3'] within predicted ['M3']
+PASS [S1] raw circle CCI: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] raw circle CCC: observed ['M3', 'M5'] within predicted ['M3', 'M4', 'M5']
+PASS [S1] line y=ix+1 is isotropic (Q=0) and non-real
+PASS [S1] (x-i)^2+y^2=-1 i.e. x^2+y^2-2ix=0 is M4 (complex centre, imaginary radius)
+PASS [S1] (x-i/2)^2+y^2=-1 is M5, (x-2i)^2+y^2=-1 is M3
+PASS [S1] circle complex centre, complex radius can be M3/M4/M5
+PASS [S1] raw circle III: M4 witness centre (i,i), r^2=4i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle IIC: M4 witness centre (i,i), r^2=6+8i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle ICI: M4 witness centre (i,1+i), r^2=4i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle ICC: M4 witness centre (i,1+i), r^2=6+8i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle CII: M4 witness centre (1+i,i), r^2=4i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle CIC: M4 witness centre (1+i,i), r^2=6+8i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle CCI: M4 witness centre (1+i,1+i), r^2=4i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+PASS [S1] raw circle CCC: M4 witness centre (1+i,1+i), r^2=6+8i is M4 (tangency |Im r^2|^2=4|w|^2(Re r^2+|w|^2))
+     raw table: {"point RR": ["P1"], "point RI": ["P2"], "point RC": ["P2"], "point IR": ["P2"], "point II": ["P2"], "point IC": ["P2"], "point CR": ["P2"], "point CI": ["P2"], "point CC": ["P2"], "line RR": ["M1"], "line RI": ["M4"], "line RC": ["M4"], "line IR": ["M3", "iso"], "line II": ["M3", "iso"], "line IC": ["M3", "iso"], "line CR": ["M3"], "line CI": ["M3"], "line CC": ["M3"], "circle RRR": ["M1"], "circle RRI": ["M2"], "circle RRC": ["M5"], "circle RIR": ["M3"], "circle RII": ["M3", "M4", "M5"], "circle RIC": ["M3", "M4", "M5"], "circle RCR": ["M3"], "circle RCI": ["M3", "M4", "M5"], "circle RCC": ["M3", "M4", "M5"], "circle IRR": ["M3"], "circle IRI": ["M3", "M4", "M5"], "circle IRC": ["M3", "M4", "M5"], "circle IIR": ["M3"], "circle III": ["M3", "M4", "M5"], "circle IIC": ["M3", "M4", "M5"], "circle ICR": ["M3"], "circle ICI": ["M3", "M4", "M5"], "circle ICC": ["M3", "M4", "M5"], "circle CRR": ["M3"], "circle CRI": ["M3", "M4", "M5"], "circle CRC": ["M3", "M4", "M5"], "circle CIR": ["M3"], "circle CII": ["M3", "M4", "M5"], "circle CIC": ["M3", "M4", "M5"], "circle CCR": ["M3"], "circle CCI": ["M3", "M4", "M5"], "circle CCC": ["M3", "M4", "M5"]}
+PASS [S2] M3: X and conj(X) meet in O1 (117 samples)
+PASS [S2] M4: X and conj(X) meet in O2 (295 samples)
+PASS [S2] M5: X and conj(X) meet in O3 (182 samples)
+PASS [S2] P2: X and conj(X) meet in O1 (300 samples)
+PASS [S2] h(C)=8|Im m|^2+4 Re r^2 and Q=4 r^2 for circles (500 random)
+PASS [S2] line y=mx+q: h=1+|m|^2, Q=1+m^2 (500 random)
+PASS [S2] Laguerre pair u -/+ Jw lies on the isotropic lines of p=u+iw, and determines p up to conjugation
+PASS [S2] inverting a non-real point in any real circle through its Laguerre pair gives its conjugate (292 random)
+PASS [S2] every non-real finite point is (i,0) after a real similarity
+PASS [S3] circles tangent at a real point have equal tau (300 random)
+     === 2. mirrors ===
+PASS [M1] a real mirror (M1 or M2) preserves the class of every input (400 random)
+PASS [M2] non-real mirror sends a real circle to a different real circle only M1<->M2, and then h(L)=0 (3000 random)
+PASS [M2] x^2+y^2=1 reflected in x^2+y^2=i is x^2+y^2=-1 (and in x^2+y^2=-i too); tau(x^2+y^2=+-i)=0
+PASS [M2] every real circle is swapped with every imaginary-radius circle by the two mirrors C +- i t C' (h=0)
+PASS [M2] two real points are swapped by every non-null member of their pencil; the non-real members are M5
+PASS [M3] C*L is through infinity (a line, isotropic line or infinity) iff C passes through infinity*L (500 random)
+PASS [M3] infinity reflected in a circle is its centre (complex centre too)
+PASS [D1] Q(L)=0: cleared formula Q(L)X-2<X,L>L is a multiple of L (constant map) (200 random)
+PASS [D1] inversion in x^2+y^2=eps^2: circle through 0 tends to its tangent line at 0
+PASS [D1] ... and a circle not through 0 tends to the point 0 (vector -> pt(0))
+PASS [D1] circles x^2+y^2+eps(x-1)=0 also shrink to 0 but give a different limit (approach-dependent)
+     approach-dependent limit: ['1', '-2', '-4', '0'] ~ circle C-(b+2)/2 pt(0)
+     === 3. pair lemmas ===
+PASS [L0] exact outcome classifier agrees with numeric roots on 1197 random pairs
+PASS [L1] real pencil: outcome is O1/O2/O3 for a non-real member of class M3,P2/M4/M5 (880 pairs)
+PASS [L2] non-real pencil: never two real points, never a conjugate pair (542 pairs)
+PASS [L2] non-real pencil through a real point: outcome O4 or O2 (360 pairs)
+PASS [L3] every circle tangent to a real circle (Q>0) at a non-real point is M3 (600 random)
+PASS [L3] tangent to an imaginary-radius circle at a non-real point: classes seen ['M3', 'M5']
+PASS [L3] x^2+y^2=-1 and x^2+y^2-ix=0 (M4) touch at (i,0)
+PASS [K1] M1,M1: kappa>=0
+PASS [K1] M1,M2 and M2,M1: kappa<=0
+PASS [K1] M2,M2: kappa>1
+     kappa ranges sampled: {'M1M2': (-84.5, 0.0), 'M1M1': (0.0, 1024.0), 'M2M1': (-62.5, 0.0), 'M2M2': (1.0903225806451613, 32.0)}
+PASS [K2] disjoint real circles (a=1): separate <=> <C1,C2> <0, nested <=> >0 (1000 random)
+PASS [K2] real point inside a circle (a=1) <=> <pt(p),C> >0 (1000 random)
+PASS [E1] circle-circle secant: outcome O1, kappa 1/4, finite pts 2, image line
+PASS [E1] circle-circle orthogonal: outcome O1, kappa 0, finite pts 2, image circle
+PASS [E1] circle-circle externally tangent: outcome O2, kappa 1, finite pts 2, image circle
+PASS [E1] circle-circle internally tangent: outcome O2, kappa 1, finite pts 2, image circle
+PASS [E1] circle-circle separate: outcome O3, kappa 49/4, finite pts 2, image circle
+PASS [E1] circle-circle nested: outcome O3, kappa 169/64, finite pts 2, image circle
+PASS [E1] circle-circle concentric: outcome O3, kappa 25/16, finite pts 0, image circle
+PASS [E1] circle-line secant: outcome O1, kappa 1/4, finite pts 2, image circle
+PASS [E1] circle-line through the centre: outcome O1, kappa 0, finite pts 2, image circle
+PASS [E1] circle-line tangent: outcome O2, kappa 1, finite pts 2, image circle
+PASS [E1] circle-line missing (Quilez): outcome O3, kappa 4, finite pts 2, image circle
+PASS [E1] line-circle secant: outcome O1, kappa 1/4, finite pts 2, image circle
+PASS [E1] line-circle through the centre: outcome O1, kappa 0, finite pts 2, image line
+PASS [E1] line-circle tangent: outcome O2, kappa 1, finite pts 2, image circle
+PASS [E1] line-circle missing: outcome O3, kappa 4, finite pts 2, image circle
+PASS [E1] line-line crossing at 45 deg: outcome O1, kappa 1/2, finite pts 1, image line
+PASS [E1] line-line perpendicular: outcome O1, kappa 0, finite pts 1, image line
+PASS [E1] line-line parallel: outcome O2, kappa 1, finite pts 0, image line
+PASS [E2] real point inside: outcome O3, image point
+PASS [E2] real point outside: outcome O3, image point
+PASS [E2] real point centre: outcome O3, image inf
+PASS [E2] real point on the circle: outcome O2, image point
+PASS [E2] real point on a line: outcome O2, image point
+PASS [E2] real point off a line: outcome O3, image point
+PASS [E2] real point infinity vs circle: outcome O3, image point
+PASS [E2] real point infinity vs line: outcome O2, image inf
+PASS [E2] centre of a circle is reflected to infinity
+     === 4. grid ===
+PASS [G0] cell M1 x M1: predicted ['O1', 'O2', 'O3'], found ['O1', 'O2', 'O3']
+PASS [G0] cell M1 x M1: orthogonal (kappa=0) possible as predicted
+PASS [G1] M1xM1 O1: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM1 O1*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM1 O2: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM1 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M1 x M2: predicted ['O3'], found ['O3']
+PASS [G0] cell M1 x M2: orthogonal (kappa=0) possible as predicted
+PASS [G1] M1xM2 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM2 O3*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M1 x M3: predicted ['O1', 'O4', 'O5', 'O6'], found ['O1', 'O4', 'O5', 'O6']
+PASS [G0] cell M1 x M3: orthogonal (kappa=0) possible as predicted
+PASS [G1] M1xM3 O1: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM3 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM3 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM3 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M1 x M4: predicted ['O2', 'O4', 'O6'], found ['O2', 'O4', 'O6']
+PASS [G0] cell M1 x M4: orthogonal (kappa=0) possible as predicted
+PASS [G1] M1xM4 O2: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM4 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM4 O4*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM4 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M1 x M5: predicted ['O3', 'O6'], found ['O3', 'O6']
+PASS [G0] cell M1 x M5: orthogonal (kappa=0) possible as predicted
+PASS [G1] M1xM5 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M1xM5 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M2 x M1: predicted ['O3'], found ['O3']
+PASS [G0] cell M2 x M1: orthogonal (kappa=0) possible as predicted
+PASS [G1] M2xM1 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M2xM1 O3*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M2 x M2: predicted ['O3'], found ['O3']
+PASS [G0] cell M2 x M2: orthogonal (kappa=0) impossible as predicted
+PASS [G1] M2xM2 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M2 x M3: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M2 x M3: orthogonal (kappa=0) possible as predicted
+PASS [G1] M2xM3 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M2xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M2xM3 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M2 x M4: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M2 x M4: orthogonal (kappa=0) impossible as predicted
+PASS [G1] M2xM4 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M2xM4 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M2 x M5: predicted ['O3', 'O5', 'O6'], found ['O3', 'O5', 'O6']
+PASS [G0] cell M2 x M5: orthogonal (kappa=0) impossible as predicted
+PASS [G1] M2xM5 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M2xM5 O5: example tangent verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M2xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M3 x M1: predicted ['O1', 'O4', 'O5', 'O6'], found ['O1', 'O4', 'O5', 'O6']
+PASS [G0] cell M3 x M1: orthogonal (kappa=0) possible as predicted
+PASS [G1] M3xM1 O1: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM1 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM1 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM1 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM1 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M3 x M2: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M3 x M2: orthogonal (kappa=0) possible as predicted
+PASS [G1] M3xM2 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM2 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM2 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M3 x M3: predicted ['O1', 'O2', 'O4', 'O5', 'O6'], found ['O1', 'O2', 'O4', 'O5', 'O6']
+PASS [G0] cell M3 x M3: orthogonal (kappa=0) possible as predicted
+PASS [G1] M3xM3 O1: example conj-pencil verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O1*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O2: example tangent-rev verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O4: example share verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O4*: example orth verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM3 O6*: example orth verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M3 x M4: predicted ['O4', 'O5', 'O6'], found ['O4', 'O5', 'O6']
+PASS [G0] cell M3 x M4: orthogonal (kappa=0) possible as predicted
+PASS [G1] M3xM4 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM4 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM4 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM4 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M3 x M5: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M3 x M5: orthogonal (kappa=0) possible as predicted
+PASS [G1] M3xM5 O5: example tangent-rev verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M3xM5 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M4 x M1: predicted ['O2', 'O4', 'O6'], found ['O2', 'O4', 'O6']
+PASS [G0] cell M4 x M1: orthogonal (kappa=0) possible as predicted
+PASS [G1] M4xM1 O2: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM1 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM1 O4*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM1 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M4 x M2: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M4 x M2: orthogonal (kappa=0) impossible as predicted
+PASS [G1] M4xM2 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM2 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M4 x M3: predicted ['O4', 'O5', 'O6'], found ['O4', 'O5', 'O6']
+PASS [G0] cell M4 x M3: orthogonal (kappa=0) possible as predicted
+PASS [G1] M4xM3 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM3 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM3 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M4 x M4: predicted ['O2', 'O4', 'O5', 'O6'], found ['O2', 'O4', 'O5', 'O6']
+PASS [G0] cell M4 x M4: orthogonal (kappa=0) possible as predicted
+PASS [G1] M4xM4 O2: example tangent-rev verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM4 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM4 O4*: example share verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM4 O5: example tangent-rev verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM4 O6: example random verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM4 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M4 x M5: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M4 x M5: orthogonal (kappa=0) possible as predicted
+PASS [G1] M4xM5 O5: example tangent verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M4xM5 O6*: example orth verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M5 x M1: predicted ['O3', 'O6'], found ['O3', 'O6']
+PASS [G0] cell M5 x M1: orthogonal (kappa=0) possible as predicted
+PASS [G1] M5xM1 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM1 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM1 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M5 x M2: predicted ['O3', 'O5', 'O6'], found ['O3', 'O5', 'O6']
+PASS [G0] cell M5 x M2: orthogonal (kappa=0) impossible as predicted
+PASS [G1] M5xM2 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM2 O5: example tangent-rev verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM2 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M5 x M3: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M5 x M3: orthogonal (kappa=0) possible as predicted
+PASS [G1] M5xM3 O5: example tangent verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM3 O6*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M5 x M4: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G0] cell M5 x M4: orthogonal (kappa=0) possible as predicted
+PASS [G1] M5xM4 O5: example tangent verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM4 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM4 O6*: example orth verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell M5 x M5: predicted ['O3', 'O5', 'O6'], found ['O3', 'O5', 'O6']
+PASS [G0] cell M5 x M5: orthogonal (kappa=0) possible as predicted
+PASS [G1] M5xM5 O3: example conj-pencil verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM5 O3*: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM5 O5: example tangent verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] M5xM5 O6*: example orth verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P1 x M1: predicted ['O2', 'O3'], found ['O2', 'O3']
+PASS [G1] P1xM1 O2: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P1xM1 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P1 x M2: predicted ['O3'], found ['O3']
+PASS [G1] P1xM2 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P1 x M3: predicted ['O2', 'O6'], found ['O2', 'O6']
+PASS [G1] P1xM3 O2: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P1xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P1 x M4: predicted ['O2', 'O6'], found ['O2', 'O6']
+PASS [G1] P1xM4 O2: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P1xM4 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P1 x M5: predicted ['O3', 'O6'], found ['O3', 'O6']
+PASS [G1] P1xM5 O3: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P1xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P2 x M1: predicted ['O1', 'O4', 'O5', 'O6'], found ['O1', 'O4', 'O5', 'O6']
+PASS [G1] P2xM1 O1: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM1 O4: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM1 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM1 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P2 x M2: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G1] P2xM2 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM2 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P2 x M3: predicted ['O1', 'O4', 'O5', 'O6'], found ['O1', 'O4', 'O5', 'O6']
+PASS [G1] P2xM3 O1: example lag2 verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM3 O4: example lag1 verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM3 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM3 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P2 x M4: predicted ['O4', 'O5', 'O6'], found ['O4', 'O5', 'O6']
+PASS [G1] P2xM4 O4: example lag1 verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM4 O5: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM4 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G0] cell P2 x M5: predicted ['O5', 'O6'], found ['O5', 'O6']
+PASS [G1] P2xM5 O5: example orth verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+PASS [G1] P2xM5 O6: example curated verified (outcome, numeric roots, classes, involution, Q, kappa, incidence, C cap C*L = C cap L)
+     leaf cells (cell,outcome): 88; orthogonal sub-cells: 24
+PASS [G2] total leaf cells = 88
+     cells admitting an orthogonal pair: 20; (cell,outcome) leaves realised orthogonally: 24
+PASS [G2] cells (M-class x M-class) admitting orthogonality = 25 - 5 = 20
+PASS [I1] image classes for M1 x M1 = {M1}
+PASS [I1] image classes for M1 x M2 = {M1}
+PASS [I1] image classes for M2 x M1 = {M2}
+PASS [I1] image classes for M2 x M2 = {M2}
+PASS [I1] image classes for M3 x M1 = {M3}
+PASS [I1] image classes for M3 x M2 = {M3}
+PASS [I1] image classes for M4 x M1 = {M4}
+PASS [I1] image classes for M4 x M2 = {M4}
+PASS [I1] image classes for M5 x M1 = {M5}
+PASS [I1] image classes for M5 x M2 = {M5}
+PASS [I1] image classes for P1 x M1 = {P1}
+PASS [I1] image classes for P1 x M2 = {P1}
+PASS [I1] image classes for P2 x M1 = {P2}
+PASS [I1] image classes for P2 x M2 = {P2}
+     image classes observed: {"M1xM1": ["M1"], "M1xM2": ["M1"], "M1xM3": ["M1", "M3"], "M1xM4": ["M1", "M4"], "M1xM5": ["M1", "M2", "M4", "M5"], "M2xM1": ["M2"], "M2xM2": ["M2"], "M2xM3": ["M2", "M4"], "M2xM5": ["M1", "M4", "M5"], "M3xM1": ["M3"], "M3xM2": ["M3"], "M3xM3": ["M3", "M5"], "M3xM4": ["M3"], "M3xM5": ["M1", "M2", "M3", "M4", "M5"], "M4xM1": ["M4"], "M4xM2": ["M4"], "M4xM3": ["M2", "M4"], "M4xM4": ["M1", "M2", "M4"], "M4xM5": ["M1", "M2", "M4"], "M5xM1": ["M5"], "M5xM2": ["M5"], "M5xM3": ["M4", "M5"], "M5xM4": ["M5"], "M5xM5": ["M1", "M4", "M5"], "P1xM1": ["P1"], "P1xM2": ["P1"], "P1xM3": ["P1", "P2"], "P1xM4": ["P1", "P2"], "P1xM5": ["P1", "P2"], "P2xM1": ["P2"], "P2xM2": ["P2"], "P2xM3": ["P1", "P2"], "P2xM4": ["P1", "P2"], "P2xM5": ["P1", "P2"]}
+
+FAILURES: none

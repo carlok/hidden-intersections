@@ -9,7 +9,7 @@ all: verify pdf site
 
 help:
 	@echo "make verify  - run every verification script (logs in verify/)"
-	@echo "make pdf     - compile theory, writeup, alt note, examples, transcript into pdf/"
+	@echo "make pdf     - compile theory, writeup, alt note, examples, transcript, classification into pdf/"
 	@echo "make site    - assemble _site/ (app + pdf) exactly as GitHub Pages serves it"
 	@echo "make clean   - remove _site/ and LaTeX by-products"
 
@@ -18,6 +18,7 @@ pdf:
 	cd theory && for f in theory writeup alt_quandle_note; do $(TECTONIC) -o ../pdf $$f.tex; done
 	cd exercises && $(TECTONIC) -o ../pdf examples16.tex
 	cd video && $(TECTONIC) -o ../pdf quilez_transcript.tex
+	cd classification && $(PYTHON) classification_build.py && $(TECTONIC) -o ../pdf classification.tex
 	@echo "Storyboard PDFs in pdf/ are committed: they need locally rendered frame dumps (not in git)."
 
 verify:
@@ -27,6 +28,7 @@ verify:
 	cd verify && $(PYTHON) alt3_verify.py
 	cd verify && $(PYTHON) ../exercises/examples16.py
 	cd verify && PYTHONPATH=../exercises $(PYTHON) theory_verify.py
+	cd verify && $(PYTHON) classification_verify.py
 	$(PYTHON) verify/check_logs.py
 
 site:

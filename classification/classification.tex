@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,xcolor}
+\usepackage[colorlinks,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}\newtheorem{remark}[theorem]{Remark}\newtheorem{example}[theorem]{Example}
+\newcommand{\C}{\mathbb{C}}\newcommand{\R}{\mathbb{R}}\newcommand{\PP}{\mathbb{P}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\pt}{\mathrm{pt}}\newcommand{\Qd}{\mathcal{Q}}
+\newcommand{\chk}[1]{\hfill{\footnotesize\textsf{[#1]}}}
+\newcommand{\cls}[1]{\textsf{#1}}
+\renewcommand{\Re}{\operatorname{Re}}\renewcommand{\Im}{\operatorname{Im}}
+\input{tab_counts.tex}
+\makeatletter\newcommand{\tabin}[1]{\@@input #1 }\makeatother
+\title{Input $\times$ mirror: an exhaustive classification\\ of points, lines and circles with real, imaginary and complex parameters}
+\author{Carlo Perassi}
+\date{October 2026\\\small Companion to \texttt{theory.pdf} and \texttt{examples16.pdf}}
+\emergencystretch=3em\sloppy
+\begin{document}\maketitle
+\begin{abstract}
+We take every combination of an \emph{input} (a point, a line or a circle) and an \emph{operator} (the mirror), where each defining parameter may be real, purely imaginary or complex, and ask three questions: can the operator act at all, what kind of object comes out, and where do input and operator meet (two real points, a real tangency, a conjugate pair, \dots). The $45\times45=2025$ raw parameter combinations collapse in three steps. Under the complex Möbius group $PO(4,\C)$ almost everything is one orbit: the only invariant of a pair is $\kappa$ (and incidence for a point). Under real Möbius maps every object falls into one of seven classes (\cls{M1}--\cls{M5}, \cls{P1}, \cls{P2}), decided by one real number $\tau=\ip X{\bar X}/|Q(X)|$. Pairs fall into $35$ cells plus one degenerate rule (points cannot be mirrors), and each cell splits by the type of common points into \cntleaf{} leaves. Orthogonality is possible in exactly \cntorthcells{} of the $25$ circle--circle cells. All exclusions are proved from four short lemmas. All \cntrows{} realised leaves are certified by exact examples, and \texttt{classification\_verify.py} runs \cntpass{} checks (\cntfail{} failures).
+\end{abstract}
+\tableofcontents
+
+\section{Setting and the questions}\label{sec:setting}
+We use the notation of \texttt{theory.pdf}. A generalized circle is $X=[a:b:c:d]\in\PP^3(\C)$, read as $a(x^2+y^2)+bx+cy+d=0$; it is a \emph{line} if $a=0$. We write
+\[\ip XY=bb'+cc'-2(ad'+a'd),\qquad Q(X)=\ip XX=b^2+c^2-4ad,\]
+$\pt(p)=[1:-2x_0:-2y_0:x_0^2+y_0^2]$ for the point-circle at $p=(x_0,y_0)\in\C^2$, and $\infty=[0:0:0:1]$. Incidence is orthogonality: $\ip{\pt(p)}X=-2X(p)$, and $\ip X\infty=-2a$, so every line passes through $\infty$. A \emph{point} is a vector with $Q=0$; for $a\neq0$ it is $\pt(p)$, and for $a=0$ it is $\infty$ or an \emph{isotropic line} $[0:1:\pm i:\delta]$ (the non-real ``points at infinity'' of the quadric $\Qd=\{Q=0\}$).
+
+\textbf{The mirror.} For $Q(L)\neq0$, $C\star L=C-2\ip CL L/Q(L)$. The pair invariant is
+\[\kappa(C,L)=\frac{\ip CL^2}{Q(C)Q(L)}\qquad(Q(C)Q(L)\neq0).\]
+It is $\cos^2$ of the angle for real secant circles, $1$ for tangency and $0$ for orthogonality. The common points of $C$ and $L$ are the null vectors orthogonal to both. Counted on $\Qd\cong\PP^1\times\PP^1$ there are always two, or one double, unless $C=L$; and $C\cap(C\star L)=C\cap L$ whenever $\ip CL\neq0$ (\texttt{theory.pdf}, Thm.~5.1).
+
+\textbf{Raw parameter types.} A point $(x_0,y_0)$ has two parameters. A line $y=mx+q$, i.e.\ $[0:m:-1:q]$, has $(m,q)$; vertical lines are equivalent to $m=0$ by a rotation and give nothing new. A circle $(x-m_1)^2+(y-m_2)^2=r^2$ has $(m_1,m_2,r)$. Each parameter is of type \texttt{R} (real), \texttt{I} (purely imaginary, $\neq0$) or \texttt{C} (both parts $\neq0$). This gives $9+9+27=45$ types per role, and $45^2=2025$ ordered (input, operator) types.
+
+\textbf{Outcome codes} for the two common points of a pair:
+\begin{center}\small\begin{tabular}{lll}\toprule
+\textbf{O1} two real points & \textbf{O2} one real double point & \textbf{O3} a conjugate pair $p,\bar p$\\
+\textbf{O4} one real, one non-real & \textbf{O5} one non-real double point & \textbf{O6} two non-real, not conjugate\\\bottomrule\end{tabular}\end{center}
+``Real'' means real on $\Qd$: a real finite point, or $\infty$. Over $\C$ only ``two distinct'' (O1, O3, O4, O6) and ``double'' (O2, O5) can be told apart; realness is what splits them. A superscript $\perp$ marks an orthogonal pair ($\kappa=0$).
+
+\textbf{Verification.} Each claim carries a tag such as \textsf{[L2]}, the tag of the matching check in \texttt{verify/classification\_verify.py}. That script writes \texttt{verify/classification\_verify\_log.txt} and \texttt{classification/classification\_data.json}; all tables below are generated from the JSON by \texttt{classification/classification\_build.py}. Exact checks use Gaussian rationals $\mathbb{Q}(i)$; numerical root checks use 80-digit mpmath. Random checks are evidence. The impossibility statements are \emph{proved} in the text; the script only confirms that random and targeted search never contradicts them.
+
+\section{Single objects}\label{sec:single}
+\subsection{Over $\C$: almost no classes}
+\begin{proposition}\label{prop:complexorbits}
+(a) $PO(4,\C)$ has exactly two orbits on $\PP^3(\C)$: $\{Q\neq0\}$ (circles and lines alike) and $\{Q=0\}$ (points, $\infty$ and isotropic lines alike).
+(b) The complex similarities (the stabiliser of $\infty$) have exactly five orbits: proper circles ($a\neq0,Q\neq0$), non-isotropic lines ($a=0,Q\neq0$), finite points, isotropic lines, and $\{\infty\}$.
+\end{proposition}
+\begin{proof}
+(a) By Witt's theorem \cite{Witt}, for a non-degenerate quadratic form over $\C$ any two vectors with the same non-zero value of $Q$ are related by an isometry. Scaling makes $Q=1$, which gives one orbit. All non-zero null vectors also form one orbit.
+(b) Complex translations, rotations $SO(2,\C)$, reflections and complex scalings send any circle $(x-m)^2=\rho$ with $\rho\neq0$ to $x^2+y^2=1$. They send any line with $b^2+c^2\neq0$ to $x=0$, and any point to $(0,0)$. They send $[0:1:\pm i:\delta]$ to $[0:1:i:0]$: use a reflection for the sign and a translation to remove $\delta$. These classes are distinct because $a=0$ and $Q=0$ are both preserved.
+\end{proof}
+So over $\C$ the parameter types (real, imaginary, complex) carry no information at all: \emph{$x^2+y^2=1$, $x^2+y^2=-1$ and $(x-i)^2+y^2=2i$ are the same object.} The only invariant is whether $Q$ vanishes.
+
+\subsection{Over $\R$: seven classes, one number}
+Real Möbius geometry is the group $PO(3,1)$ of real matrices preserving $Q$. It commutes with conjugation $X\mapsto\bar X$. Write $X=R+iS$ with $R,S$ real, and let $W_R(X)=\operatorname{span}_\R(R,S)$. Define
+\[h(X)=\ip X{\bar X}=Q(R)+Q(S)\in\R,\qquad \tau(X)=\frac{h(X)}{|Q(X)|}\quad(Q(X)\neq0).\]
+Both are projective invariants: $X\mapsto\lambda X$ multiplies $h$ and $|Q|$ by $|\lambda|^2$. They are also invariant under real Möbius maps.
+
+\begin{theorem}[Seven real classes]\label{thm:seven}
+Every object belongs to exactly one class in the table, and the number of its real points is as listed.
+\begin{center}\footnotesize\begin{tabular}{@{}lp{3.3cm}lp{2.2cm}p{5.6cm}@{}}\toprule
+class & definition & $\tau$ & real points & normal form / examples\\\midrule
+\cls{M1} & real, $Q>0$ & $1$ & a real circle/line & $x^2+y^2=1$, $y=0$\\
+\cls{M2} & real, $Q<0$ & $-1$ & none & $x^2+y^2=-1$\\
+\cls{M3} & non-real, $W_R$ positive definite & $>1$ & two & $x+2iy=0$; $(x-2i)^2+y^2=-1$\\
+\cls{M4} & non-real, $W_R$ degenerate & $=1$ & one & $R+t\,\pt(r)$, $R$ real, $r\in R$ real, $t\notin\R$; $x=i$\\
+\cls{M5} & non-real, $W_R$ Lorentzian & $\in(-1,1)$ & none & $x^2+y^2=i$; $(x-\tfrac i2)^2+y^2=-1$\\
+\cls{P1} & real point ($Q=0$) & -- & itself & $\pt(0,0)$, $\infty$\\
+\cls{P2} & non-real point ($Q=0$) & -- & its Laguerre pair & $\pt(i,0)$, isotropic lines\\\bottomrule\end{tabular}\end{center}
+\end{theorem}
+\begin{proof}
+A real point $p$ lies on $X$ iff $\ip{\pt(p)}R=\ip{\pt(p)}S=0$, i.e.\ iff the real null vector $\pt(p)$ lies in the real plane $W_R^\perp$. When $X$ is non-real, $W_R$ is two-dimensional and, since $Q$ has signature $(3,1)$, $W_R^\perp$ has the complementary type. A positive definite $W_R$ gives a Lorentzian $W_R^\perp$, which contains two real null lines. A degenerate $W_R$ gives one, and a Lorentzian $W_R$ gives a definite $W_R^\perp$, which contains none.
+
+For $\tau$: $Q(X)=Q(R)-Q(S)+2i\ip RS$, so
+\[h^2-|Q|^2=4\bigl(Q(R)Q(S)-\ip RS^2\bigr)=4\det\operatorname{Gram}(R,S).\]
+Hence $|\tau|>1$, $=1$, $<1$ according to the three cases. A negative definite real plane does not exist in signature $(3,1)$. A degenerate plane lies in $n^\perp$ for its null radical $n$, and $n^\perp$ is positive semi-definite. So $h>0$ in the first two cases, which gives $\tau>1$ and $\tau=1$. The \cls{M4} normal form: the radical is a real null vector, i.e.\ a real point $r$, and $W_R=\operatorname{span}(R,\pt(r))$ with $R\perp\pt(r)$.
+\end{proof}
+\noindent Two facts make $\tau$ easy to read. First, $\kappa(X,\bar X)=\tau^2$, so $\tau$ is (up to sign) the angle invariant between an object and its conjugate. Second, $X$ and $\bar X$ meet in O1, O2, O3 for \cls{M3}, \cls{M4}, \cls{M5} respectively, and in O1 for \cls{P2}. \chk{S2}
+
+\begin{proposition}[Non-real points]\label{prop:P2}\chk{S2}
+For $p=u+iw\in\C^2$ with $u,w\in\R^2$, $w\neq0$, the two isotropic lines through $p$ meet the real plane in the \emph{Laguerre pair} $u\mp Jw$, where $J$ is the rotation by $90^\circ$. The pair determines $p$ up to conjugation. Real similarities act transitively on non-real finite points, so every one of them is $(i,0)$ in suitable real coordinates. The isotropic lines, i.e.\ the non-real points of $\Qd$ at infinity, belong to the same real Möbius class \cls{P2}. Inverting $p$ in \emph{any} real circle through its Laguerre pair gives $\bar p$.
+\end{proposition}
+\begin{proof}[Proof of the last claim]
+On $\Qd\cong\PP^1\times\PP^1$ write $p=(\alpha,\beta)$; the real points are $(z,\bar z)$ and $\bar p=(\bar\beta,\bar\alpha)$. The real points on the rulings through $p$ are $q_1=(\alpha,\bar\alpha)$ and $q_2=(\bar\beta,\beta)$, the Laguerre pair. Inversion in a real circle acts as $(u,v)\mapsto(f(v),\bar f(u))$ for a Möbius $f$. Fixing $q_1$ and $q_2$ gives $\bar f(\alpha)=\bar\alpha$ and $f(\beta)=\bar\beta$, so $p\mapsto(\bar\beta,\bar\alpha)=\bar p$.
+\end{proof}
+
+\subsection{Collapse of the raw parameter types}
+\begin{proposition}[Explicit criteria]\label{prop:raw}\chk{S1}
+(a) A point is \cls{P1} iff both coordinates are real.
+(b) For the line $y=mx+q$: $h=1+|m|^2$, $Q=1+m^2$, and $h^2-|Q|^2=4(\Im m)^2$. It is \cls{M1} if $m,q\in\R$, \cls{M4} if $m\in\R$, $q\notin\R$ (its one real point is $\infty$), isotropic (\cls{P2}) if $m=\pm i$, and \cls{M3} for every other non-real $m$ (its real points are $\infty$ and one finite point). \emph{A line is never \cls{M5}}, since it passes through the real point $\infty$.
+(c) For the circle with centre $m=u+iw$ and $\rho=r^2$: $h=8|w|^2+4\Re\rho$, $Q=4\rho$, and
+\[h^2-|Q|^2=16\,\Delta,\qquad \Delta=4|w|^2(\Re\rho+|w|^2)-(\Im\rho)^2.\]
+It is \cls{M3}, \cls{M4}, \cls{M5} as $\Delta>0,=0,<0$ (if non-real). Equivalently, its real points are those of the real circle $|p-u|^2=\Re\rho+|w|^2$ on the real line $2(p-u)\cdot w=-\Im\rho$. In particular, a real centre with $r\in\R$, $i\R$, or complex gives \cls{M1}, \cls{M2}, \cls{M5} ($\tau=\cos\arg\rho$). \emph{A non-real centre with a real radius always gives \cls{M3}.}
+\end{proposition}
+\begin{proof}
+(b) and (c) follow by expanding $X(p)=0$ for real $p$ into real and imaginary parts, and by the identity in Theorem~\ref{thm:seven}. For lines, $|1+m^2|\le1+|m|^2$ with equality iff $m^2\ge0$.
+\end{proof}
+
+\begin{center}\small
+\begin{longtable}{llp{6cm}}
+\caption{The 45 raw types and the classes they reach (I=imaginary, C=complex; for circles the code is $m_1m_2r$). ``iso'' = isotropic line. Every listed class is realised: by random sampling, plus the explicit \cls{M4} witnesses of \textsf{[S1]} where sampling missed them (e.g.\ $(x-i)^2+(y-i)^2=4i$ for \texttt{III}).}\label{tab:raw}\\\toprule
+object & code & classes\\\midrule\endfirsthead\toprule object & code & classes\\\midrule\endhead
+\tabin{tab_raw.tex}
+\bottomrule\end{longtable}\end{center}
+\noindent\textbf{Collapse.} The 9 point types become $2$ classes: \texttt{RR} gives \cls{P1}, the other 8 give \cls{P2}. The 9 line types reach $3$ classes plus isotropic lines (\cls{P2}). The 27 circle types reach all of \cls{M1}--\cls{M5}. Only \texttt{RRR}, \texttt{RRI}, \texttt{RRC} (real centre) and the $8$ types \texttt{xyR} with a non-real centre and a real radius have a single class. The remaining $16$ types depend on the actual values through the sign of $\Delta$.
+
+\section{Who can be a mirror, and what comes out}\label{sec:mirrors}
+\begin{proposition}[Points are not mirrors]\label{prop:degen}\chk{D1}
+If $Q(L)=0$ (\cls{P1}, \cls{P2}, $\infty$, an isotropic line) the formula is undefined. The cleared map $X\mapsto Q(L)X-2\ip XL L=-2\ip XL L$ is the constant map to $L$ (and zero on circles through $L$), so it is not a projective transformation. Limits do not help: for $L_\varepsilon:x^2+y^2=\varepsilon^2$,
+\[C\star L_\varepsilon\to\begin{cases}\pt(0)&C\not\ni0,\\ \text{the tangent line of }C\text{ at }0& C\ni0,\end{cases}\]
+whereas other families shrinking to the same point, e.g.\ $x^2+y^2+\varepsilon(x-1)=0$, give a different limit. So ``reflecting in a point'' has no well-defined meaning, and the point rows of the operator column collapse to one degenerate rule.
+\end{proposition}
+\begin{proof}
+With $L_\varepsilon=[1:0:0:-\varepsilon^2]$ and $C=[a:b:c:d]$: $Q(L_\varepsilon)=4\varepsilon^2$ and $\ip C{L_\varepsilon}=2a\varepsilon^2-2d$, so $C\star L_\varepsilon=C-(a-d/\varepsilon^2)[1:0:0:-\varepsilon^2]$. If $d\neq0$, multiplying by $\varepsilon^2$ gives the limit $[d:0:0:0]=\pt(0)$. If $d=0$, the result is $[0:b:c:a\varepsilon^2]\to[0:b:c:0]$, which is $bx+cy=0$.
+\end{proof}
+
+\begin{proposition}[Real mirrors preserve class]\chk{M1}
+If $L$ is \cls{M1} or \cls{M2}, then $s_L$ is a real Möbius map and $C\star L$ has the class of $C$.
+\end{proposition}
+
+\begin{proposition}[Non-real mirrors and real circles]\label{prop:swap}\chk{M2}
+Let $C\ne C'$ be real circles. A mirror $L$ with $C\star L=C'$ lies in $\operatorname{span}(C,C')$ and equals $C\pm\mu C'$ with $\mu^2=Q(C)/Q(C')$. It is non-real iff $Q(C)Q(C')<0$, i.e.\ one is \cls{M1} and the other \cls{M2}. In that case $h(L)=0$, i.e.\ $\tau(L)=0$, and $L$ is \cls{M5}. Example: $x^2+y^2=\pm i$ swaps $x^2+y^2=1$ and $x^2+y^2=-1$.
+\end{proposition}
+\begin{proof}
+$C\star L\propto C'$ forces $L\propto C-\lambda C'$. Comparing $Q$ of both sides of $s_L(C)=\lambda C'$ gives $\lambda^2=Q(C)/Q(C')$. If the ratio is negative, $\mu=it$ with $t\in\R$, and $h(C\pm itC')=Q(C)+t^2Q(C')=0$.
+\end{proof}
+
+\begin{proposition}[Line or circle?]\chk{M3}
+$C\star L$ passes through $\infty$ (it is a line, an isotropic line or $\infty$) iff $C$ passes through $\infty\star L$. For a proper circle $L$, $\infty\star L$ is its centre (also for a complex centre); for a line $L$, $\infty\star L=\infty$. So reflection in a circle turns $C$ into a line iff $C$ passes through the centre of $L$. Reflection in a line turns lines into lines and circles into circles.
+\end{proposition}
+
+\begin{center}\small
+\begin{longtable}{lll}
+\caption{Classes of $C\star L$ observed for input class $\times$ mirror class (exact arithmetic, \cntpass{}-check run; \textsf{[I1]}). The \cls{M1}/\cls{M2} columns are proved (the class is preserved). The other columns are \emph{observed lower bounds}, not a proven classification.}\label{tab:img}\\\toprule input & mirror & image classes\\\midrule\endfirsthead\toprule input & mirror & image classes\\\midrule\endhead
+\tabin{tab_img.tex}
+\bottomrule\end{longtable}\end{center}
+
+\section{Pairs: invariants and four lemmas}\label{sec:pairs}
+\subsection{Over $\C$}
+\begin{proposition}[Complex orbit types]\label{prop:pairorbits}
+Ordered pairs $(C,L)$ with $Q(L)\ne0$ fall into the following $PO(4,\C)$-orbit types:
+(i) $C=L$;
+(ii) $Q(C)\neq0$, $C\ne L$, $\kappa=1$ (tangent: one double common point);
+(iii) $Q(C)\ne0$, $\kappa\ne1$: one orbit for each value of $\kappa\in\C\setminus\{1\}$ (two distinct common points), with $\kappa=0$ (orthogonal, $C\star L=C$) singled out;
+(iv) $C$ a point on $L$;
+(v) $C$ a point off $L$.
+That gives six types if $\kappa=0$ is counted separately, and $\kappa$ is the only continuous invariant.
+\end{proposition}
+\begin{proof}
+For (iii), the Gram matrix of $(C,L)$ has determinant $Q(C)Q(L)(1-\kappa)\ne0$. Over $\C$ one can scale to $Q(C)=Q(L)=1$, and $\ip CL=\pm\sqrt\kappa$; the sign is absorbed by $C\mapsto-C$. Witt's extension theorem \cite{Witt} then gives an isometry between any two such pairs. Witt's theorem also covers the degenerate spans in (ii), (iv) and (v). This is a quoted theorem, not checked by the script.
+\end{proof}
+So, over $\C$, all of ``secant'', ``disjoint'', ``nested'', ``separate'', ``concentric'' and ``line missing the circle'' are the \emph{same} relation ``$\kappa\ne1$''. ``Tangent'' and ``parallel lines'' are both $\kappa=1$, and ``through a point'' is (iv).
+
+\subsection{Over $\R$: four lemmas}
+\begin{lemma}[Real pencil]\label{lem:real}\chk{L1}
+Suppose $\operatorname{span}(C,L)$ is real (equal to its conjugate). Then the outcome is O1, O2 or O3, decided by the real pencil's signature (Lorentzian, degenerate, definite). If the pencil contains a non-real member $X$, the outcome is O1, O2, O3 for $X$ of class \cls{M3}/\cls{P2}, \cls{M4}, \cls{M5}.
+\end{lemma}
+\begin{proof}
+The common points form a conjugation-invariant set. A double point $p$ then has $\bar p$ double too, so $p$ is real. If $X=R+iS$ is in the pencil, the pencil is $W_R(X)$; apply Theorem~\ref{thm:seven}.
+\end{proof}
+\begin{lemma}[Non-real pencil]\label{lem:nonreal}\chk{L2}
+If $\operatorname{span}(C,L)$ is not real, there is at most one real common point, and never a conjugate pair. So the outcome is O2 or O4 (with a real point) or O5 or O6 (without).
+\end{lemma}
+\begin{proof}
+A real common point is orthogonal to the pencil and its conjugate, whose sum has dimension at least $3$. So there is at most one. If $p$ and $\bar p$ were both common points, the pencil would be $\operatorname{span}(p,\bar p)^\perp$, which is real.
+\end{proof}
+\begin{lemma}[Tangency]\label{lem:tangent}\chk{S3, L3}
+(a) If $C$ and $L$ are tangent at a real point, then $\tau(C)=\tau(L)$.
+(b) If $C$ is \cls{M1} and $L$ is tangent to it at a non-real point, then $L$ is \cls{M3}.
+(c) If $C$ is \cls{M2}, a circle tangent to $C$ at a non-real point can be \cls{M3}, \cls{M4} or \cls{M5}. Example: $x^2+y^2=-1$ and $x^2+y^2-ix=0$ (\cls{M4}) touch at $(i,0)$.
+\end{lemma}
+\begin{proof}
+The circles tangent to $C$ at $p$ are $L=C+t\,\pt(p)$ with $\ip C{\pt(p)}=0$, so $Q(L)=Q(C)$.
+(a) If $p$ is real, the cross terms of $h(L)$ vanish and $h(L)=h(C)$.
+(b) If $C$ is real, the cross terms vanish again and $h(L)=Q(C)+|t|^2h(\pt(p))$. For a non-real null $p$ we have $h(\pt(p))>0$: write $\pt(p)=R'+iS'$, so that $Q(R')=Q(S')$ and $R'\perp S'$, which forces $Q(R')>0$. Hence $\tau(L)>1$, and $L$ is non-real.
+(c) $\tau(L)=-1+|t|^2h(\pt(p))/|Q(C)|$ takes every value in $(-1,\infty)$.
+\end{proof}
+\begin{lemma}[$\kappa$ ranges and orthogonality]\label{lem:kappa}\chk{K1}
+For real pairs: $\kappa(\cls{M1},\cls{M1})\ge0$ and $\kappa(\cls{M1},\cls{M2})\le0$. Also $\kappa(\cls{M2},\cls{M2})>1$ for $C\ne L$, so \emph{two imaginary-radius circles are never tangent and never orthogonal}. Orthogonality is impossible in exactly the cells \cls{M2}$\times$\cls{M2}, \cls{M2}$\times$\cls{M4}, \cls{M4}$\times$\cls{M2}, \cls{M2}$\times$\cls{M5}, \cls{M5}$\times$\cls{M2}.
+\end{lemma}
+\begin{proof}
+A real plane containing a timelike vector ($Q<0$) is Lorentzian, so its Gram determinant $Q(C)Q(L)(1-\kappa)$ is negative. An \cls{M4} mirror $R+t\,\pt(r)$ is orthogonal to a real $C$ iff $C\perp R$ and $C\perp\pt(r)$, and no timelike vector is orthogonal to a null one. An \cls{M5} mirror is orthogonal to a real $C$ iff $C\perp W_R$, but $W_R^\perp$ is then positive definite. In the other $20$ cells an orthogonal example exists (Table~\ref{tab:ex}).
+\end{proof}
+The script also confirms these ranges numerically. The observed sampled ranges are $\kappa\in[0,1024]$ for \cls{M1}\cls{M1}, $[-62.5,0]$ for \cls{M1}\cls{M2}, and $[1.09,32]$ for \cls{M2}\cls{M2}.
+
+\subsection{The exact classifier}
+\texttt{classification\_core.outcome} decides the outcome in exact arithmetic. If $\operatorname{rank}\{C,L,\bar C,\bar L\}=2$, the pencil is real and the signature of a real basis gives O1/O2/O3. If the rank is $3$, the pencil plus its conjugate has a real normal $n$: if $Q(n)=0$, then $n$ is the real common point and the outcome is O2 or O4; otherwise there is none and the Gram determinant separates O5 (double) from O6. It agrees with 80-digit numerical roots on 1196 random pairs. \chk{L0}
+
+\section{Real--real pairs: what Euclid sees and Möbius forgets}\label{sec:euclid}
+Normalise proper circles to $a=1$. Then $\ip{C_1}{C_2}=2(r_1^2+r_2^2-|m_1-m_2|^2)$. Its sign separates disjoint circles: \emph{separate} iff $\ip{C_1}{C_2}<0$, \emph{nested} iff $>0$. Similarly, a real point is inside $C$ iff $\ip{\pt(p)}C>0$. \chk{K2} Both signs flip under $C\mapsto-C$, so they are \emph{not} projective invariants. Möbius maps exchange inside and outside: an inversion turns a nested pair into a separate pair with the same $\kappa$. Concentric circles are just disjoint circles placed symmetrically. Hence:
+\begin{center}\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}llp{2.9cm}p{2.9cm}llccl@{}}
+\caption{The Euclidean relations Carlo listed, with $\kappa$, the sign of $\ip CL$ (at $a=1$), the outcome, the number of finite common points, and the kind of $C\star L$. \chk{E1}}\label{tab:euc}\\\toprule
+pair & relation & $C$ & $L$ & $\kappa$ & $\ip CL$ & O & fin. & $C\star L$\\\midrule\endfirsthead
+\toprule pair & relation & $C$ & $L$ & $\kappa$ & $\ip CL$ & O & fin. & $C\star L$\\\midrule\endhead
+\tabin{tab_euc.tex}
+\bottomrule\end{longtable}
+\begin{longtable}{lllllc}
+\caption{A real point (\cls{P1}) against a real circle or line. \chk{E2}}\label{tab:pts}\\\toprule
+relation & point & $L$ & $\ip{\pt}{L}$ & O & $\pt\star L$\\\midrule
+\tabin{tab_pts.tex}
+\bottomrule\end{longtable}\end{center}
+\noindent\textbf{Collapse.} The 18 real relations (circle/line, in either order) collapse to four $\kappa$-classes: $0<\kappa<1$ (secant), $\kappa=0$ (orthogonal, which includes ``line through the centre'' and ``perpendicular''), $\kappa=1$ (tangent internally or externally, and \emph{parallel lines}, tangent at $\infty$), and $\kappa>1$ (separate, nested, concentric, a line missing a circle). These are three outcome codes O1, O2, O3. The 8 point relations collapse to two: on (O2) and off (O3; inside, outside, centre and ``$\infty$ vs.\ a circle'' are all the same). For real points against a real circle, ``off'' always means the two isotropic lines through $p$ cut the circle in a conjugate pair. Tangency of real circles has the extra Euclidean split internal/external (sign of $\ip CL$), which is also lost projectively.
+
+\section{The full grid}\label{sec:grid}
+\begin{theorem}[The grid]\label{thm:grid}
+For input class (row) and mirror class (column), the possible outcomes are exactly those in Table~\ref{tab:grid}. A $\perp$ marks outcomes also realised by an orthogonal pair.
+\end{theorem}
+\begin{table}[h]\centering\small
+\tabin{tab_grid.tex}
+\caption{Outcome codes (O1--O6 written as 1--6) per cell. There are \cntleaf{} leaves (cell, outcome), and \cntleafo{} of them are also realised orthogonally, spread over \cntorthcells{} cells. \chk{G0, G2}}\label{tab:grid}
+\end{table}
+\begin{proof}
+\emph{Exclusions.} Lemma~\ref{lem:real} and Lemma~\ref{lem:nonreal} restrict to O1--O3 for real pencils and O2, O4--O6 otherwise. A real pencil with a non-real member has its outcome fixed by that member's class, so a real pencil between two non-real objects of different classes is impossible (for example in \cls{M3}$\times$\cls{M4} and \cls{M3}$\times$\cls{M5}). Objects without real points (\cls{M2}, \cls{M5}) exclude O1, O2 and O4. A real double point needs equal $\tau$ (Lemma~\ref{lem:tangent}a), which kills O2 in, e.g., \cls{M1}$\times$\cls{M3}, \cls{M1}$\times$\cls{M5} and \cls{M3}$\times$\cls{M4}. Tangency to \cls{M1} at a non-real point forces \cls{M3} (Lemma~\ref{lem:tangent}b), which kills O5 in \cls{M1}$\times$\cls{M4}, \cls{M1}$\times$\cls{M5} and their transposes. For a point input $p$: the common points of $\pt(p)$ and $L$ are one point on each isotropic line through $p$. For real $p$ these are non-real unless $p\in L$, so \cls{P1} gives O2 (on), O3 (real pencil) or O6. For non-real $p$, a real common point is a Laguerre point of $p$.
+\emph{Realisations.} Each of the \cntleaf{} leaves and \cntleafo{} orthogonal sub-leaves has an exact example in Table~\ref{tab:ex}. Each example is checked for its exact outcome, the 80-digit numerical roots, both classes, involutivity of $\star$, $Q(C\star L)=Q(C)$, $\kappa(C\star L,L)=\kappa(C,L)$, incidence of the listed points on both curves, and $C\cap(C\star L)=C\cap L$. \chk{G1}
+\end{proof}
+
+\noindent\textbf{Reading the grid.} The \cls{M1} row is Carlo's ``real circle or line against anything''. Against a real mirror it gives the three familiar cases. Against a mirror with no real points it gives only ``misses'' (O3) or two non-real, non-conjugate points (O6). The matrix is symmetric because common points do not depend on which object is the mirror; only the image $C\star L$ depends on the order. The \cls{P1}/\cls{P2} rows have no matching columns, since points cannot be mirrors (Prop.~\ref{prop:degen}).
+
+\footnotesize\setlength{\tabcolsep}{2.5pt}
+\begin{longtable}{@{}>{\raggedleft}p{0.5cm}p{1.5cm}p{0.45cm}>{\raggedright}p{3.7cm}>{\raggedright}p{3.7cm}p{1.3cm}p{0.6cm}>{\raggedright\arraybackslash}p{3.6cm}@{}}
+\caption{One exact example per leaf: input $C$, mirror $L$, $\kappa$, class of $C\star L$, and common points (3 decimals; ``ideal'' = a common point at infinity on $\Qd$, i.e.\ $\infty$ or an isotropic direction; $^{\times2}$ = double). \chk{G1}}\label{tab:ex}\\\toprule
+\# & cell & O & input $C$ & mirror $L$ & $\kappa$ & img & common points\\\midrule\endfirsthead
+\toprule \# & cell & O & input $C$ & mirror $L$ & $\kappa$ & img & common points\\\midrule\endhead
+\tabin{tab_examples.tex}
+\bottomrule\end{longtable}
+\normalsize
+
+\section{Counting the collapse}\label{sec:counts}
+\begin{center}\small\begin{tabular}{@{}lrp{7.2cm}@{}}\toprule
+level & count & what is identified\\\midrule
+raw ordered (input, operator) types & $2025$ & $45\times45$\\
+\quad of which operator is a point & $405$ & $45\times9$: one degenerate rule (Prop.~\ref{prop:degen}); isotropic lines ($m=\pm i$ inside line types \texttt{I*}) obey the same rule\\
+\quad with a line/circle operator & $1620$ & $45\times36$\\
+real class pairs & $49$ & $7\times7$ (Thm.~\ref{thm:seven}, Prop.~\ref{prop:raw})\\
+\quad valid cells & $35$ & $7$ inputs $\times$ $5$ mirror classes; $14$ point-mirror pairs $\to$ $1$ rule\\
+leaves (cell, outcome) & \cntleaf & Theorem~\ref{thm:grid}\\
+\quad $+$ orthogonal sub-leaves & \cntleafo & in \cntorthcells{} of the $25$ \cls{M}$\times$\cls{M} cells\\
+complex orbit types of pairs & $6$ & Prop.~\ref{prop:pairorbits} (plus the value of $\kappa$)\\
+Euclidean real relations & $18\to4$ & $\kappa$-classes (Sec.~\ref{sec:euclid})\\
+real point vs.\ real circle/line & $8\to2$ & on / off\\\bottomrule\end{tabular}\end{center}
+Over $\C$, the 88 leaves collapse to just ``two distinct'' or ``double'' common points (plus coincidence and incidence for points). The six-way split O1--O6 is entirely an effect of the real structure.
+
+\section{Surprises}\label{sec:surprises}
+\begin{enumerate}
+\item \textbf{All non-real points are one point.} $(i,0)$, $(1+i,2-3i)$ and even the isotropic lines are the same \cls{P2} object up to real Möbius maps. Each non-real point carries a real ``shadow'', its Laguerre pair, and inverting it in a real circle through that pair returns its conjugate.
+\item \textbf{The parameter types barely matter.} A complex centre with a \emph{real} radius always gives a circle with two real points (\cls{M3}). A line is never of the no-real-point type \cls{M5}, because it passes through $\infty$. Most circle types are decided by the sign of $\Delta=4|w|^2(\Re\rho+|w|^2)-(\Im\rho)^2$, not by which parameters are imaginary.
+\item \textbf{Real tangency needs equal $\tau$, and tangency to a real circle at a non-real point forces \cls{M3}.} Consequently a real circle and an \cls{M5} (e.g.\ $x^2+y^2=i$) can only miss (O3) or meet in two unrelated non-real points (O6): no tangency of any kind.
+\item \textbf{Imaginary-radius circles are rigid.} Two of them always have $\kappa>1$: never tangent, never orthogonal. Orthogonality fails in exactly five cells, all involving \cls{M2}. A real circle and an imaginary-radius one are swapped by a non-real mirror only via $\tau=0$ mirrors such as $x^2+y^2=\pm i$.
+\item \textbf{A point as a mirror is a limit with no value}: the limit depends on how the mirror circle shrinks.
+\end{enumerate}
+
+\section{Verification map and honesty notes}\label{sec:ver}
+\texttt{verify/classification\_verify.py} ran \cntpass{} checks with \cntfail{} failures (log: \texttt{verify/classification\_verify\_log.txt}). The tags are S1 (raw types, 57), S2/S3 (single objects), M1--M3 (mirrors), D1 (degenerate mirror), L0--L3 (lemmas), K1/K2 ($\kappa$ and signs), E1/E2 (Euclidean tables), G0--G2 (grid), and I1 (image classes).
+\begin{itemize}
+\item \emph{Proved in the text:} Theorem~\ref{thm:seven}, Propositions~\ref{prop:raw}, \ref{prop:degen}, \ref{prop:swap}, Lemmas~\ref{lem:real}--\ref{lem:kappa}, and the exclusions of Theorem~\ref{thm:grid}. \emph{Quoted:} Witt's theorem (Props.~\ref{prop:complexorbits}, \ref{prop:pairorbits}).
+\item \emph{Exact, by example:} every realised leaf (Table~\ref{tab:ex}).
+\item \emph{Observed only:} the non-real-mirror columns of Table~\ref{tab:img} (lower bounds), and the sampled $\kappa$ ranges.
+\item The search (random, Laguerre, tangent, pencil and orthogonal recipes, plus symmetric swaps) never produced an outcome outside Table~\ref{tab:grid}. That is consistent with, but no substitute for, the proofs.
+\item Changes made during review are recorded in \texttt{classification/classification\_review\_log.txt}.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{Witt} E.~Witt, Theorie der quadratischen Formen in beliebigen Körpern, \emph{J.~reine angew.\ Math.}\ 176 (1937), 31--44.
+\end{thebibliography}
+\end{document}

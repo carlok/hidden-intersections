@@ -38,8 +38,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Rebuild PDFs (falls back to the committed ones on failure)
+        # includes classification/: classification_build.py (stdlib only) regenerates
+        # tab_*.tex from classification_data.json, then tectonic builds pdf/classification.pdf
         continue-on-error: true
         run: make pdf
+      - name: Check classification.pdf is in pdf/
+        run: test -s pdf/classification.pdf
       - name: Assemble site
         run: make site
       - uses: actions/configure-pages@v5

@@ -1,0 +1,48 @@
+classification_review_log.txt -- claims weakened, corrected or re-scoped during the build of classification.tex
+(times Europe/Rome, 31 Oct 2026)
+
+1. CORRECTED (before the final run). The first draft of the grid allowed O5 (non-real double point) in
+   M1xM4, M1xM5, M4xM1 and M5xM1. Lemma 4.4(b) (tangency to a real Q>0 circle at a non-real point forces
+   the tangent circle to be M3) rules this out; the predictions were corrected and the lemma was added
+   with a proof (tag L3, 600 random checks).
+
+2. CORRECTED: orthogonality count. The brief/plan said "20 orthogonal sub-cells". What is true and checked:
+   orthogonality is possible in 20 of the 25 MxM cells (impossible in M2M2, M2M4, M4M2, M2M5, M5M2;
+   proved in Lemma 4.6). Counted as (cell, outcome) leaves that are realised orthogonally there are 24.
+   The G2 check now tests "20 cells"; the paper reports both numbers.
+
+3. NUMERICS FIXED, NOT A CLAIM CHANGE. The first verify run had 17 failures. All came from the numerical
+   double-root detector: at 40 digits, sqrt(discriminant ~ 1e-40) ~ 1e-20 sat on the threshold, and one
+   crash came when the quadratic degenerated (A~B~0). Fix: 80-digit precision, and detect a double root
+   from the discriminant, not from the distance between roots. The exact (Q(i)) classifier did not change.
+   After the fix: 0 failures.
+
+4. CORRECTED: I1 image-class check for M4xM2 and M5xM2. The failure came from missing samples, not from
+   a counterexample. Real mirrors preserve the class (proved, Prop. 3.2), and direct sampling of real
+   mirrors now confirms it for every input class.
+
+5. RE-SCOPED: raw circle types III, IIC, ICI, ICC, CII, CIC, CCI, CCC. Random sampling only hit M3/M5.
+   M4 is predicted by the Delta criterion and occurs on the measure-zero set Delta=0. Explicit M4
+   witnesses were added (e.g. (x-i)^2+(y-i)^2=4i), so Table 1 lists M3, M4, M5 for these types.
+
+6. WEAKENED: image classes under NON-real mirrors (Table 2) are reported as observed lower bounds,
+   not a classification. Only the real-mirror columns are proved.
+
+7. WEAKENED: complex orbit types of pairs (Prop. 4.1) rely on Witt's extension theorem, which is quoted
+   and not machine-checked. "6 orbit types" counts kappa=0 separately; strictly the types are
+   coincident / kappa=1 / generic kappa (a 1-parameter family) / point on / point off, with kappa=0
+   singled out because there C*L = C.
+
+8. WEAKENED: the classes M3/M4/M5 are defined by the number of real points (equivalently the sign of
+   tau-1). The paper does NOT claim that tau is a complete real-Moebius invariant within M3 or M5.
+
+9. HONESTY NOTE: exclusions in the grid theorem are proved from Lemmas 4.2-4.6. The search (random and
+   targeted recipes plus symmetric swaps) only confirms that nothing unpredicted appears. Realisations are
+   exact examples (Table 5), each fully re-verified.
+
+10. TOOLING: pdflatex is not installed on the box; the PDF was compiled with tectonic (same LaTeX source).
+    Nothing was committed or pushed to git.
+
+11. RELOCATION (repo hidden-intersections): sources in classification/, the verifier in verify/ (it adds
+    ../classification to sys.path, writes its log to verify/ and the JSON to classification/), PDF in pdf/.
+    Re-run from the new location: 305 checks passed, 0 failed.

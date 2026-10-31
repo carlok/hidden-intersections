@@ -20,6 +20,16 @@ Theory, exercises, storyboards and an interactive explorer.
 
 All credit for the starting question and the construction goes to Inigo Quilez. This repository does not contain any of his video, audio or frames. `video/quilez_transcript.tex` describes his Short in text, with a link to the original.
 
+## Input × mirror: the full classification
+
+[`pdf/classification.pdf`](https://carlok.github.io/hidden-intersections/pdf/classification.pdf) works through every combination of an *input* (point, line, circle) and an *operator* (the mirror). Each parameter can be real, purely imaginary or complex, and the paper also covers how the two objects meet: secant, tangent, disjoint, nested, concentric, orthogonal, through a point, parallel, isotropic.
+
+- **2025 raw parameter pairs collapse to 7 real classes and 35 cells** (plus one rule: points cannot be mirrors). Each cell then splits into **88 leaves** by the type of common points: two real points, a real double point, a conjugate pair, one real and one non-real, a non-real double point, or two non-real points that are not conjugate.
+- A single real number, τ = ⟨X, X̄⟩/|Q(X)|, sorts single objects. Over ℂ, almost everything is one orbit, and κ is the only invariant of a pair.
+- Every exclusion is proved, and every leaf has an exact example. `verify/classification_verify.py` runs 305 checks (about 2.5 minutes).
+
+Sources: `classification/` (LaTeX, generated tables `tab_*.tex`, data, helper modules, review log) and `verify/classification_verify.py`.
+
 ## Interactive explorer
 
 **<https://carlok.github.io/hidden-intersections/>**: choose a curve (circle, ellipse, parabola, cubic, quartic, lemniscate, Cassini oval) and a line direction, then drag to rotate the complex tangency locus. It is a single static `app/index.html` with no dependencies, so you can also open it locally.
@@ -31,22 +41,23 @@ All credit for the starting question and the construction goes to Inigo Quilez. 
 | Path | Contents |
 |---|---|
 | `theory/` | `theory.tex` (the main paper), `writeup.tex` (phantom loci), `section_inv.tex` (inversive notes), `alt_quandle_note.tex` (kei/quandle note), figures `figs/`, `alt_figs/` and their generators |
+| `classification/` | `classification.tex`: exhaustive input × mirror classification; `classification_build.py` turns `classification_data.json` into the `tab_*.tex` tables; core/gen/explore helper modules; review log |
 | `exercises/` | `examples16.tex`: 16 worked examples (real, complex and mixed), with figures and generators |
 | `video/` | storyboards (v4, alt v2, third: `.tex`, `.py`, narration `_script.txt`), a text transcript of Quilez's Short, and the TTS / frame / render scripts |
 | `verify/` | every verification script with its log; `check_logs.py` fails if any log reports a failure |
 | `app/` | the standalone interactive explorer (`index.html`) |
-| `pdf/` | compiled PDFs: theory, writeup, alt note, examples, storyboards, transcript |
+| `pdf/` | compiled PDFs: theory, writeup, alt note, examples, classification, storyboards, transcript |
 | `docs/` | README images |
 | `.github/workflows/` | `ci.yml` (verify on every push and PR), `pages.yml` (verify, rebuild PDFs, deploy `app/` + `pdf/` to Pages on push to `main`) |
 
-Main reading order: [`pdf/theory.pdf`](pdf/theory.pdf), then [`pdf/examples16.pdf`](pdf/examples16.pdf), [`pdf/writeup.pdf`](pdf/writeup.pdf) and [`pdf/alt_quandle_note.pdf`](pdf/alt_quandle_note.pdf).
+Main reading order: [`pdf/theory.pdf`](pdf/theory.pdf), then [`pdf/examples16.pdf`](pdf/examples16.pdf), [`pdf/classification.pdf`](pdf/classification.pdf), [`pdf/writeup.pdf`](pdf/writeup.pdf) and [`pdf/alt_quandle_note.pdf`](pdf/alt_quandle_note.pdf).
 
 ## Build
 
 ```sh
 python3 -m venv .venv && . .venv/bin/activate
 pip install -r requirements.txt
-make verify   # all verification scripts (theory_verify.py takes about a minute); logs land in verify/
+make verify   # all verification scripts (theory_verify.py ~1 min, classification_verify.py ~2.5 min); logs land in verify/
 make pdf      # needs tectonic (https://tectonic-typesetting.github.io)
 make site     # assembles _site/ exactly as GitHub Pages serves it
 ```

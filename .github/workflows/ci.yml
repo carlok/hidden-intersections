@@ -20,11 +20,13 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install numpy sympy mpmath scipy matplotlib
-      - name: Run verification scripts
+      - name: Run verification scripts (incl. classification_verify.py, ~2.5 min)
         run: make verify
       - name: Upload fresh logs
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: verify-logs
-          path: verify/*_log.txt
+          path: |
+            verify/*_log.txt
+            classification/classification_data.json
