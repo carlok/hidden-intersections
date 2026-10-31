@@ -1,0 +1,32 @@
+Third storyboard (always two, over C): voiceover, 30 scenes, 178 s, 469 words
+
+1. [0:00-0:04] Inigo Quilez's video is lovely, with many directions to explore.
+2. [0:04-0:10] I chose one: circles acting on circles, with complex numbers everywhere. One closed operation, one invariant.
+3. [0:10-0:15] His move: when the square root goes negative, the intersection points turn complex.
+4. [0:15-0:21] Our slice: a unit circle and a vertical line, x equals t, sliding without turning.
+5. [0:21-0:28] His orange dots hang on his moving point o; ours sit at the foot of the perpendicular. Our version, not his.
+6. [0:28-0:34] Inside, the points are t, plus or minus a real root. Outside, they're plus or minus i s.
+7. [0:34-0:40] Drop the i, plot s, and you get a hyperbola: t squared minus s squared equals one.
+8. [0:40-0:47] Better: give the imaginary part its own axis. Circle and hyperbola join into one curve, meeting where the line touches.
+9. [0:47-0:54] A circle is four numbers: a, b, c, d. Let them be complex; only ratios matter, and lines have a zero.
+10. [0:54-1:00] Each circle carries one number, Q. For a real circle it's four times the radius squared.
+11. [1:00-1:05] The operation: reflect C in L by subtracting just the right multiple of L.
+12. [1:05-1:12] For real circles, that's reflection in a line, or inversion in a circle. Circle in, circle out, even over C.
+13. [1:12-1:18] The only forbidden mirrors have Q equal to zero: point-circles, and lines through the circular points.
+14. [1:18-1:25] The rules: a mirror fixes itself, reflecting twice brings you back, and mirrors carry relations along. That makes a kei.
+15. [1:25-1:33] Where does circle C meet line L? Substituting gives a quadratic with leading term a times Q of L: always two points.
+16. [1:33-1:40] Reflect C in L: C star L is C minus a multiple of L, so it meets C where L does.
+17. [1:40-1:48] As curves, two circles meet four times: twice at the circular points I and J, shared by every circle, and twice on our line.
+18. [1:48-1:55] Chain mirrors and you get the complex Möbius group. One number survives all of it: kappa.
+19. [1:55-2:00] Kappa equals one exactly when the two points merge: tangency.
+20. [2:00-2:06] In our slice, kappa is just t squared: below one they cross, above one they hide.
+21. [2:06-2:12] Complex maps keep the two points, tangency and kappa, but not whether the points are real.
+22. [2:12-2:19] A complex circle splits into two real circles: its real and imaginary parts. Its real points are where they cross.
+23. [2:19-2:25] So it has two real points, one, or none, and a similar test decides.
+24. [2:25-2:30] Now nudge our unit circle off the reals, and sweep the line again.
+25. [2:30-2:36] The junctions come apart: tangency now happens at complex t, so the real sweep never splits.
+26. [2:36-2:40] Two points all the way. No switch, no branching.
+27. [2:40-2:45] Hidden is just what a real slice does to one symmetric picture.
+28. [2:45-2:50] One operation, circle star circle. One invariant, kappa, with tangency at one.
+29. [2:50-2:54] Always two points, real or not.
+30. [2:54-2:58] Thanks, Inigo, for the spark.

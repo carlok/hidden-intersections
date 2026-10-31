@@ -1,0 +1,40 @@
+1. theta 0.3 deg 3 max|Im coeff| 0.0 roots [ 1.2062-0.j     -0.5811+0.7441j -0.5811-0.7441j]
+   conj-pair closure err 9.550499576785472e-16
+1. theta 1.1 deg 3 max|Im coeff| 0.0 roots [-1.0471-0.j      0.7236+0.4556j  0.7236-0.4556j]
+   conj-pair closure err 9.485749680535094e-16
+1b. parabola vertical lines degree in t: 1 (drops from 2 -> asymptotic direction)
+2. circle: max |c^2-s^2-r^2|, |Re t| = 4.6629367034256575e-15
+2. parabola: max |c+s^2|,|Re t| = 1.7763568394002505e-15
+2. Quilez formula, parallel translation: blue=foot err, orange on hyperbola err, Im p parallel d: 9.992007221626409e-15
+3. real critical c values (discriminant roots): [-4.68287 -2.14574  1.60095]
+   double root t0 -1.2600219732966034 Im 2.53298158606302e-16
+   predicted kappa -0.5479415038380028
+   c=c0+0.001: t-t0=-1.113e-03+6.045e-02j, 2(c-c0)/dt^2=-0.54678+0.02015j
+   c=c0-0.001: t-t0=-5.927e-02-2.897e-15j, 2(c-c0)/dt^2=-0.56934+0.00000j
+   c=c0+0.0001: t-t0=-1.113e-04-1.911e-02j, 2(c-c0)/dt^2=-0.54782-0.00638j
+   c=c0-0.0001: t-t0=-1.899e-02+4.971e-15j, 2(c-c0)/dt^2=-0.55444-0.00000j
+3. y=x^3, c= 0.5 arg(t)/deg = [ 120. -120.    0.]
+3. y=x^3, c= -0.5 arg(t)/deg = [180.  60. -60.]
+4. R_lam R_mu = R_lam*mu: True  R_i^4=id: True R_i^2=mirror: True
+4. circle F(c,i s) = c**2 - t**2 - 1
+5. t-exponents [0, 2] gcd m = 2  brute #roots of unity in stabilizer = 2
+5. t-exponents [0, 2, 4] gcd m = 2  brute #roots of unity in stabilizer = 2
+5. t-exponents [0, 4] gcd m = 4  brute #roots of unity in stabilizer = 4
+5. t-exponents [1, 5] gcd m = 4  brute #roots of unity in stabilizer = 4
+5. t-exponents [0, 3] gcd m = 3  brute #roots of unity in stabilizer = 3
+5. t-exponents [2, 8] gcd m = 6  brute #roots of unity in stabilizer = 6
+5. t-exponents [1, 4, 7] gcd m = 3  brute #roots of unity in stabilizer = 3
+5. t-exponents [0, 1] gcd m = 1  brute #roots of unity in stabilizer = 1
+5. t-exponents [3, 7, 11] gcd m = 4  brute #roots of unity in stabilizer = 4
+5. |lam|=2, exps {0,4}: lam^0 vs lam^4 equal? False
+5. x^4+y^4=1, theta= pi/2  G= c**4 + t**4 - 1  t-exps [0, 4]  m= 4  phantom F(c,is)= c**4 + t**4 - 1
+5. x^4+y^4=1, theta= 3*pi/4  G= c**4/2 + 3*c**2*t**2 + t**4/2 - 1  t-exps [0, 2, 4]  m= 2  phantom F(c,is)= c**4/2 - 3*c**2*t**2 + t**4/2 - 1
+5. x^4+y^4, c=1.4 roots [-0.9181+0.9181j -0.9181-0.9181j  0.9181+0.9181j  0.9181-0.9181j] (|Re|=|Im|)
+   c=0.6 roots [-0.9659+0.j      0.    +0.9659j  0.    -0.9659j  0.9659+0.j    ] imag pair on c^4+s^4=1: True
+5b. y=x^3-x type t^3-t-c, F(c,is)= -c - I*t**3 - I*t -> needs s^3+s=0 and c=0: only finitely many real points
+   t^3-t-0.6 roots [ 1.2212+0.j     -0.6106+0.3442j -0.6106-0.3442j] (complex pair has Re t != 0)
+6. isotropic line in circle: -r**2 + t*(2*x0 + 2*I*y0) + x0**2 + y0**2 ; d.d = 0
+3c. eps 0.0001 observed u/v^2 -0.30495041  predicted gamma/kappa -0.30497556  c-c0 vs -kappa v^2/2: 0.99988893
+3c. eps 1e-06 observed u/v^2 -0.30497531  predicted gamma/kappa -0.30497556  c-c0 vs -kappa v^2/2: 0.99999889
+6b. asymptote direction n+i d, (n+id).(n+id) = 0j
+6c. R_lam^{-1} circle: c**2 + lam**2*t**2 - 1

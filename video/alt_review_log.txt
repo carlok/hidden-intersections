@@ -1,0 +1,19 @@
+ROUND 1 (math audit)
+- Added alt_frames_check.py -> alt_frames/check_log.txt: every number on a frame is recomputed (K*L, L*K, the s20 radii, the s18 distributivity error 1e-17, the s21 collapse radii 0.44/0.11/0.012/0.001, the agreement points with errors <=1e-14, the common fixed circles with error 1e-13 passing through P+- to 1e-14, the two random pairs in s36 with 2 real agreement points each, the complex limiting points (0,0.6+-0.8i) agreeing for c=0.6).
+- Fixed a test bug: projective equality must allow complex scalars (2x2 minors), not just +-1.
+- s40 VO: "Its partner is where the mirrors agree" wrongly suggested the hidden crossings do NOT agree. Changed to "It's the hidden half of where the mirrors agree".
+- s36 caption: added the scope "distinct real mirrors, infinity counts" (two lines agree at their crossing and at infinity; parallel lines are tangent at infinity).
+- s18: the D*E circle was drawn orange (which means imaginary) though it is real; now chalk white.
+- Note: in Theorem 3 the hypothesis I != 0 is harmless but not needed (orthogonal mirrors still give 2+2 points).
+
+ROUND 2 (cold story read)
+- "Limiting points" was used in s38 without ever being introduced. s30 VO now names them: "They do, at two real points on the axis: the limiting points."
+- s29 had no tension, only a statement. It now asks the question the act answers: "Now lift the line. The crossings hide. Do the mirrors still agree?"
+- s38 now matches the nouns: "two crossings, two limiting points".
+- s37 is split into two sentences for breath.
+- Checked: the hook question (s5) is answered twice, once for real points (s30) and once for hidden points (s38-40). The through-line is stated at s6 and s41, and the closing line s42 restates the thesis.
+
+ROUND 3 (polish)
+- Pacing: seven scenes ran at 3.0 words/s (s7, s10, s21, s29, s36, s38, s40). Each was trimmed to 2.5-2.75 words/s with the meaning unchanged.
+- s20: the zoom inset covered the circle K. It now sits in the empty top-left area.
+- Rebuilt the frames, the storyboard PDF and the script. Re-ran alt_frames_check.py: all numbers unchanged.

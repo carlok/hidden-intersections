@@ -1,0 +1,16 @@
+theory.tex review log (31 Oct 2026, CET)
+Verification: theory_verify.py -> theory_verify_log.txt, 76 checks, 0 failures (exact SymPy where possible, numeric otherwise).
+Pass 1 (math rigour):
+- Removed placeholder "True" checks from the first draft of theory_verify.py; each is now an actual test or was deleted.
+- Fixed a sign error in check P7.4 (K at (is,c) is c^2-s^2-1); the earlier "or" check had hidden it.
+- Cartan-Dieudonne decomposition check: residual is now measured relative to |A|^2 (random products are ill-conditioned).
+- Remark on circular points: restricted to a != 0 and labelled the blow-up description "heuristic / quoted".
+- Two mirrors, item (1): "finite order n iff ..." replaced by "finite order iff theta/pi rational".
+- Two mirrors, item (4): justified the complex angle by a polynomial identity in cos, sin (it was only checked for one m); also checked directly.
+- Item (3) now proved from mu+1/mu = 4kappa-2 rather than "checked numerically".
+- Cross-references to the companion notes corrected (writeup Thm 5/Prop 8/Thm 9, alt note Thm 5).
+- Weakened: PSO(4,C) = PSL2 x PSL2 and the blow-up picture are quoted, not proved; the group theorem relies on Cartan-Dieudonne (cited, numerically illustrated); Appendix A only summarizes writeup.tex.
+Pass 2 (clarity):
+- Abstract sentence rewritten ("a circle meets its mirror image exactly where it meets the mirror").
+- Added a roadmap, two figures (pencil/limiting points, Quilez construction), and split an overfull display.
+- Stated the mirror-on-the-right convention and its difference from alt_quandle_note (mirror on the left).

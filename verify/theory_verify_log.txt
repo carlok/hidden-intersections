@@ -1,0 +1,82 @@
+theory_verify.py — exact SymPy + numeric checks for theory.tex
+PASS [P2.1] Q = b^2+c^2-4ad
+PASS [P2.1] signature of G is (3,1)
+PASS [P2.1] Q(pt(p))=0
+PASS [P2.1] <pt(p),C> = -2 C(p)
+PASS [P2.1] Q(circle centre m radius r)=4a^2 r^2
+PASS [P2.1] [0:1:1i:d] null
+PASS [P2.1] [0:1:-1i:d] null
+PASS [P2.1] infinity [0:0:0:1] null, lies on every line
+PASS [P2.2] Segre map P1xP1 -> quadric: null
+PASS [P2.2] Segre map at (u,v)=(x+iy,x-iy) gives pt(x,y)
+PASS [P2.2] u=inf or v=inf gives a=0 points
+PASS [P2.2] circle eq in u,v: a uv + ((b-ic)/2) u + ((b+ic)/2) v + d
+PASS [P2.3] every circle passes through I=(1:i:0) and J=(1:-i:0)
+PASS [P2.3] tangent at I is [0:1:i:(b+ic)/2a]: proportional gradient, null, orthogonal to C
+PASS [P3.1] R preserves form: R^T G R = G
+PASS [P3.1] R^2 = I
+PASS [P3.1] R L = -L
+PASS [P3.1] C*L = R C
+PASS [P3.1] Q(C*L)=Q(C)
+PASS [P3.1] homogeneous degree 0 in L, linear in C
+PASS [P3.2] pt(p)*L = inversion of p in real circle L (projectively)
+PASS [P3.2] pt(p)*L = mirror reflection in real line L
+PASS [P3.2] reflection in x^2+y^2=-1 is p -> -p/|p|^2
+PASS [T3.3] K1: L*L = -L (vector), so = L projectively
+PASS [T3.3] K2: (C*L)*L = C
+PASS [T3.3] K3: (C*D)*L = (C*L)*(D*L)
+PASS [T3.3] conjugation: R_{R_L D} = R_L R_D R_L
+PASS [T3.3] not associative: (K*B)*L != K*(B*L)
+PASS [T3.3] not commutative: K*Lx !~ Lx*K
+PASS [T4.1] random O(4,C) elements are products of reflections (numeric, 200 trials, error relative to |A|^2)
+   T4.1 max relative residual 8.0e-15
+   T4.1 reflections used: min 4 max 4 (generic case; Cartan-Dieudonne bound is 4), trials decomposed: 200/200
+PASS [T4.1] s_N = -s_e1 s_e2 s_e3 for x^2+y^2=-1 (imaginary circle = point reflection composed)
+PASS [T5.1] span(C,C*L)=span(C,L) iff <C,L>!=0 : det relation
+PASS [T5.1] det Gram(C,L) = Q(C)Q(L)-<C,L>^2
+PASS [T5.1] rank Q|U = rank Q|V (300 random complex pencils, ~30% forced tangent)
+PASS [T5.1] K∩{y=c} = (±sqrt(1-c^2),c)
+PASS [T5.1] K*{y=c} passes through the same finite points
+PASS [E5.2] concentric: [0:1:±i:0] null and orthogonal to both
+PASS [E5.2] concentric: no finite common point
+PASS [E5.2] parallel lines x=0,x=1 meet only at infinity, kappa=1 (double)
+PASS [E5.2] isotropic y=ix+1: Q=0 (not a mirror); meets K only at (0,1) finitely
+PASS [E5.2] pt(0,0),pt(1,i): Q=Q=<,>=0, the whole span is null
+PASS [P6.1] kappa invariant under any reflection R_M
+PASS [P6.1] kappa(C*L,L)=kappa(C,L) (symbolic)
+PASS [P6.1] K vs y=c: det Gram=0 iff c=±1, and there the common point is double
+PASS [P6.1] circles: <C1,C2>/sqrt(Q1Q2) = (r1^2+r2^2-d^2)/(2r1r2)
+PASS [P6.1] lines at angle theta: kappa=cos^2 theta
+PASS [P6.1] circle r1 and line at distance delta: kappa=delta^2/r1^2
+PASS [P6.1] numeric: kappa=cos^2(crossing angle), 500 random real pairs
+PASS [P6.1] kappa(K, y=mx+c)=c^2/(1+m^2): every complex value occurs
+PASS [P6.1] kappa<0 example: K vs complex-centre circle (x-i)^2+y^2=1 vs x=0 gives -1
+PASS [P6.1] real circles with Q>0 have kappa>=0; real Q>0 with Q<0 gives kappa<=0 (D vs x^2+y^2=-1: -1/4)
+PASS [P7.1] real C,L: the two common points are fixed or swapped by conjugation (200 random real pairs)
+PASS [P7.2] phantom: (i s, c) on K  <=>  c^2 - s^2 = 1
+PASS [P7.3] limiting points of span(K,y=c) are (0, c±sqrt(c^2-1))
+PASS [P7.3] limiting points are swapped by inversion in K and by reflection in y=c
+PASS [P7.3] Quilez dots = limiting points rotated by 90 deg about the foot
+PASS [P7.4] sigma1-real circles [a:i b:c:d]: Q = -b^2+c^2-4ad, signature (2,2)
+PASS [P7.4] sigma1-real points of K are the phantom hyperbola
+PASS [T8.1] numeric: s2s1 = id on U, eigenvalues on V satisfy mu+1/mu = 4 kappa - 2 (200 random complex pairs)
+PASS [T8.1] lines through 0 at angle theta: s2 s1 = rotation by 2 theta
+PASS [T8.1] parallel x=0, x=a: translation by 2a
+PASS [T8.1] complex angle tan(theta)=i sqrt3/2: u->lam u, v->v/lam, lam = 7∓4sqrt3, |lam|!=1
+PASS [T8.1] kappa for that pair = 4 = cos^2 theta
+PASS [T8.1] disjoint real circles: eigenvalues on V real positive != 1 (hyperbolic)
+PASS [P8.2] K, y=1.7: P*K ~ P*L at the 2 limiting points and the 2 hidden crossings
+PASS [P8.2] ... and not at a generic point
+PASS [T9.1] K, x=1 (tangent): the vector of the pencil orthogonal to both is pt(1,0)
+PASS [T9.1] Q(M)=2<C,M>  <=>  lambda^2=1 (q!=0)
+PASS [T9.1] <C-C',C+C'> = Q(C)-Q(C') = 0
+PASS [T9.1] Q(M-)Q(M+) = 4(q^2-p^2) = 4 q^2 (1-kappa)
+PASS [T9.1] Ex16 M-: K*M ~ C2
+PASS [T9.1] Ex16 M+: K*M ~ C2
+PASS [T9.1] intersecting real circles: both mirrors real (angle bisectors), Q>0
+PASS [T9.1] tangent case: one candidate is a point-circle (Q=0)
+PASS [A.1] circle: hidden points of y=c trace c^2-s^2=1 (30 values)
+PASS [A.1] cubic y=x^3-x, c=0.6: pair -0.6106 ± 0.3442 i (Re t != 0: non-planar phantom)
+
+checks: 76 pass, 0 fail
+FAILURES: none

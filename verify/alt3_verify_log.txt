@@ -1,0 +1,32 @@
+PASS  kei 1: A*A ~ A (projectively; A*A=-A): max err 1.76e-16
+PASS  kei 2: (A*B)*B = A: max err 9.54e-14
+PASS  kei 3: (A*B)*C = (A*C)*(B*C): max err 7.72e-15
+PASS  Q(A*B)=Q(A) (vectors): max err 1.55e-13
+PASS  kappa preserved by every reflection: max err 6.04e-12
+INFO  non-associativity: max |(A*B)*C - A*(B*C)| (projective) = 0.829  (>0: not associative)
+PASS  reflection matrices: R^T G R=G, R^2=1, det=-1: max err 6.62e-12
+PASS  random g=expm(G^-1 S): g^T G g=G: max err 6.60e-15
+PASS  kappa invariant under random PO(4,C): max err 4.91e-14
+PASS  g(X*M) = (gX)*(gM)  (maps are automorphisms of the kei): max err 3.32e-15
+PASS  line substitution: leading coeff = a*Q(L) (so 2 roots iff a,Q(L) != 0): max err 1.00e-14
+PASS  two points lie on C and L: max err 3.74e-13
+PASS  the same two points lie on C*L  (C cap L = C cap (C*L)): max err 1.43e-14
+PASS  C - C*L is a multiple of L: radical axis = L: max err 3.34e-16
+PASS  Moebius view: null vectors in span(C,L)^perp = pt(P1),pt(P2): max err 8.17e-15
+PASS  circular points I,J on every circle (Bezout 4 = I,J + 2): max err 0.00e+00
+INFO  disc/(<C,L>^2-Q(C)Q(L)): sample [-1.-0.j -1.+0.j -1.+0.j]
+PASS  symbolic: disc = -1 * (<C,L>^2 - Q(C)Q(L))
+PASS  kappa=1  =>  discriminant 0, double root (relative disc; root gap ~ sqrt(eps) numerically; exact by the symbolic identity above): max err 2.45e-10
+INFO  isotropic line Q(L)=0.0e+00+0.0e+00j: substitution is linear (one finite point; the other is the circular point I or J)
+INFO  Q(point-circle)=1.3e-16, Q(line at infinity [0:0:0:1])=0+0j, Q([0:1:i:d])=0
+PASS  <C,L>=0  =>  C*L = C (then C cap (C*L) is all of C: exception): max err 1.04e-15
+PASS  real slice: points (t,+-sqrt(1-t^2)) | (t,+-is), t^2-s^2=1, kappa=t^2: max err 1.78e-15
+INFO  real crossing pair kappa=0.360; after random complex g: kappa=0.360+0.000j; image points [[(0.689-0.172j), (0.021+0.327j)], [(0.652-0.055j), (-0.586+1.09j)]] (non-real coordinates) ; on gC,gL: 3.7e-15
+PASS  real trace of complex circle: 2 real points iff <C1,C2>^2<Q(C1)Q(C2), else 0 (count mismatches): max err 0.00e+00
+PASS  DR scales by |lambda|^4 under C -> lambda C (sign well defined): max err 5.83e-12
+INFO  random complex circles: {'two': 766, 'one': 0, 'none': 1234}
+INFO  tangent real pair: DR=0.00e+00-0.00e+00j, realpts=1
+PASS  sweep of complex circle: kappa(t)=1 roots give double points (relative disc): max err 1.71e-10
+INFO  real branch values among 4000 roots for random complex circles: 0  (generic: none, so a real sweep never splits/merges)
+
+FAILURES: none

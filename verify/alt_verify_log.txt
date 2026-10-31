@@ -1,0 +1,87 @@
+== 1. Kei axioms on Q != 0 (random real circles, lines, imaginary circles, complex vectors), 4000 triples ==
+triples tested: 4000
+  max error idem     : 3.19e-16  PASS
+  max error invol    : 3.89e-12  PASS
+  max error dist     : 1.49e-11  PASS
+  max error closureQ : 3.31e-11  PASS
+  max error iso      : 1.01e-11  PASS
+  note: C*C = -C as a vector, i.e. C*C ~ C in P^3 (idempotent projectively)
+  well-defined on P^3: star(aC,bD) = b*star(C,D): True
+
+== 2. Real stays real ==
+  real circle * real circle imaginary part: 0.0
+
+== 3. Domain caveat: mirror with Q(C)=0 (a point) ==
+  Q(point)=0.0e+00; cleared formula Q(C)D-2<D,C>C = -2<D,C>C ~ C: every D collapses to the point (degenerate). proportional to point: True
+  mirror radius 0.5: image centre (13.00000,-12.00000), radius 1.75e+01
+  mirror radius 0.1: image centre (1.00000,-0.00000), radius 7.00e-01
+  mirror radius 0.01: image centre (0.50500,0.49500), radius 7.00e-03
+  mirror radius 0.001: image centre (0.50005,0.49995), radius 7.00e-05
+  -> as the mirror shrinks to a point the image shrinks onto that point: Q(C)=0 excluded from the mirrors.
+
+== 4. Non-associative, non-commutative (example) ==
+  K*L = circle centre (0.0000,0.2941) r=0.2941   (expect centre (0,1/3.4)=(0,0.2941), r=0.2941)
+  L*K = circle centre (-0.0000,3.4000) r=1.0000   (expect centre (0,3.4), r=1)
+  commutative? K*L ~ L*K: False
+  (K*L)*M = circle centre (0.0862,0.3232) r=0.0574 ; K*(L*M) = circle centre (0.1873,0.3246) r=0.1248 ; associative? False
+
+== 5. Fixed set of a mirror: C*X ~ X  iff  <X,C>=0 or X ~ C ==
+  point on K                               <X,K>=+0.0000  fixed: True
+  circle orthogonal to K (d^2=r1^2+r2^2)   <X,K>=-0.0000  fixed: True
+  line y=0 through centre                  <X,K>=+0.0000  fixed: True
+  generic circle                           <X,K>=+2.4000  fixed: False
+  K itself                                 <X,K>=+4.0000  fixed: True
+  -> point-circles fixed by mirror K are exactly the points of K.
+
+== 6. Pairs are transported: I(L*D, L*E) = I(D,E); real/hidden preserved by real mirrors ==
+  I(D,E)=0.360000  I(M*D,M*E)=0.360000   mirror line y=1.7
+  I(D,E)=0.360000  I(M*D,M*E)=0.360000   mirror circle (1.5,0.8,1)
+  I(D,E)=0.360000  I(M*D,M*E)=0.360000   mirror circle (-0.4,0.3,0.6)
+  I(D,E)=2.890000  I(M*D,M*E)=2.890000   mirror line y=1.7
+  I(D,E)=2.890000  I(M*D,M*E)=2.890000   mirror circle (1.5,0.8,1)
+  I(D,E)=2.890000  I(M*D,M*E)=2.890000   mirror circle (-0.4,0.3,0.6)
+  I(D,E)=0.015625  I(M*D,M*E)=0.015625   mirror line y=1.7
+  I(D,E)=0.015625  I(M*D,M*E)=0.015625   mirror circle (1.5,0.8,1)
+  I(D,E)=0.015625  I(M*D,M*E)=0.015625   mirror circle (-0.4,0.3,0.6)
+  I(D,E)=4.000000  I(M*D,M*E)=4.000000   mirror line y=1.7
+  I(D,E)=4.000000  I(M*D,M*E)=4.000000   mirror circle (1.5,0.8,1)
+  I(D,E)=4.000000  I(M*D,M*E)=4.000000   mirror circle (-0.4,0.3,0.6)
+  K ∩ (y=1.7) via null lines of U: [(np.complex128(-1.3748j), np.complex128(1.7+0j)), (np.complex128(1.3748j), np.complex128(1.7+0j))]
+  M*(K∩L) vs (M*K)∩(M*L): max error 3.45e-15  PASS  (hidden pair maps to hidden pair: images non-real: True)
+
+== 7. Where two mirrors agree: Agree(K,L) = {points p : K*p ~ L*p} ==
+  c=0.6: crossings K∩L = [(np.complex128(0.8-0j), np.complex128(0.6-0j)), (np.complex128(-0.8+0j), np.complex128(0.6+0j))]
+         point-circles of pencil span(K,L) (limiting points) = [(np.complex128(-0+0j), np.complex128(0.6-0.8j)), (np.complex128(-0+0j), np.complex128(0.6+0.8j))]
+           crossing (np.complex128(0.8-0j), np.complex128(0.6-0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           crossing (np.complex128(-0.8+0j), np.complex128(0.6+0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           limiting (np.complex128(-0+0j), np.complex128(0.6-0.8j)): K*p ~ L*p ? True; K*p ~ p ? False
+           limiting (np.complex128(-0+0j), np.complex128(0.6+0.8j)): K*p ~ L*p ? True; K*p ~ p ? False
+  c=1.0: crossings K∩L = [(np.complex128(0j), np.complex128(1+0j)), (np.complex128(-0+0j), np.complex128(1+0j))]
+         point-circles of pencil span(K,L) (limiting points) = [(np.complex128(-0+0j), np.complex128(1-0j)), (np.complex128(-0+0j), np.complex128(1+0j))]
+           crossing (np.complex128(0j), np.complex128(1+0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           crossing (np.complex128(-0+0j), np.complex128(1+0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           limiting (np.complex128(-0+0j), np.complex128(1-0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           limiting (np.complex128(-0+0j), np.complex128(1+0j)): K*p ~ L*p ? True; K*p ~ p ? True
+  c=1.7: crossings K∩L = [(np.complex128(-1.3748j), np.complex128(1.7+0j)), (np.complex128(1.3748j), np.complex128(1.7+0j))]
+         point-circles of pencil span(K,L) (limiting points) = [(np.complex128(-0+0j), np.complex128(3.0748-0j)), (np.complex128(-0+0j), np.complex128(0.3252-0j))]
+           crossing (np.complex128(-1.375j), np.complex128(1.7+0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           crossing (np.complex128(1.375j), np.complex128(1.7+0j)): K*p ~ L*p ? True; K*p ~ p ? True
+           limiting (np.complex128(-0+0j), np.complex128(3.075-0j)): K*p ~ L*p ? True; K*p ~ p ? False
+           limiting (np.complex128(-0+0j), np.complex128(0.325-0j)): K*p ~ L*p ? True; K*p ~ p ? False
+  brute-force search over the real plane, c=0.6: real points with K*p ~ L*p: [(np.float64(-0.8), np.float64(0.6), '3e-16'), (np.float64(0.8), np.float64(0.6), '3e-16')]
+  brute-force search over the real plane, c=1.7: real points with K*p ~ L*p: [(np.float64(0.0), np.float64(0.3252), '3e-08'), (np.float64(0.0), np.float64(3.0748), '3e-08')]
+  both mirrors swap the limiting points: K*P+ ~ P-: True, L*P+ ~ P-: True
+  -> real agreement points: the crossings when the line cuts (c=0.6); the limiting points when it misses (c=1.7). Always exactly two real ones.
+
+== 8. Same statement with z in C: fixed points of the Mobius map s_L o s_K ==
+  c=0.6: z^2-2icz-1=0 roots [ 0.8+0.6j -0.8+0.6j]; check |f(z)-z| = 5.0e-16
+  c=1.0: z^2-2icz-1=0 roots [ 0.+1.j -0.+1.j]; check |f(z)-z| = 2.3e-16
+  c=1.7: z^2-2icz-1=0 roots [ 0.+3.0748j -0.+0.3252j]; check |f(z)-z| = 4.4e-16
+  -> always two roots in C (one double at tangency): c<1 they are the crossings ±sqrt(1-c^2)+ic, c>1 the limiting points i(c±sqrt(c^2-1)).
+
+== 9. Common fixed circles of two mirrors: Fix(K)∩Fix(L) = U = span(K,L)^perp ==
+  c=0.6: U fixed by both mirrors: True; Gram eigenvalues of U [-0.7442  1.    ] -> point-circles of U = crossings (real)
+  c=1.7: U fixed by both mirrors: True; Gram eigenvalues of U [0.5575 1.    ] -> point-circles of U = crossings (hidden); every member passes through limiting points: max |<u,P>|=1.4e-15
+
+== 10. Random pairs of real circles: fixed points of s_L o s_K in C = real crossings or real limiting points ==
+  2000 random pairs (981 crossing, 1017 disjoint/nested): mismatches 0  PASS

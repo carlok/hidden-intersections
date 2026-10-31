@@ -1,0 +1,30 @@
+name: CI (verify)
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install numpy sympy mpmath scipy matplotlib
+      - name: Run verification scripts
+        run: make verify
+      - name: Upload fresh logs
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: verify-logs
+          path: verify/*_log.txt

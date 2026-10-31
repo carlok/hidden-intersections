@@ -1,0 +1,34 @@
+# media (renders, narration, downloaded videos) stay out of git
+*.mp4
+*.wav
+*.mp3
+*.webm
+*.mov
+# frame dumps and render work dirs
+frames*/
+alt_frames*/
+alt3_frames*/
+alt3_anim/
+alt3_hd/
+alt3_tts/
+anim/
+hd/
+stills/
+tts/
+quilez/
+# LaTeX by-products
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# site build
+_site/
+.DS_Store

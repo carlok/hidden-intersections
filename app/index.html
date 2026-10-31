@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hidden intersections: complex tangency locus explorer</title>
+<meta name="description" content="Sweep parallel lines across a real curve and follow all intersections in C^2: the real curve and its phantom branches form one locus, glued at tangency points.">
+<style>
+:root{--bg:#fff;--fg:#1b1b1f;--mut:#5b5f6a;--sub:#e3e5ea;--str:#a9adb8;--c0:#1f6fd1;--c1:#e07b00;--c2:#2a9d4b;--font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#111318;--fg:#e9eaee;--mut:#a3a7b2;--sub:#2a2e37;--str:#59606e;--c0:#5ea2ff;--c1:#ffa040;--c2:#4fd07a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font)}
+main{max-width:1200px;margin:0 auto;padding:20px}
+h1{font-size:1.6rem;margin:.2em 0}h2{font-size:1.15rem;margin:1.4em 0 .4em}
+p{margin:.4em 0}a{color:var(--c0)}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.92rem;margin:.6em 0 1em}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin:10px 0}
+label.sl{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 150px;font-size:.85rem;color:var(--mut)}
+label.sl span.top{display:flex;justify-content:space-between}label.sl b{color:var(--fg);font:500 .85rem var(--mono)}
+input[type=range]{width:100%;accent-color:var(--c0)}
+select,button{font:inherit;padding:6px 10px;border:1px solid var(--str);border-radius:6px;background:var(--bg);color:var(--fg)}
+button{cursor:pointer}button:hover{border-color:var(--c0)}
+.legend{display:flex;gap:18px;font-size:.85rem;color:var(--mut);margin:6px 0}.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+svg{display:block;width:100%}svg text{font:14px var(--font);fill:var(--mut)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media (max-width:800px){.grid{grid-template-columns:1fr}}
+table{border-collapse:collapse;width:100%;font:.85rem var(--mono)}td,th{padding:4px 8px;border-bottom:1px solid var(--sub);text-align:left}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:.9rem}dt{color:var(--mut)}dd{margin:0}
+.eq{font:1rem var(--mono);background:color-mix(in srgb,var(--sub) 45%,transparent);padding:8px 12px;border-radius:6px;margin:6px 0;overflow-x:auto}
+.callout{border-left:3px solid var(--c0);padding:6px 12px;margin:14px 0;background:color-mix(in srgb,var(--c0) 7%,transparent)}
+footer{margin-top:30px;font-size:.85rem;color:var(--mut);border-top:1px solid var(--sub);padding-top:10px}
+</style>
+</head>
+<body><main>
+<h1>Complex tangency locus (phantom curves)</h1>
+<p>Sweep a family of parallel lines across a real curve and follow all of its intersections in ℂ²: the real curve and its phantom branches form one connected locus, glued at the tangency points.</p>
+<div class="links">
+<a href="https://www.youtube.com/shorts/cc-Z_igk4Lo">Inigo Quilez — “Intersections are always there” (original Short)</a>
+<a href="https://youtube.com/shorts/IfTOfr-aFRE">Carlo Perassi — reply Short</a>
+<a href="https://github.com/carlok/hidden-intersections">Source repository</a>
+<a href="pdf/theory.pdf">Theory (PDF)</a>
+<a href="pdf/writeup.pdf">Phantom loci (PDF)</a>
+<a href="pdf/examples16.pdf">16 worked examples (PDF)</a>
+</div>
+
+<h2>Explorer</h2>
+<p style="color:var(--mut);font-size:.9rem">Floor = the real plane; height = Im t. Drag the picture to rotate.</p>
+<div class="row" id="ctl1"></div>
+<div class="row" id="ctl2"></div>
+<div class="legend"><span><i style="background:var(--c0)"></i>Real curve (Im t = 0)</span><span><i style="background:var(--c1)"></i>Phantom branches (Im t ≠ 0)</span><span><i style="background:var(--c2)"></i>Tangency points</span></div>
+<svg id="v3" viewBox="0 0 1200 620" style="touch-action:none;cursor:grab;user-select:none"></svg>
+
+<div class="grid">
+<section><h2>Real plane</h2><svg id="v2" viewBox="0 0 600 460"></svg>
+<p>Dashed: the current line. Hollow rings mark the real part of each complex intersection, the “shadow” of the phantom point on the line.</p></section>
+<section><h2>Intersections at current c</h2><dl id="props"></dl>
+<table><thead><tr><th>#</th><th>t</th><th>x</th><th>y</th><th>Type</th></tr></thead><tbody id="rows"></tbody></table></section>
+</div>
+
+<h2>Setup</h2>
+<p>Fix a direction d = (cos θ, sin θ) and its normal n = (−sin θ, cos θ). Every line of the family is n·p = c with c real, parametrised by t:</p>
+<div class="eq">p(t) = c n + t d,   P<sub>c</sub>(t) = F(c n + t d) = a<sub>k</sub>t<sup>k</sup> + … + a<sub>0</sub>(c)</div>
+<p>For a real polynomial F of degree k, this is a degree-k polynomial in t with real coefficients, and the leading coefficient depends only on d. Allowing t ∈ ℂ gives exactly k intersections in ℂ² for every c (counted with multiplicity; fewer if d is an asymptotic direction), and sweeping c traces a real 1-dimensional locus on the complex curve. The picture plots it as (c, Re t, Im t), with the floor being the real plane itself.</p>
+<h2>Why conjugate pairs</h2>
+<div class="eq">P<sub>c</sub>(t̄) = <span style="text-decoration:overline">P<sub>c</sub>(t)</span>   ⇒   roots are real or a ± ib</div>
+<p>The coefficients are real, so complex roots come in conjugate pairs. That is why the phantom branches are mirror-symmetric about the floor, and why the ℂ² points come as (x, y) and (x̄, ȳ).</p>
+<h2>Branches are born at tangencies</h2>
+<div class="eq">Disc<sub>t</sub>(P<sub>c</sub>) = 0   ⇔   F = 0 and ∇F · d = 0</div>
+<p>A conjugate pair can only leave the real plane where two real roots collide, i.e. where the discriminant vanishes. That is where the line is tangent to the real curve (or passes through a singular point): the critical points of the height c = n·p restricted to the curve. The tangency dots are found by bisecting on the number of real roots.</p>
+<h2>Perpendicular departure, same curvature</h2>
+<div class="eq">c ≈ c<sub>0</sub> + (κ/2) t²   ⇒   t = ± √(2(c − c<sub>0</sub>)/κ);    t = i s:   c = c<sub>0</sub> − (κ/2) s²</div>
+<p>On one side of c₀ the two roots are real (the curve), on the other they are purely imaginary to second order. The phantom branch leaves at a right angle to the real curve with the same curvature κ, bending the other way. At an inflection tangent the local form is t³ instead, and three branches meet (try the inflection example: cubic, θ = −45°, c = 0).</p>
+<h2>Circle and hyperbola</h2>
+<div class="eq">t² + c² = r²,   t = i s   ⇒   c² − s² = r²</div>
+<p>For the circle, lines beyond the tangency points (|c| &gt; r) meet the complex circle at t = ± i √(c² − r²). In the vertical plane through the tangency points that is the hyperbola c² − s² = r²: the circle and the hyperbola are two real slices of one complex conic, glued at the tangency points. The parabola y = x² with horizontal lines gives the phantom parabola y = −s² in the same way.</p>
+<div class="callout"><b>Reading the picture.</b> Changing θ rotates the family of lines, so the phantom branches swing around the curve and always attach at the current tangency points.</div>
+<footer>Part of <a href="https://github.com/carlok/hidden-intersections">hidden-intersections</a> by Carlo Perassi (MIT code, CC BY 4.0 text). Inspired by and credited to <a href="https://www.youtube.com/shorts/cc-Z_igk4Lo">Inigo Quilez's Short</a>. Live page: <a href="https://carlok.github.io/hidden-intersections/">carlok.github.io/hidden-intersections</a>. No tracking, no external scripts.</footer>
+</main>
+<script>
+"use strict";
+const PRESETS={
+ circle:{label:"Circle",formula:"x² + y² = r²",params:[{name:"r",min:.3,max:2,step:.05,def:1}],mons:p=>[[1,2,0],[1,0,2],[-p[0]*p[0],0,0]],ext:p=>p[0]},
+ ellipse:{label:"Ellipse",formula:"x²/a² + y²/b² = 1",params:[{name:"a",min:.3,max:2,step:.05,def:1.4},{name:"b",min:.3,max:2,step:.05,def:.7}],mons:p=>[[1/(p[0]*p[0]),2,0],[1/(p[1]*p[1]),0,2],[-1,0,0]],ext:p=>Math.max(p[0],p[1])},
+ parabola:{label:"Parabola y = x²",formula:"y − x² = 0",params:[],mons:()=>[[1,0,1],[-1,2,0]],ext:()=>1.2},
+ cubic:{label:"Cubic y = x³ − x",formula:"y − x³ + x = 0",params:[],mons:()=>[[1,0,1],[-1,3,0],[1,1,0]],ext:()=>1.3},
+ quartic:{label:"Quartic x⁴ + y⁴ = 1",formula:"x⁴ + y⁴ = 1",params:[],mons:()=>[[1,4,0],[1,0,4],[-1,0,0]],ext:()=>1.1},
+ lemniscate:{label:"Lemniscate of Bernoulli",formula:"(x² + y²)² = 2a²(x² − y²)",params:[{name:"a",min:.4,max:1.4,step:.05,def:.8}],mons:p=>{const a2=p[0]*p[0];return[[1,4,0],[2,2,2],[1,0,4],[-2*a2,2,0],[2*a2,0,2]]},ext:p=>p[0]*1.42},
+ cassini:{label:"Cassini oval",formula:"((x−a)² + y²)((x+a)² + y²) = b⁴",params:[{name:"a",min:.3,max:1.2,step:.02,def:.8},{name:"b",min:.3,max:1.5,step:.02,def:.85}],mons:p=>{const a2=p[0]*p[0];return[[1,4,0],[2,2,2],[1,0,4],[-2*a2,2,0],[2*a2,0,2],[a2*a2-Math.pow(p[1],4),0,0]]},ext:p=>Math.sqrt(p[0]*p[0]+p[1]*p[1])},
+};
+const KEYS=Object.keys(PRESETS);
+function pmul(a,b){const r=new Array(a.length+b.length-1).fill(0);for(let i=0;i<a.length;i++)for(let j=0;j<b.length;j++)r[i+j]+=a[i]*b[j];return r}
+function ppow(a,n){let r=[1];for(let i=0;i<n;i++)r=pmul(r,a);return r}
+function polyT(mons,c,th){const dx=Math.cos(th),dy=Math.sin(th),x0=-c*dy,y0=c*dx,out=[0];
+ for(const[k,i,j]of mons){const p=pmul(ppow([x0,dx],i),ppow([y0,dy],j));while(out.length<p.length)out.push(0);for(let q=0;q<p.length;q++)out[q]+=k*p[q]}
+ const m=Math.max(...out.map(Math.abs))||1;while(out.length>1&&Math.abs(out[out.length-1])<1e-10*m)out.pop();return out}
+function roots(co){const n=co.length-1;if(n<1)return[];const a=co.map(v=>v/co[n]);let R=0;for(let i=0;i<n;i++)R=Math.max(R,Math.abs(a[i]));R=1+R;
+ const z=[];for(let k=0;k<n;k++){const g=2*Math.PI*k/n+.4;z.push([.5*R*Math.cos(g),.5*R*Math.sin(g)])}
+ for(let it=0;it<200;it++){let mx=0;
+  for(let k=0;k<n;k++){const zr=z[k][0],zi=z[k][1];let pr=0,pi=0,dr=0,di=0;
+   for(let i=n;i>=0;i--){const ndr=dr*zr-di*zi+pr,ndi=dr*zi+di*zr+pi;dr=ndr;di=ndi;const npr=pr*zr-pi*zi+a[i],npi=pr*zi+pi*zr;pr=npr;pi=npi}
+   if(pr===0&&pi===0)continue;const dd=dr*dr+di*di||1e-300,qr=(pr*dr+pi*di)/dd,qi=(pi*dr-pr*di)/dd;let sr=0,si=0;
+   for(let j=0;j<n;j++){if(j===k)continue;const ur=zr-z[j][0],ui=zi-z[j][1],uu=ur*ur+ui*ui||1e-300;sr+=ur/uu;si+=-ui/uu}
+   const br=1-(qr*sr-qi*si),bi=-(qr*si+qi*sr),bb=br*br+bi*bi||1e-300,wr=(qr*br+qi*bi)/bb,wi=(qi*br-qr*bi)/bb;
+   z[k]=[zr-wr,zi-wi];mx=Math.max(mx,Math.hypot(wr,wi)/(1+Math.hypot(zr,zi)))}
+  if(mx<1e-14)break}
+ return z}
+const isReal=z=>Math.abs(z[1])<1e-6*(1+Math.abs(z[0]));const countReal=zs=>zs.filter(isReal).length;
+function perms(n){if(n===0)return[[]];const out=[];for(const p of perms(n-1))for(let i=0;i<=p.length;i++)out.push([...p.slice(0,i),n-1,...p.slice(i)]);return out}
+const PERMS=[0,1,2,3,4,5].map(perms);
+function matchTo(prev,cur){const n=cur.length;if(n>5||prev.length!==n)return cur;let best=PERMS[n][0],bd=Infinity;
+ for(const p of PERMS[n]){let s=0;for(let i=0;i<n;i++){const dx=prev[i][0]-cur[p[i]][0],dy=prev[i][1]-cur[p[i]][1];s+=dx*dx+dy*dy}if(s<bd){bd=s;best=p}}return best.map(j=>cur[j])}
+const fmtNum=v=>Math.abs(v)<5e-4?"0.000":v.toFixed(3);
+const fmtC=(re,im)=>Math.abs(im)<5e-4?fmtNum(re):`${fmtNum(re)} ${im<0?"−":"+"} ${fmtNum(Math.abs(im))}i`;
+
+const S={preset:"circle",params:[1],thetaDeg:20,cFrac:.8,yaw:35,pitch:22,zoom:1};
+let model=null,modelKey="";
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function slider(label,key,min,max,step,fmt,idx){
+ const l=document.createElement("label");l.className="sl";
+ l.innerHTML=`<span class="top"><span>${label}</span><b></b></span><input type="range" min="${min}" max="${max}" step="${step}">`;
+ const inp=l.querySelector("input"),b=l.querySelector("b");
+ const get=()=>idx===undefined?S[key]:S.params[idx];
+ inp.value=get();b.textContent=fmt(get());
+ inp.addEventListener("input",()=>{const v=parseFloat(inp.value);if(idx===undefined)S[key]=v;else S.params[idx]=v;render()});
+ l._sync=()=>{inp.value=get();b.textContent=fmt(get())};return l}
+let sliders=[];
+function buildControls(){
+ const c1=document.getElementById("ctl1"),c2=document.getElementById("ctl2");c1.innerHTML="";c2.innerHTML="";sliders=[];
+ const wrap=document.createElement("label");wrap.className="sl";wrap.style.minWidth="220px";wrap.innerHTML="<span class='top'><span>Curve</span></span>";
+ const sel=document.createElement("select");for(const k of KEYS){const o=document.createElement("option");o.value=k;o.textContent=PRESETS[k].label;sel.appendChild(o)}
+ sel.value=S.preset;sel.addEventListener("change",()=>choose(sel.value));wrap.appendChild(sel);c1.appendChild(wrap);
+ PRESETS[S.preset].params.forEach((q,i)=>{const s=slider(q.name,null,q.min,q.max,q.step,v=>v.toFixed(2),i);c1.appendChild(s);sliders.push(s)});
+ const th=slider("Line direction θ","thetaDeg",-90,90,.5,v=>v.toFixed(1)+"°");c1.appendChild(th);sliders.push(th);
+ const cc=slider("Offset c","cFrac",-1,1,.002,v=>(v*1.6*PRESETS[S.preset].ext(S.params)).toFixed(3));c1.appendChild(cc);sliders.push(cc);
+ for(const[l,k,a,b,st,f]of[["Yaw","yaw",0,360,1,v=>v.toFixed(0)+"°"],["Pitch","pitch",-10,90,1,v=>v.toFixed(0)+"°"],["Zoom","zoom",.5,2.5,.05,v=>v.toFixed(2)+"×"]]){const s=slider(l,k,a,b,st,f);c2.appendChild(s);sliders.push(s)}
+ for(const[l,fn]of[["Top view",()=>{S.yaw=0;S.pitch=90}],["Reset view",()=>{S.yaw=35;S.pitch=22;S.zoom=1}],["Inflection example",()=>{choose("cubic",true);S.thetaDeg=-45;S.cFrac=0}]]){
+  const b=document.createElement("button");b.textContent=l;b.addEventListener("click",()=>{fn();buildControls();render()});c2.appendChild(b)}
+}
+function choose(k,silent){S.preset=k;S.params=PRESETS[k].params.map(q=>q.def);if(!silent){buildControls();render()}}
+function computeModel(mons,th,C){
+ const N=400,ct=Math.cos(th),st=Math.sin(th),plane=(cc,t)=>[-cc*st+t*ct,cc*ct+t*st],solve=cc=>roots(polyT(mons,cc,th));
+ const cs=[],rs=[];let prev=null;
+ for(let i=0;i<N;i++){const cc=-C+2*C*i/(N-1);let r=solve(cc);if(prev)r=matchTo(prev,r);cs.push(cc);rs.push(r);prev=r}
+ const segs=[],lim=2.6*C,jump=.3*C;
+ for(let i=1;i<N;i++){const A=rs[i-1],B=rs[i];if(A.length!==B.length)continue;
+  for(let k=0;k<A.length;k++){const za=A[k],zb=B[k];if(Math.hypot(...za)>lim||Math.hypot(...zb)>lim)continue;if(Math.hypot(za[0]-zb[0],za[1]-zb[1])>jump)continue;
+   const pa=plane(cs[i-1],za[0]),pb=plane(cs[i],zb[0]);segs.push({a:[pa[0],pa[1],za[1]],b:[pb[0],pb[1],zb[1]],real:isReal(za)&&isReal(zb)})}}
+ const tans=[];
+ for(let i=1;i<N;i++){const n0=countReal(rs[i-1]),n1=countReal(rs[i]);if(n0===n1||rs[i-1].length!==rs[i].length)continue;
+  let lo=cs[i-1],hi=cs[i];for(let it=0;it<60&&hi-lo>1e-11;it++){const mid=.5*(lo+hi);if(countReal(solve(mid))===n0)lo=mid;else hi=mid}
+  const cr=n0>n1?lo:hi,real=solve(cr).filter(isReal).map(z=>z[0]);let bt=0,bd=Infinity;
+  for(let a=0;a<real.length;a++)for(let b=a+1;b<real.length;b++){const d=Math.abs(real[a]-real[b]);if(d<bd){bd=d;bt=.5*(real[a]+real[b])}}
+  if(bd===Infinity)continue;const p=plane(cr,bt);tans.push({c:cr,t:bt,X:p[0],Y:p[1]})}
+ return{segs,tans}}
+const f1=v=>v.toFixed(1);
+function render(){
+ sliders.forEach(s=>s._sync());
+ const P=PRESETS[S.preset],th=S.thetaDeg*Math.PI/180,ext=P.ext(S.params),C=1.6*ext,c=S.cFrac*C,mons=P.mons(S.params);
+ const key=S.preset+"|"+S.params.join(",")+"|"+S.thetaDeg;if(key!==modelKey){model=computeModel(mons,th,C);modelKey=key}
+ const cur=roots(polyT(mons,c,th));cur.sort((u,v)=>Math.abs(u[0]-v[0])>1e-9?u[0]-v[0]:v[1]-u[1]);
+ const c0=css("--c0"),c1=css("--c1"),c2=css("--c2"),sub=css("--sub"),str=css("--str"),mut=css("--mut"),bg=css("--bg");
+ const W=1200,H=620,cx=W/2,cy=H/2+20,s=S.zoom*230/C,ph=S.yaw*Math.PI/180,ps=S.pitch*Math.PI/180;
+ const proj=(X,Y,Z)=>{const u=X*Math.cos(ph)-Y*Math.sin(ph),w=X*Math.sin(ph)+Y*Math.cos(ph);return[cx+s*u,cy-s*(Z*Math.cos(ps)+w*Math.sin(ps))]};
+ const pathOf=real=>{let d="";for(const g of model.segs){if(g.real!==real)continue;const A=proj(...g.a),B=proj(...g.b);d+=`M${f1(A[0])} ${f1(A[1])}L${f1(B[0])} ${f1(B[1])}`}return d};
+ const ct=Math.cos(th),st=Math.sin(th),planeP=(cc,t)=>[-cc*st+t*ct,cc*ct+t*st],L=1.25*C,lineA=planeP(c,-L),lineB=planeP(c,L),ax=1.2*C;
+ const dT=proj(ax*ct,ax*st,0),nT=proj(-ax*st,ax*ct,0),zT=proj(0,0,ax),zB=proj(0,0,-ax),O=proj(0,0,0);
+ const sq=[[-C,-C],[C,-C],[C,C],[-C,C]].map((q,i)=>{const p=proj(q[0],q[1],0);return`${i?"L":"M"}${f1(p[0])} ${f1(p[1])}`}).join("")+"Z";
+ let h=`<path d="${sq}" fill="none" stroke="${sub}"/>`;
+ h+=`<line x1="${zB[0]}" y1="${zB[1]}" x2="${zT[0]}" y2="${zT[1]}" stroke="${str}"/><line x1="${O[0]}" y1="${O[1]}" x2="${dT[0]}" y2="${dT[1]}" stroke="${str}"/><line x1="${O[0]}" y1="${O[1]}" x2="${nT[0]}" y2="${nT[1]}" stroke="${str}"/>`;
+ h+=`<text x="${dT[0]+6}" y="${dT[1]}">Re t (along d)</text><text x="${nT[0]+6}" y="${nT[1]}">c (along n)</text><text x="${zT[0]+6}" y="${zT[1]}">Im t</text>`;
+ h+=`<path d="${pathOf(false)}" fill="none" stroke="${c1}" stroke-width="2" stroke-linecap="round"/><path d="${pathOf(true)}" fill="none" stroke="${c0}" stroke-width="2.6" stroke-linecap="round"/>`;
+ {const A=proj(lineA[0],lineA[1],0),B=proj(lineB[0],lineB[1],0);h+=`<line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="${mut}" stroke-width="1.2" stroke-dasharray="6 5"/>`}
+ for(const z of cur){if(Math.hypot(...z)>2.6*C)continue;const p=planeP(c,z[0]),F=proj(p[0],p[1],0),Qp=proj(p[0],p[1],z[1]),re=isReal(z);
+  if(!re)h+=`<line x1="${F[0]}" y1="${F[1]}" x2="${Qp[0]}" y2="${Qp[1]}" stroke="${c1}" stroke-dasharray="3 3"/><circle cx="${F[0]}" cy="${F[1]}" r="3" fill="none" stroke="${c1}" stroke-width="1.2"/>`;
+  h+=`<circle cx="${Qp[0]}" cy="${Qp[1]}" r="6" fill="${re?c0:c1}" stroke="${bg}" stroke-width="1.5"/>`}
+ for(const g of model.tans){const p=proj(g.X,g.Y,0);h+=`<circle cx="${p[0]}" cy="${p[1]}" r="6" fill="${c2}" stroke="${bg}" stroke-width="1.5"/>`}
+ document.getElementById("v3").innerHTML=h;
+ const W2=600,H2=460,s2=(H2/2-20)/C,m2=(X,Y)=>[W2/2+s2*X,H2/2-s2*Y];let rp="";
+ for(const g of model.segs){if(!g.real)continue;const A=m2(g.a[0],g.a[1]),B=m2(g.b[0],g.b[1]);rp+=`M${f1(A[0])} ${f1(A[1])}L${f1(B[0])} ${f1(B[1])}`}
+ const lA=m2(...lineA),lB=m2(...lineB);
+ let h2=`<line x1="0" y1="${H2/2}" x2="${W2}" y2="${H2/2}" stroke="${sub}"/><line x1="${W2/2}" y1="0" x2="${W2/2}" y2="${H2}" stroke="${sub}"/><text x="${W2-16}" y="${H2/2-6}">x</text><text x="${W2/2+6}" y="16">y</text>`;
+ h2+=`<path d="${rp}" fill="none" stroke="${c0}" stroke-width="2.4" stroke-linecap="round"/><line x1="${lA[0]}" y1="${lA[1]}" x2="${lB[0]}" y2="${lB[1]}" stroke="${mut}" stroke-width="1.2" stroke-dasharray="6 5"/>`;
+ for(const z of cur){if(Math.hypot(...z)>2.6*C)continue;const p=planeP(c,z[0]),q=m2(p[0],p[1]);
+  h2+=isReal(z)?`<circle cx="${q[0]}" cy="${q[1]}" r="5.5" fill="${c0}" stroke="${bg}" stroke-width="1.5"/>`:`<circle cx="${q[0]}" cy="${q[1]}" r="5.5" fill="none" stroke="${c1}" stroke-width="2"/>`}
+ for(const g of model.tans){const q=m2(g.X,g.Y);h2+=`<circle cx="${q[0]}" cy="${q[1]}" r="5" fill="${c2}" stroke="${bg}" stroke-width="1.5"/>`}
+ document.getElementById("v2").innerHTML=h2;
+ const nReal=cur.filter(isReal).length;
+ document.getElementById("props").innerHTML=[["Curve",P.formula],["Line",`−x sin θ + y cos θ = ${c.toFixed(3)}`],["Real / complex",`${nReal} real, ${cur.length-nReal} complex (degree ${cur.length})`],["Tangencies found",model.tans.length?model.tans.map(g=>`c = ${g.c.toFixed(3)}`).join(", "):"none in range"]].map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("");
+ document.getElementById("rows").innerHTML=cur.map((z,i)=>{const[a,b]=z,xr=-c*st+a*ct,xi=b*ct,yr=c*ct+a*st,yi=b*st;return`<tr><td>${i+1}</td><td>${fmtC(a,b)}</td><td>${fmtC(xr,xi)}</td><td>${fmtC(yr,yi)}</td><td>${isReal(z)?"real":"complex"}</td></tr>`}).join("");
+}
+// drag to rotate
+const v3=document.getElementById("v3");let drag=null;
+v3.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY};v3.setPointerCapture(e.pointerId)});
+v3.addEventListener("pointermove",e=>{if(!drag||!e.buttons){drag=null;return}const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag={x:e.clientX,y:e.clientY};
+ S.yaw=((S.yaw-dx*.5)%360+360)%360;S.pitch=Math.max(-10,Math.min(90,S.pitch+dy*.4));render()});
+for(const ev of["pointerup","pointerleave","pointercancel"])v3.addEventListener(ev,()=>{drag=null});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",render);
+buildControls();render();
+</script>
+</body></html>

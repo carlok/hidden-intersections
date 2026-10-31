@@ -1,0 +1,30 @@
+Third storyboard: review log (three passes). Drafts kept: alt3_script_v0.py (draft), v1 (after pass 1), v2 (after pass 2), alt3_script.py (final, after pass 3).
+
+Draft v0: 40 scenes, 213 s, 567 words.
+
+PASS 1 - mathematical rigour (-> alt3_script_v1.py). Every claim cross-checked against alt3_verify.py (all PASS).
+ - His move: on his screen the orange i is inserted with the radicand unchanged (notational), stated in the animation note.
+ - "One curve" made exact: the union of the circle (plane Im y=0) and the hyperbola (plane Re y=0), the real-t slice of x^2+y^2=1, meeting at t=+-1.
+ - Q: Q/a^2 = 4r^2 (scale-free form).
+ - Forbidden mirrors: point-circles (any centre in C^2, or infinity) AND isotropic lines b^2+c^2=0.
+ - L*L ~ L (equals -L, projectively L).
+ - Group: "the complex Moebius group PO(4,C)", cited via Cartan-Dieudonne, not computed.
+ - C cap (C*L) = C cap L only if <C,L> != 0; otherwise C*L = C. Shown on screen.
+ - Invariant renamed kappa (I, J are the circular points).
+ - Complex maps preserve the count, tangency and kappa, not realness; points counted on the Moebius quadric (infinity included). Example numbers from a random g.
+ - Real trace of a complex circle: sign of D_R decides two/one/none, plus the whole-circle case when C is real up to scale.
+ - Overstatement removed: "nothing hidden / none hidden" for the nudged circle -> "two points all the way, no branching"; they are real only at t=0.
+ - "Always two" qualified: with multiplicity, a != 0, Q(L) != 0 (an isotropic line gives one finite point).
+
+PASS 2 - story clarity and pacing (-> alt3_script_v2.py): 40 -> 30 scenes, 213 -> 178 s, 567 -> 469 words.
+ - Merged/dropped beats that repeated a point: "The plan" folded into "The one I chose"; "The group" folded into "The invariant"; "Why" folded into "Through the mirror". (A first round of merges and cuts took 40 -> 33 scenes, 191 s; the three merges above and VO trims took it to 30 scenes, 178 s.)
+ - Order fixed to one line of thought: his move -> our slice -> one curve (3D) -> circles as four numbers -> the operation (closed, a kei) -> always two / four -> kappa and tangency -> not realness -> complex circle -> nudge (3D) -> hidden is a slice -> recap.
+ - Shortened VO in fast scenes; all scenes now <= 3.0 words/s except the 4 s thanks (1.25, intentional hold).
+
+PASS 3 - English polish (-> alt3_script.py).
+ - Smoother spoken phrasing (e.g. "with many directions to explore", "Substituting gives a quadratic...", "Kappa equals one exactly when the two points merge: tangency.").
+ - Removed clipped phrasing ("Its real points are where they cross.", "Our version, not his.").
+ - "reply to @iquilezles" -> "reply to @InigoQuilez" (YouTube handle, since this is a YouTube reply).
+ - Scene 26 on-screen text made precise: "2 points for every real t; real only at t=0".
+
+Frames (alt3_frames.py -> alt3_frames/, numbers in alt3_frames/check_log.txt): visual review fixed overflowing formula lines (two-line versions), tiny captions (auto-wrap/fit), clipped panels (scene 23), unreadable checklist text (scene 21), and the scene-25 zoom (restricted t range).

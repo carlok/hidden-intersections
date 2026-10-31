@@ -1,0 +1,19 @@
+{
+  "name": "hidden-intersections",
+  "description": "Closing Quilez's hidden intersections: circles as a complex kei, mirrors, invariants. Theory, exercises, storyboards and an interactive explorer.",
+  "homepage": "https://carlok.github.io/hidden-intersections/",
+  "topics": [
+    "mathematics",
+    "complex-geometry",
+    "inversive-geometry",
+    "mobius-transformations",
+    "quandle",
+    "latex",
+    "sympy",
+    "youtube-shorts",
+    "interactive-visualization"
+  ],
+  "pages": {"build_type": "workflow", "source_branch": "main"},
+  "default_branch": "main",
+  "visibility": "public"
+}

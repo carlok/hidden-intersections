@@ -1,0 +1,430 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.5cm]{geometry}\usepackage{graphicx,amsmath,amssymb,xcolor,hyperref,booktabs,tabularx,longtable}
+\setlength{\parindent}{0pt}
+\begin{document}
+{\LARGE\bfseries Storyboard v4: ``The other half of the circle'' (long cut)}\\[3pt]
+Reply Short to Inigo Quilez: \url{https://www.youtube.com/shorts/cc-Z_igk4Lo}\\[6pt]
+\textbf{Format.} YouTube Short, 9:16 (1080$\times$1920). \textbf{176\,s total} (cap 179\,s), 46 scenes of 3--5\,s, 419 words of voiceover ($\approx$2.4 words/s). Hook and setup: scenes 1--7, 25\,s.\\
+\textbf{Look.} Dark chalkboard (\#16191D), chalk-white strokes, \textcolor[HTML]{4DA3FF}{\textbf{blue = real}}, \textcolor[HTML]{FF9A3C}{\textbf{orange = imaginary / hidden}}. Dots = intersection points; squares = limiting points (real, so blue). Each frame builds on the last.\\
+\textbf{Through-line.} A line is a circle; a circle is a point of one space with a number $Q$ and a dot product; every circle is also a mirror built from that dot product, so the family is closed. In it, every circle and line meet in a pair of points: real crossings, a tangency, or a hidden pair whose orthogonal partner shows up as two real limiting points. No symmetry turns hidden into real; the swap changes what ``real'' means.\\[4pt]
+\textbf{Guardrails.} Limiting points are real only for $|c|>r$. ``Only four maps'' means complexified Möbius maps fixing $C_0$ and the parallel lines $y=c$. Numbers: $r=1$, $c\in\{0.6,1.7\}$, sample circle centre $(0.6,-0.4)$, radius $1$. All frames come from \texttt{frames\_v4.py}; numeric checks are in \texttt{frames\_v4/check\_log.txt}.\\[4pt]
+{\small\begin{tabular}{lll}\toprule act & scenes & time\\\midrule Hook \& setup & 1--7 & 0:00--0:25 \\ Circles and lines: one family & 8--12 & 0:25--0:43 \\ The number $Q$, mirrors, incidence & 13--21 & 0:43--1:17 \\ Angles and $I$ & 22--26 & 1:17--1:33 \\ Pencils and the point pair & 27--33 & 1:33--2:01 \\ The swap & 34--38 & 2:01--2:22 \\ Closure and symmetry & 39--41 & 2:22--2:35 \\ A new ``real''; close & 42--46 & 2:35--2:56 \\\bottomrule\end{tabular}}\\[4pt]
+{\scriptsize\begin{longtable}{rllp{0.55\textwidth}}\toprule \# & time & beat & voiceover\\\midrule
+1 & 0:00--0:03 & Quote & \emph{Quilez says: ``they're just hidden.''}\\
+2 & 0:03--0:07 & Go complex & \emph{When the root goes negative, he goes complex.}\\
+3 & 0:07--0:10 & Plus or minus i & \emph{Plus or minus i: two orange dots.}\\
+4 & 0:10--0:14 & Tangle & \emph{Move the line freely, and the dots tangle.}\\
+5 & 0:14--0:18 & Slide & \emph{Slide it without turning: a clean hyperbola.}\\
+6 & 0:18--0:21 & t to it & \emph{In symbols: t goes to i t.}\\
+7 & 0:21--0:25 & Out of the family & \emph{But it bends the circle into a hyperbola: out of the family.}\\
+8 & 0:25--0:29 & Write it out & \emph{We need a family that stays closed. Write a circle out.}\\
+9 & 0:29--0:33 & Four numbers & \emph{Four numbers, a, b, c, d. Scale them: same circle.}\\
+10 & 0:33--0:36 & a = 0 & \emph{Set a to zero: you get a line.}\\
+11 & 0:36--0:40 & Invert the line & \emph{Invert a line in a circle: a circle through the centre.}\\
+12 & 0:40--0:43 & Circle through infinity & \emph{So a line is a circle through infinity.}\\
+13 & 0:43--0:47 & One number & \emph{One number, Q, sorts them by its sign.}\\
+14 & 0:47--0:51 & Circle & \emph{For our circle, Q is four. Positive: a real circle.}\\
+15 & 0:51--0:54 & Line & \emph{For the line, Q is one. Positive too.}\\
+16 & 0:54--0:57 & Point & \emph{Radius zero: Q is zero. A point.}\\
+17 & 0:57--1:01 & Imaginary circle & \emph{Push below zero: an imaginary circle, with no real points.}\\
+18 & 1:01--1:05 & Dot product & \emph{Q comes with a dot product between any two circles.}\\
+19 & 1:05--1:10 & Every circle is a mirror & \emph{Every circle is also a mirror: inversion, built from the same dot product.}\\
+20 & 1:10--1:14 & Point with circle & \emph{Pair a point with a circle: minus twice the circle's equation.}\\
+21 & 1:14--1:17 & On = orthogonal & \emph{On the circle, that's zero. On means orthogonal.}\\
+22 & 1:17--1:21 & Angle & \emph{For two circles, the dot product measures their angle.}\\
+23 & 1:21--1:24 & I below 1 & \emph{I below one: two real crossings.}\\
+24 & 1:24--1:27 & I equals 1 & \emph{I equal to one: they touch.}\\
+25 & 1:27--1:30 & I above 1 & \emph{Above one: the crossings go hidden.}\\
+26 & 1:30--1:33 & Circle and line & \emph{Circle and line: distance squared over radius squared.}\\
+27 & 1:33--1:37 & Pencil & \emph{Mix the circle and the line: a whole pencil of circles.}\\
+28 & 1:37--1:41 & Elliptic & \emph{Line cuts: every member passes through both points.}\\
+29 & 1:41--1:44 & Hyperbolic & \emph{Line misses: members share only the hidden pair.}\\
+30 & 1:44--1:48 & Limiting points & \emph{Two members shrink to points: the limiting points.}\\
+31 & 1:48--1:53 & Pair as object & \emph{The crossing pair is an object too: the plane orthogonal to the pencil.}\\
+32 & 1:53--1:57 & Real pair & \emph{For a real pair, Q takes both signs on that plane.}\\
+33 & 1:57--2:01 & Hidden pair & \emph{For a hidden pair, Q stays positive.}\\
+34 & 2:01--2:06 & Swap & \emph{Now swap: take the pencil instead. The hidden pair becomes the limiting points.}\\
+35 & 2:06--2:11 & Check & \emph{Check: the heights multiply to exactly one. Inverse in the circle.}\\
+36 & 2:11--2:15 & Quilez's dots & \emph{Quilez's dots? The same pair, turned ninety degrees.}\\
+37 & 2:15--2:19 & Sweep & \emph{Sweep: the pair merges at tangency, then splits along the axis.}\\
+38 & 2:19--2:22 & Nothing vanishes & \emph{Nothing vanishes. It swaps.}\\
+39 & 2:22--2:26 & Before inversion & \emph{Is the swap just our coordinates? Invert the whole picture.}\\
+40 & 2:26--2:30 & After inversion & \emph{The squares are still the limiting points: the swap survives.}\\
+41 & 2:30--2:35 & Only four maps & \emph{Only four maps fix the picture. None makes a hidden point real.}\\
+42 & 2:35--2:39 & Not a map & \emph{The swap moves nothing. It changes what counts as real.}\\
+43 & 2:39--2:43 & Two reals & \emph{Old rule: x, y real. New rule: x imaginary, y real.}\\
+44 & 2:43--2:48 & Two worlds & \emph{Euclidean: this is a circle. Lorentzian, like spacetime: the hyperbola is the circle.}\\
+45 & 2:48--2:52 & Closed family & \emph{One closed family. Every circle pair: always two points.}\\
+46 & 2:52--2:56 & Close & \emph{Not hidden. The same circle, with a different real.}\\\bottomrule\end{longtable}}
+\newpage
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s01.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 1: Quote}\hfill 0:00--0:03 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Quilez says: ``they're just hidden.''}\\[2pt]
+\textbf{On screen:} \emph{``They are just hidden.''}; credit @iquilezles\\[2pt]
+\textbf{Animation:} Quilez's last frame: a unit circle, a tilted line at distance 1.6 that misses it. Orange ``?'' blink.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s02.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 2: Go complex}\hfill 0:03--0:07 (4\,s)\\[2pt]
+\textbf{VO:} \emph{When the root goes negative, he goes complex.}\\[2pt]
+\textbf{On screen:} $p=o-d(o\cdot d\pm\sqrt\Delta)$; $\Delta=-1.56<0$\\[2pt]
+\textbf{Animation:} Formula writes on; $\Delta$ ticks to $-1.56$; blue foot of the perpendicular appears.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s03.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 3: Plus or minus i}\hfill 0:07--0:10 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Plus or minus i: two orange dots.}\\[2pt]
+\textbf{On screen:} $\pm i\sqrt{|\Delta|}$, $\sqrt{|\Delta|}=1.249$\\[2pt]
+\textbf{Animation:} The $\pm i$ flashes orange; two orange dots drop at $\mathrm{Re}\,p+\mathrm{Im}\,p$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s04.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 4: Tangle}\hfill 0:10--0:14 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Move the line freely, and the dots tangle.}\\[2pt]
+\textbf{On screen:} ``Free motion = a tangle''\\[2pt]
+\textbf{Animation:} Line rotates and translates at once; orange and blue trails pile up into a knot (real computation, 3000 poses).
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s05.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 5: Slide}\hfill 0:14--0:18 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Slide it without turning: a clean hyperbola.}\\[2pt]
+\textbf{On screen:} $c^2-s^2=r^2$\\[2pt]
+\textbf{Animation:} Cut to horizontal; parallel slide; orange dots draw the hyperbola.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s06.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 6: t to it}\hfill 0:18--0:21 (3\,s)\\[2pt]
+\textbf{VO:} \emph{In symbols: t goes to i t.}\\[2pt]
+\textbf{On screen:} $(c,t)\mapsto(c,it)$; $t=\pm is\mapsto\mp s$\\[2pt]
+\textbf{Animation:} Hollow rings at $(\pm is)$ slide out to the real dots.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s07.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 7: Out of the family}\hfill 0:21--0:25 (4\,s)\\[2pt]
+\textbf{VO:} \emph{But it bends the circle into a hyperbola: out of the family.}\\[2pt]
+\textbf{On screen:} $x^2+y^2=r^2\mapsto y^2-x^2=r^2$\\[2pt]
+\textbf{Animation:} Circle morphs into hyperbola; orange cross. Beat: we need a family that stays closed.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s08.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 8: Write it out}\hfill 0:25--0:29 (4\,s)\\[2pt]
+\textbf{VO:} \emph{We need a family that stays closed. Write a circle out.}\\[2pt]
+\textbf{On screen:} $x^2+y^2-1.2x+0.8y-0.48=0$\\[2pt]
+\textbf{Animation:} Circle centre $(0.6,-0.4)$, radius 1; $(x-0.6)^2+(y+0.4)^2=1$ expands term by term.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s09.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 9: Four numbers}\hfill 0:29--0:33 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Four numbers, a, b, c, d. Scale them: same circle.}\\[2pt]
+\textbf{On screen:} $[1:-1.2:0.8:-0.48]\sim[2:-2.4:1.6:-0.96]$\\[2pt]
+\textbf{Animation:} Coefficients lift off the equation into a bracket; doubling them leaves the circle unchanged.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s10.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 10: a = 0}\hfill 0:33--0:36 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Set a to zero: you get a line.}\\[2pt]
+\textbf{On screen:} $[0:0:1:-1.6]$ is $y=1.6$\\[2pt]
+\textbf{Animation:} The $x^2+y^2$ term fades; the circle straightens into the line $y=1.6$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s11.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 11: Invert the line}\hfill 0:36--0:40 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Invert a line in a circle: a circle through the centre.}\\[2pt]
+\textbf{On screen:} $p\mapsto p/|p|^2$; image: centre $(0,0.3125)$, radius $0.3125$\\[2pt]
+\textbf{Animation:} Rays from the centre; three line points map to blue dots on the small circle.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s12.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 12: Circle through infinity}\hfill 0:40--0:43 (3\,s)\\[2pt]
+\textbf{VO:} \emph{So a line is a circle through infinity.}\\[2pt]
+\textbf{On screen:} $0\leftrightarrow\infty$\\[2pt]
+\textbf{Animation:} Hold; label ``$0\leftrightarrow\infty$''.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s13.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 13: One number}\hfill 0:43--0:47 (4\,s)\\[2pt]
+\textbf{VO:} \emph{One number, Q, sorts them by its sign.}\\[2pt]
+\textbf{On screen:} $Q=b^2+c^2-4ad=4a^2r^2$\\[2pt]
+\textbf{Animation:} Formula slams in under the circle.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s14.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 14: Circle}\hfill 0:47--0:51 (4\,s)\\[2pt]
+\textbf{VO:} \emph{For our circle, Q is four. Positive: a real circle.}\\[2pt]
+\textbf{On screen:} $1.44+0.64+1.92=4$\\[2pt]
+\textbf{Animation:} Numbers drop into the formula one by one.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s15.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 15: Line}\hfill 0:51--0:54 (3\,s)\\[2pt]
+\textbf{VO:} \emph{For the line, Q is one. Positive too.}\\[2pt]
+\textbf{On screen:} $[0:0:1:-1.6]$: $Q=1$\\[2pt]
+\textbf{Animation:} Same formula, line coefficients.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s16.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 16: Point}\hfill 0:54--0:57 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Radius zero: Q is zero. A point.}\\[2pt]
+\textbf{On screen:} $Q=0$: a point\\[2pt]
+\textbf{Animation:} Circle shrinks through radii $1,0.6,0.3$ to a dot.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s17.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 17: Imaginary circle}\hfill 0:57--1:01 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Push below zero: an imaginary circle, with no real points.}\\[2pt]
+\textbf{On screen:} $x^2+y^2+1=0$: $Q=-4$\\[2pt]
+\textbf{Animation:} Dot re-inflates as a dashed orange circle.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s18.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 18: Dot product}\hfill 1:01--1:05 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Q comes with a dot product between any two circles.}\\[2pt]
+\textbf{On screen:} $\langle C_1,C_2\rangle=b_1b_2+c_1c_2-2(a_1d_2+a_2d_1)$; three plus, one minus\\[2pt]
+\textbf{Animation:} Formula; small caption ``signature $(3,1)$''.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s18b.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 19: Every circle is a mirror}\hfill 1:05--1:10 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Every circle is also a mirror: inversion, built from the same dot product.}\\[2pt]
+\textbf{On screen:} $X\mapsto X-2\frac{\langle X,C\rangle}{Q(C)}C$\\[2pt]
+\textbf{Animation:} Dashed $C_0$ as mirror; a small circle and its image (centre $(0.622,0.207)$, $r=0.124$), rays through matched points. The mirror is a circle, the map is built from circles: the family is closed.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s19.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 20: Point with circle}\hfill 1:10--1:14 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Pair a point with a circle: minus twice the circle's equation.}\\[2pt]
+\textbf{On screen:} $\langle P,C\rangle=-2C(p)$; $p=(0,1.7)$: $-3.78$\\[2pt]
+\textbf{Animation:} White point off the circle; value ticks.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s20.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 21: On = orthogonal}\hfill 1:14--1:17 (3\,s)\\[2pt]
+\textbf{VO:} \emph{On the circle, that's zero. On means orthogonal.}\\[2pt]
+\textbf{On screen:} $p\in C\Leftrightarrow\langle P,C\rangle=0$\\[2pt]
+\textbf{Animation:} Point slides onto the circle; value ticks to 0.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s21.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 22: Angle}\hfill 1:17--1:21 (4\,s)\\[2pt]
+\textbf{VO:} \emph{For two circles, the dot product measures their angle.}\\[2pt]
+\textbf{On screen:} $I=\frac{\langle C_1,C_2\rangle^2}{Q(C_1)Q(C_2)}=\cos^2\theta$; $\cos\theta=0.125$, $I=0.0156$\\[2pt]
+\textbf{Animation:} Second circle, centre $(1.2,0)$, radius $0.8$; tangent lines and $\theta$ drawn.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s22.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 23: I below 1}\hfill 1:21--1:24 (3\,s)\\[2pt]
+\textbf{VO:} \emph{I below one: two real crossings.}\\[2pt]
+\textbf{On screen:} $I=0.145$\\[2pt]
+\textbf{Animation:} Second circle slides to centre $1.5$; two blue dots.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s23.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 24: I equals 1}\hfill 1:24--1:27 (3\,s)\\[2pt]
+\textbf{VO:} \emph{I equal to one: they touch.}\\[2pt]
+\textbf{On screen:} $I=1$\\[2pt]
+\textbf{Animation:} Slides to $1.8$: dots merge (white).
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s24.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 25: I above 1}\hfill 1:27--1:30 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Above one: the crossings go hidden.}\\[2pt]
+\textbf{On screen:} $I=4$; $(1.18,\pm0.63i)$\\[2pt]
+\textbf{Animation:} Slides to $2.2$: dots become orange rings.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s25.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 26: Circle and line}\hfill 1:30--1:33 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Circle and line: distance squared over radius squared.}\\[2pt]
+\textbf{On screen:} $I=\delta^2/r^2$; $c=0.6$: $0.36$; $c=1.7$: $2.89$\\[2pt]
+\textbf{Animation:} Two lines; $\delta$ arrow; values appear blue and orange.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s26.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 27: Pencil}\hfill 1:33--1:37 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Mix the circle and the line: a whole pencil of circles.}\\[2pt]
+\textbf{On screen:} $C_0+\mu L$\\[2pt]
+\textbf{Animation:} Members bloom one by one for $c=0.6$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s27.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 28: Elliptic}\hfill 1:37--1:41 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Line cuts: every member passes through both points.}\\[2pt]
+\textbf{On screen:} ``elliptic''\\[2pt]
+\textbf{Animation:} Two blue dots pulse; all members pass through them.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s28.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 29: Hyperbolic}\hfill 1:41--1:44 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Line misses: members share only the hidden pair.}\\[2pt]
+\textbf{On screen:} ``hyperbolic''\\[2pt]
+\textbf{Animation:} Line jumps to $c=1.7$; nested members; orange rings.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s29.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 30: Limiting points}\hfill 1:44--1:48 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Two members shrink to points: the limiting points.}\\[2pt]
+\textbf{On screen:} $(0,\,c\pm s)=(0,0.325),(0,3.075)$\\[2pt]
+\textbf{Animation:} Two members collapse to blue squares on the axis.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s30.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 31: Pair as object}\hfill 1:48--1:53 (5\,s)\\[2pt]
+\textbf{VO:} \emph{The crossing pair is an object too: the plane orthogonal to the pencil.}\\[2pt]
+\textbf{On screen:} $U=V^\perp$\\[2pt]
+\textbf{Animation:} The pencil fades; the pair is bracketed as one object.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s31.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 32: Real pair}\hfill 1:53--1:57 (4\,s)\\[2pt]
+\textbf{VO:} \emph{For a real pair, Q takes both signs on that plane.}\\[2pt]
+\textbf{On screen:} $c=0.6$: signature $(1,1)$\\[2pt]
+\textbf{Animation:} Line back to $c=0.6$; tag ``$+,-$''.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s32.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 33: Hidden pair}\hfill 1:57--2:01 (4\,s)\\[2pt]
+\textbf{VO:} \emph{For a hidden pair, Q stays positive.}\\[2pt]
+\textbf{On screen:} $c=1.7$: signature $(2,0)$\\[2pt]
+\textbf{Animation:} Line to $c=1.7$; tag ``$+,+$''.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s33.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 34: Swap}\hfill 2:01--2:06 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Now swap: take the pencil instead. The hidden pair becomes the limiting points.}\\[2pt]
+\textbf{On screen:} $(\pm is,c)\mapsto(0,c\pm s)$\\[2pt]
+\textbf{Animation:} Key beat, slow: rings collapse into the foot; squares grow out along the axis.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s34.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 35: Check}\hfill 2:06--2:11 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Check: the heights multiply to exactly one. Inverse in the circle.}\\[2pt]
+\textbf{On screen:} $y_+y_-=c^2-s^2=r^2$; $(1.7+\sqrt{1.89})(1.7-\sqrt{1.89})=1$\\[2pt]
+\textbf{Animation:} Ray from centre; numbers multiply on screen.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s35.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 36: Quilez's dots}\hfill 2:11--2:15 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Quilez's dots? The same pair, turned ninety degrees.}\\[2pt]
+\textbf{On screen:} $90^\circ$ arrow\\[2pt]
+\textbf{Animation:} Orange dots rotate about $(0,c)$ onto the squares.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s36.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 37: Sweep}\hfill 2:15--2:19 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Sweep: the pair merges at tangency, then splits along the axis.}\\[2pt]
+\textbf{On screen:} live $c$; white flash at $c=1$\\[2pt]
+\textbf{Animation:} Line sweeps $c$ from 0.1 to 2.3.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s37.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 38: Nothing vanishes}\hfill 2:19--2:22 (3\,s)\\[2pt]
+\textbf{VO:} \emph{Nothing vanishes. It swaps.}\\[2pt]
+\textbf{On screen:} real pair $\leftrightarrow$ limiting points\\[2pt]
+\textbf{Animation:} Ghost trail of all positions.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s38.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 39: Before inversion}\hfill 2:22--2:26 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Is the swap just our coordinates? Invert the whole picture.}\\[2pt]
+\textbf{On screen:} mirror circle $K$: centre $(1.5,0.8)$, $r=1$\\[2pt]
+\textbf{Animation:} Dashed circle $K$ appears over the scene.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s39.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 40: After inversion}\hfill 2:26--2:30 (4\,s)\\[2pt]
+\textbf{VO:} \emph{The squares are still the limiting points: the swap survives.}\\[2pt]
+\textbf{On screen:} $g(U)^\perp=g(U^\perp)$\\[2pt]
+\textbf{Animation:} Everything flips through $K$; squares land on the new limiting points (error $10^{-16}$).
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s40.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 41: Only four maps}\hfill 2:30--2:35 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Only four maps fix the picture. None makes a hidden point real.}\\[2pt]
+\textbf{On screen:} $\{\pm\mathrm{id},(x,y)\mapsto(\pm x,\mp y)\}$\\[2pt]
+\textbf{Animation:} Four mini-panels flick on, one per beat. Fine print: complexified Möbius maps fixing $C_0$ and the lines $y=c$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s41.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 42: Not a map}\hfill 2:35--2:39 (4\,s)\\[2pt]
+\textbf{VO:} \emph{The swap moves nothing. It changes what counts as real.}\\[2pt]
+\textbf{On screen:} map vs real structure\\[2pt]
+\textbf{Animation:} Two labels: ``moves points'' / ``chooses which points are real''.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s42.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 43: Two reals}\hfill 2:39--2:43 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Old rule: x, y real. New rule: x imaginary, y real.}\\[2pt]
+\textbf{On screen:} $\sigma_0=(\bar x,\bar y)$; $\sigma_1=(-\bar x,\bar y)$\\[2pt]
+\textbf{Animation:} Blue line, then orange line write on.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s43.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 44: Two worlds}\hfill 2:43--2:48 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Euclidean: this is a circle. Lorentzian, like spacetime: the hyperbola is the circle.}\\[2pt]
+\textbf{On screen:} $PO(3,1)$ / $PO(2,2)$\\[2pt]
+\textbf{Animation:} Split screen; toggle flips circle to hyperbola.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s44.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 45: Closed family}\hfill 2:48--2:52 (4\,s)\\[2pt]
+\textbf{VO:} \emph{One closed family. Every circle pair: always two points.}\\[2pt]
+\textbf{On screen:} ``always two points'' (tangency counts twice)\\[2pt]
+\textbf{Animation:} Dots, tangency, squares on one frame.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{frames_v4/s45.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 46: Close}\hfill 2:52--2:56 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Not hidden. The same circle, with a different real.}\\[2pt]
+\textbf{On screen:} ``Not hidden.''; ``write-up linked below''\\[2pt]
+\textbf{Animation:} Circle + hyperbola; hold, loop.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\newpage
+{\large\bfseries Full voiceover script} (176\,s, 419 words)\\[6pt]
+1. [0:00--0:03] Quilez says: they're just hidden.\\
+2. [0:03--0:07] When the root goes negative, he goes complex.\\
+3. [0:07--0:10] Plus or minus i: two orange dots.\\
+4. [0:10--0:14] Move the line freely, and the dots tangle.\\
+5. [0:14--0:18] Slide it without turning: a clean hyperbola.\\
+6. [0:18--0:21] In symbols: t goes to i t.\\
+7. [0:21--0:25] But it bends the circle into a hyperbola: out of the family.\\
+8. [0:25--0:29] We need a family that stays closed. Write a circle out.\\
+9. [0:29--0:33] Four numbers, a, b, c, d. Scale them: same circle.\\
+10. [0:33--0:36] Set a to zero: you get a line.\\
+11. [0:36--0:40] Invert a line in a circle: a circle through the centre.\\
+12. [0:40--0:43] So a line is a circle through infinity.\\
+13. [0:43--0:47] One number, Q, sorts them by its sign.\\
+14. [0:47--0:51] For our circle, Q is four. Positive: a real circle.\\
+15. [0:51--0:54] For the line, Q is one. Positive too.\\
+16. [0:54--0:57] Radius zero: Q is zero. A point.\\
+17. [0:57--1:01] Push below zero: an imaginary circle, with no real points.\\
+18. [1:01--1:05] Q comes with a dot product between any two circles.\\
+19. [1:05--1:10] Every circle is also a mirror: inversion, built from the same dot product.\\
+20. [1:10--1:14] Pair a point with a circle: minus twice the circle's equation.\\
+21. [1:14--1:17] On the circle, that's zero. On means orthogonal.\\
+22. [1:17--1:21] For two circles, the dot product measures their angle.\\
+23. [1:21--1:24] I below one: two real crossings.\\
+24. [1:24--1:27] I equal to one: they touch.\\
+25. [1:27--1:30] Above one: the crossings go hidden.\\
+26. [1:30--1:33] Circle and line: distance squared over radius squared.\\
+27. [1:33--1:37] Mix the circle and the line: a whole pencil of circles.\\
+28. [1:37--1:41] Line cuts: every member passes through both points.\\
+29. [1:41--1:44] Line misses: members share only the hidden pair.\\
+30. [1:44--1:48] Two members shrink to points: the limiting points.\\
+31. [1:48--1:53] The crossing pair is an object too: the plane orthogonal to the pencil.\\
+32. [1:53--1:57] For a real pair, Q takes both signs on that plane.\\
+33. [1:57--2:01] For a hidden pair, Q stays positive.\\
+34. [2:01--2:06] Now swap: take the pencil instead. The hidden pair becomes the limiting points.\\
+35. [2:06--2:11] Check: the heights multiply to exactly one. Inverse in the circle.\\
+36. [2:11--2:15] Quilez's dots? The same pair, turned ninety degrees.\\
+37. [2:15--2:19] Sweep: the pair merges at tangency, then splits along the axis.\\
+38. [2:19--2:22] Nothing vanishes. It swaps.\\
+39. [2:22--2:26] Is the swap just our coordinates? Invert the whole picture.\\
+40. [2:26--2:30] The squares are still the limiting points: the swap survives.\\
+41. [2:30--2:35] Only four maps fix the picture. None makes a hidden point real.\\
+42. [2:35--2:39] The swap moves nothing. It changes what counts as real.\\
+43. [2:39--2:43] Old rule: x, y real. New rule: x imaginary, y real.\\
+44. [2:43--2:48] Euclidean: this is a circle. Lorentzian, like spacetime: the hyperbola is the circle.\\
+45. [2:48--2:52] One closed family. Every circle pair: always two points.\\
+46. [2:52--2:56] Not hidden. The same circle, with a different real.
+\end{document}

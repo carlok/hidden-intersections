@@ -1,0 +1,25 @@
+1. eigenvalues of Gram: [-2.  1.  1.  2.]
+1. max err Q=4a^2r^2, <P,C>=-2F(p), Q(P)=0: 2.842170943040401e-14
+1. imaginary circle x^2+y^2+1=0: Q= -4.0 ; point at infinity [0:0:0:1] Q= 0.0
+2. circle-circle: I<1 <=> two real points; mismatches: 0 ; |I-cos^2(angle)| max: 1.3988810110276972e-14
+2. circle-line: I = dist^2/r^2 and I<1 <=> two real points; mismatches: 0
+3. inversion in C == reflection X-2<X,C>/Q(C) C, preserves Q; max err: 2.4364670206795617e-12
+4. r=1,c=0.5: det Gram(V)=3.0000, sig(V)=(2, 0), sig(U=V^perp)=(1, 1)
+4. r=1,c=1.0: det Gram(V)=0.0000, sig(V)=(1, 0), sig(U=V^perp)=(1, 0)
+4. r=1,c=1.7: det Gram(V)=-7.5600, sig(V)=(1, 1), sig(U=V^perp)=(2, 0)
+4. c=0.6: null pts of U (intersections): [[0.8, 0.6], [-0.8, 0.6]]
+   null pts of V (limiting points): [[(-0+0j), (0.6-0.8j)], [(-0+0j), (0.6+0.8j)]]
+   predicted: intersections (±sqrt(r²-c²),c) = [(0.8+0j), (0.6+0j)]  limiting (0,c±sqrt(c²-r²)) = [(0.6+0.8j), (0.6-0.8j)]  product of y's = (1+0j)
+4. c=1.7: null pts of U (intersections): [[-1.37477j, (1.7-0j)], [1.37477j, (1.7+0j)]]
+   null pts of V (limiting points): [[-0.0, 3.07477], [-0.0, 0.32523]]
+   predicted: intersections (±sqrt(r²-c²),c) = [1.37477j, (1.7+0j)]  limiting (0,c±sqrt(c²-r²)) = [(3.07477+0j), (0.32523+0j)]  product of y's = (1+0j)
+4b. real pair plane sig (1, 1)
+    conjugate pair (±0.4i,0.9) real plane sig (2, 0)
+6. best linear fit of R_i on point vectors, max residual: 2.0363291970384947 (nonzero => R_i not induced by PO(4,C))
+6. hyperbola top form at circular points (1,±i): [(-2+0j), (-2+0j)]  circle top form: [0j, 0j]
+7. orientation preserving  eqs: [alpha*b, a*b + alpha*beta*r**2 - r**2, a*beta*r**2, alpha - beta]  solutions: [{a: 1/b, alpha: 0, beta: 0}, {a: 0, alpha: -1, b: 0, beta: -1}, {a: 0, alpha: 1, b: 0, beta: 1}]
+7. orientation reversing  eqs: [a*beta, a*b + alpha*beta*r**2 - r**2, alpha*b*r**2, alpha - beta]  solutions: [{a: 1/b, alpha: 0, beta: 0}, {a: 0, alpha: -1, b: 0, beta: -1}, {a: 0, alpha: 1, b: 0, beta: 1}]
+8. R_i s0 R_i^-1 = s1 max err: 0
+8. Q on s1-real circle space eigenvalues: [-2. -1.  1.  2.]  -> signature (2,2)
+8. s1 acts on circle coords [a:b:c:d] -> [conj a: -conj b: conj c: conj d]; C0, L_c fixed: True
+8. s1-real points (is,c) of C0 satisfy c^2-s^2=r^2: max |F|: 1.7763568394002505e-15

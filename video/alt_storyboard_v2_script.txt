@@ -1,0 +1,41 @@
+Alternative storyboard v2 (where two mirrors agree): voiceover, 39 scenes, 174 s, 434 words
+
+1. [0:00-0:04] Inigo Quilez's video is lovely, and it opens many doors.
+2. [0:04-0:08] I took one: circles as mirrors, the Möbius way.
+3. [0:08-0:12] My aim: give his hidden points an algebra, and an invariant.
+4. [0:12-0:17] His move: when the square root goes negative, go complex. Two orange dots.
+5. [0:17-0:21] My move: a circle, a mirror-circle, and out comes another circle.
+6. [0:21-0:25] A line is the simplest mirror: reflect a circle across it.
+7. [0:25-0:29] A circle is a mirror too. That reflection is called inversion.
+8. [0:29-0:33] Invert the line in the circle: out comes a small circle.
+9. [0:33-0:38] Reflect the circle in the line instead: a different circle. Order matters.
+10. [0:38-0:42] Every circle is just four numbers: a, b, c, d.
+11. [0:42-0:46] And reflection is a single formula on those numbers.
+12. [0:46-0:50] Circle in, circle out. Lines too. The family is closed.
+13. [0:50-0:55] Rule one: a mirror fixes itself. Rule two: reflect twice, and you're back.
+14. [0:55-1:00] Rule three: reflect a whole picture, and every relation in it comes along.
+15. [1:00-1:04] These rules have a name: a kei, or involutory quandle.
+16. [1:04-1:08] Not associative, though: move the brackets, and the circle changes.
+17. [1:08-1:13] Points can't be mirrors, since everything would collapse. But they still get reflected.
+18. [1:13-1:18] Now, the invariant: every mirror keeps the angle between any two circles.
+19. [1:18-1:23] And that number decides real or hidden, so no mirror can flip it.
+20. [1:23-1:27] What does a mirror leave alone? The points on it.
+21. [1:27-1:31] And every circle that crosses it at right angles.
+22. [1:31-1:35] Now take two mirrors: our circle and our line.
+23. [1:35-1:39] Where do they agree? Same point in, same point out.
+24. [1:39-1:44] When the line cuts, they agree at the crossings. Both leave them fixed.
+25. [1:44-1:48] The circles both mirrors fix swirl around those two points.
+26. [1:48-1:53] Lift the line, and the crossings hide. Do the mirrors still agree?
+27. [1:53-1:58] They do, at two real points on the axis: the limiting points.
+28. [1:58-2:03] Each mirror swaps them, top for bottom, and their heights multiply to one.
+29. [2:03-2:07] Now the circles both mirrors fix all run through them.
+30. [2:07-2:11] And Quilez's dots? The same two points, turned ninety degrees.
+31. [2:11-2:16] Sweep the line: the points slide up, merge where it touches, then split.
+32. [2:16-2:21] Two mirrors always agree at exactly two points, or one if they touch.
+33. [2:21-2:27] Why two? Two reflections make one Möbius map. Its fixed points solve a quadratic.
+34. [2:27-2:32] Over the complex numbers there are four: two crossings, two limiting points.
+35. [2:32-2:36] But only two are ever real. The other two hide.
+36. [2:36-2:41] Move everything by any mirror, and agreement points follow. That's the invariant answer.
+37. [2:41-2:46] So the hidden pair isn't lost. It's the hidden half of the agreement.
+38. [2:46-2:50] A circle, a mirror-circle, another circle: one closed algebra.
+39. [2:50-2:54] Not hidden. Just where two mirrors agree.

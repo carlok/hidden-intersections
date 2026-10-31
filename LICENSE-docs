@@ -1,0 +1,27 @@
+Documentation, text and figures license
+=======================================
+
+Copyright (c) 2026 Carlo Perassi
+
+Unless stated otherwise, the documents, LaTeX sources, figures, storyboards,
+scripts for narration and compiled PDFs in this repository (theory/, exercises/,
+video/*.tex, video/*_script.txt, pdf/, docs/) are licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt the material for any purpose, even
+commercially, provided you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:         https://creativecommons.org/licenses/by/4.0/
+
+Source code (*.py, *.js, app/index.html, Makefile, workflows) is licensed
+under the MIT License; see LICENSE.
+
+Third-party content
+-------------------
+The Short "Hidden intersections" and its narration, visuals and frames are by
+Inigo Quilez and are NOT covered by these licenses. This repository contains no
+copy of his video, audio or frames; video/quilez_transcript.tex describes the
+Short for readers who cannot watch it and quotes its short narration for the
+purpose of commentary, with credit and a link to the original.

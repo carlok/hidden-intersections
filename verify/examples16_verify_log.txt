@@ -1,0 +1,266 @@
+PASS Ex1: equations match vectors
+PASS Ex1: involution (X*M)*M ~ X
+PASS Ex1: Q preserved
+PASS Ex1: kappa(X*M,M)=kappa(X,M)
+PASS Ex1: finite X∩(X*M) = X∩M
+PASS Ex1: numeric star projectively equal under rescaling
+PASS Ex1: point {x: 1/2, y: -sqrt(3)/2} on both
+PASS Ex1: point {x: 1/2, y: sqrt(3)/2} on both
+PASS Ex1: Moebius common point null and incident
+PASS Ex1: Moebius common point null and incident
+PASS Ex1: finite Moebius points = pt(finite common points)
+   Ex1: Q=4,1 ip=1 kappa=1/4 star=[1, -2, 0, 0] pts=[{x: 1/2, y: -sqrt(3)/2}, {x: 1/2, y: sqrt(3)/2}] nature=two real moebius=[[1, -1, -sqrt(3), 1], [1, -1, sqrt(3), 1]]
+PASS Ex2: equations match vectors
+PASS Ex2: involution (X*M)*M ~ X
+PASS Ex2: Q preserved
+PASS Ex2: kappa(X*M,M)=kappa(X,M)
+PASS Ex2: finite X∩(X*M) = X∩M
+PASS Ex2: numeric star projectively equal under rescaling
+PASS Ex2: point {x: 2, y: -sqrt(3)*I} on both
+PASS Ex2: point {x: 2, y: sqrt(3)*I} on both
+PASS Ex2: Moebius common point null and incident
+PASS Ex2: Moebius common point null and incident
+PASS Ex2: finite Moebius points = pt(finite common points)
+   Ex2: Q=4,1 ip=4 kappa=4 star=[1, -8, 0, 15] pts=[{x: 2, y: -sqrt(3)*I}, {x: 2, y: sqrt(3)*I}] nature=conjugate pair moebius=[[1, -4, 2*sqrt(3)*I, 1], [1, -4, -2*sqrt(3)*I, 1]]
+PASS Ex3: equations match vectors
+PASS Ex3: involution (X*M)*M ~ X
+PASS Ex3: Q preserved
+PASS Ex3: kappa(X*M,M)=kappa(X,M)
+PASS Ex3: finite X∩(X*M) = X∩M
+PASS Ex3: numeric star projectively equal under rescaling
+PASS Ex3: point {x: sqrt(2)/2, y: sqrt(2)/2} on both
+PASS Ex3: Moebius common point null and incident
+PASS Ex3: finite Moebius points = pt(finite common points)
+   Ex3: Q=4,2 ip=2*sqrt(2) kappa=1 star=[1, -2*sqrt(2), -2*sqrt(2), 3] pts=[{x: sqrt(2)/2, y: sqrt(2)/2}] nature=one double point (real) moebius=[[1, -sqrt(2), -sqrt(2), 1]]
+PASS Ex4: equations match vectors
+PASS Ex4: involution (X*M)*M ~ X
+PASS Ex4: Q preserved
+PASS Ex4: kappa(X*M,M)=kappa(X,M)
+PASS Ex4: <X,M>=0 => X*M=X
+PASS Ex4: numeric star projectively equal under rescaling
+PASS Ex4: point {x: 1/2, y: -sqrt(3)/2} on both
+PASS Ex4: point {x: 1/2, y: sqrt(3)/2} on both
+PASS Ex4: Moebius common point null and incident
+PASS Ex4: Moebius common point null and incident
+PASS Ex4: finite Moebius points = pt(finite common points)
+   Ex4: Q=4,12 ip=0 kappa=0 star=[1, 0, 0, -1] pts=[{x: 1/2, y: -sqrt(3)/2}, {x: 1/2, y: sqrt(3)/2}] nature=two real moebius=[[1, -1, -sqrt(3), 1], [1, -1, sqrt(3), 1]]
+PASS Ex5: equations match vectors
+PASS Ex5: involution (X*M)*M ~ X
+PASS Ex5: Q preserved
+PASS Ex5: kappa(X*M,M)=kappa(X,M)
+PASS Ex5: finite X∩(X*M) = X∩M
+PASS Ex5: numeric star projectively equal under rescaling
+PASS Ex5: Moebius common point null and incident
+PASS Ex5: Moebius common point null and incident
+PASS Ex5: finite Moebius points = pt(finite common points)
+   Ex5: Q=4,16 ip=10 kappa=25/16 star=[1, 0, 0, -16] pts=[] nature=no finite point moebius=[[0, 1, -I, 0], [0, 1, I, 0]]
+PASS Ex6: equations match vectors
+PASS Ex6: involution (X*M)*M ~ X
+PASS Ex6: Q preserved
+PASS Ex6: kappa(X*M,M)=kappa(X,M)
+PASS Ex6: numeric star projectively equal under rescaling
+PASS Ex6: point {x: 0, y: 0} on both
+PASS Ex6: Moebius common point null and incident
+PASS Ex6: Moebius common point null and incident
+PASS Ex6: finite Moebius points = pt(finite common points)
+   Ex6: Q=1,4 ip=-1 kappa=1/4 star=[0, 1, sqrt(3)/3, 0] pts=[{x: 0, y: 0}] nature=one finite point (and $\infty$) moebius=[[1, 0, 0, 0], [0, 0, 0, 1]]
+PASS Ex7: equations match vectors
+PASS Ex7: involution (X*M)*M ~ X
+PASS Ex7: Q preserved
+PASS Ex7: kappa(X*M,M)=kappa(X,M)
+PASS Ex7: numeric star projectively equal under rescaling
+PASS Ex7: point {x: 2, y: -sqrt(3)*I} on both
+PASS Ex7: point {x: 2, y: sqrt(3)*I} on both
+PASS Ex7: Moebius common point null and incident
+PASS Ex7: Moebius common point null and incident
+PASS Ex7: finite Moebius points = pt(finite common points)
+   Ex7: Q=1,4 ip=4 kappa=4 star=[1, -1/2, 0, 0] pts=[{x: 2, y: -sqrt(3)*I}, {x: 2, y: sqrt(3)*I}] nature=conjugate pair moebius=[[1, -4, 2*sqrt(3)*I, 1], [1, -4, -2*sqrt(3)*I, 1]]
+PASS Ex8: equations match vectors
+PASS Ex8: involution (X*M)*M ~ X
+PASS Ex8: Q preserved
+PASS Ex8: kappa(X*M,M)=kappa(X,M)
+PASS Ex8: finite X∩(X*M) = X∩M
+PASS Ex8: numeric star projectively equal under rescaling
+PASS Ex8: point {x: 0, y: -sqrt(2)} on both
+PASS Ex8: point {x: 0, y: sqrt(2)} on both
+PASS Ex8: Moebius common point null and incident
+PASS Ex8: Moebius common point null and incident
+PASS Ex8: finite Moebius points = pt(finite common points)
+   Ex8: Q=4,1 ip=-2*I kappa=-1 star=[1, 2*I, 0, -2] pts=[{x: 0, y: -sqrt(2)}, {x: 0, y: sqrt(2)}] nature=two real moebius=[[1, 0, -2*sqrt(2), 2], [1, 0, 2*sqrt(2), 2]]
+PASS Ex9: equations match vectors
+PASS Ex9: involution (X*M)*M ~ X
+PASS Ex9: Q preserved
+PASS Ex9: kappa(X*M,M)=kappa(X,M)
+PASS Ex9: finite X∩(X*M) = X∩M
+PASS Ex9: numeric star projectively equal under rescaling
+PASS Ex9: point {x: -1/2, y: -sqrt(5)*I/2} on both
+PASS Ex9: point {x: -1/2, y: sqrt(5)*I/2} on both
+PASS Ex9: Moebius common point null and incident
+PASS Ex9: Moebius common point null and incident
+PASS Ex9: finite Moebius points = pt(finite common points)
+   Ex9: Q=4,-4 ip=-2 kappa=-1/4 star=[0, 1, 0, 1/2] pts=[{x: -1/2, y: -sqrt(5)*I/2}, {x: -1/2, y: sqrt(5)*I/2}] nature=conjugate pair moebius=[[1, 1, -sqrt(5)*I, -1], [1, 1, sqrt(5)*I, -1]]
+PASS Ex10: equations match vectors
+PASS Ex10: involution (X*M)*M ~ X
+PASS Ex10: Q preserved
+PASS Ex10: kappa(X*M,M)=kappa(X,M)
+PASS Ex10: <X,M>=0 => X*M=X
+PASS Ex10: numeric star projectively equal under rescaling
+PASS Ex10: point {x: -sqrt(3)*I/3, y: 2*sqrt(3)/3} on both
+PASS Ex10: point {x: sqrt(3)*I/3, y: -2*sqrt(3)/3} on both
+PASS Ex10: Moebius common point null and incident
+PASS Ex10: Moebius common point null and incident
+PASS Ex10: finite Moebius points = pt(finite common points)
+   Ex10: Q=4,-3 ip=0 kappa=0 star=[1, 0, 0, -1] pts=[{x: -sqrt(3)*I/3, y: 2*sqrt(3)/3}, {x: sqrt(3)*I/3, y: -2*sqrt(3)/3}] nature=two complex, not conjugate moebius=[[1, 2*sqrt(3)*I/3, -4*sqrt(3)/3, 1], [1, -2*sqrt(3)*I/3, 4*sqrt(3)/3, 1]]
+PASS Ex11: equations match vectors
+PASS Ex11: involution (X*M)*M ~ X
+PASS Ex11: Q preserved
+PASS Ex11: finite X∩(X*M) = X∩M
+PASS Ex11: numeric star projectively equal under rescaling
+PASS Ex11: point {x: 3/4 - I/4, y: 3/4 + I/4} on both
+PASS Ex11: point {x: 3/4 + I/4, y: 3/4 - I/4} on both
+PASS Ex11: Moebius common point null and incident
+PASS Ex11: Moebius common point null and incident
+PASS Ex11: finite Moebius points = pt(finite common points)
+   Ex11: Q=0,4 ip=-2 kappa=zoo star=[1, -1, -1, 1/2] pts=[{x: 3/4 - I/4, y: 3/4 + I/4}, {x: 3/4 + I/4, y: 3/4 - I/4}] nature=conjugate pair moebius=[[1, -3/2 - I/2, -3/2 + I/2, 1], [1, -3/2 + I/2, -3/2 - I/2, 1]]
+PASS Ex12: equations match vectors
+PASS Ex12: involution (X*M)*M ~ X
+PASS Ex12: Q preserved
+PASS Ex12: kappa(X*M,M)=kappa(X,M)
+PASS Ex12: finite X∩(X*M) = X∩M
+PASS Ex12: numeric star projectively equal under rescaling
+PASS Ex12: point {x: I/2, y: -sqrt(5)/2} on both
+PASS Ex12: point {x: I/2, y: sqrt(5)/2} on both
+PASS Ex12: Moebius common point null and incident
+PASS Ex12: Moebius common point null and incident
+PASS Ex12: finite Moebius points = pt(finite common points)
+   Ex12: Q=4,4 ip=6 kappa=9/4 star=[1, -3*I, 0, -5/2] pts=[{x: I/2, y: -sqrt(5)/2}, {x: I/2, y: sqrt(5)/2}] nature=two complex, not conjugate moebius=[[1, -I, -sqrt(5), 1], [1, -I, sqrt(5), 1]]
+PASS Ex13: equations match vectors
+PASS Ex13: involution (X*M)*M ~ X
+PASS Ex13: Q preserved
+PASS Ex13: kappa(X*M,M)=kappa(X,M)
+PASS Ex13: numeric star projectively equal under rescaling
+PASS Ex13: point {x: 0, y: 0} on both
+PASS Ex13: Moebius common point null and incident
+PASS Ex13: Moebius common point null and incident
+PASS Ex13: finite Moebius points = pt(finite common points)
+   Ex13: Q=1,1/4 ip=-1 kappa=4 star=[0, 1, 7*sqrt(3)*I/12, 0] pts=[{x: 0, y: 0}] nature=one finite point (and $\infty$) moebius=[[1, 0, 0, 0], [0, 0, 0, 1]]
+PASS Ex14: equations match vectors
+PASS Ex14: involution (X*M)*M ~ X
+PASS Ex14: Q preserved
+PASS Ex14: kappa(X*M,M)=kappa(X,M)
+PASS Ex14: finite X∩(X*M) = X∩M
+PASS Ex14: numeric star projectively equal under rescaling
+PASS Ex14: point {x: 0, y: 1} on both
+PASS Ex14: point {x: 4/5, y: 3/5} on both
+PASS Ex14: Moebius common point null and incident
+PASS Ex14: Moebius common point null and incident
+PASS Ex14: finite Moebius points = pt(finite common points)
+   Ex14: Q=4,5 ip=4 kappa=4/5 star=[1, -8/5, -16/5, 11/5] pts=[{x: 0, y: 1}, {x: 4/5, y: 3/5}] nature=two real moebius=[[1, -8/5, -6/5, 1], [1, 0, -2, 1]]
+PASS Ex15: equations match vectors
+PASS Ex15: involution (X*M)*M ~ X
+PASS Ex15: Q preserved
+PASS Ex15: kappa(X*M,M)=kappa(X,M)
+PASS Ex15: finite X∩(X*M) = X∩M
+PASS Ex15: numeric star projectively equal under rescaling
+PASS Ex15: point {x: -2*sqrt(3)/3, y: -sqrt(3)*I/3} on both
+PASS Ex15: Moebius common point null and incident
+PASS Ex15: finite Moebius points = pt(finite common points)
+   Ex15: Q=4,-3 ip=-2*sqrt(3)*I kappa=1 star=[1, 8*sqrt(3)/3, 4*sqrt(3)*I/3, 3] pts=[{x: -2*sqrt(3)/3, y: -sqrt(3)*I/3}] nature=one double point (complex) moebius=[[1, 4*sqrt(3)/3, 2*sqrt(3)*I/3, 1]]
+PASS Ex16: equations match vectors
+PASS Ex16: involution (X*M)*M ~ X
+PASS Ex16: Q preserved
+PASS Ex16: kappa(X*M,M)=kappa(X,M)
+PASS Ex16: finite X∩(X*M) = X∩M
+PASS Ex16: numeric star projectively equal under rescaling
+PASS Ex16: point {x: 13/8, y: -sqrt(105)*I/8} on both
+PASS Ex16: point {x: 13/8, y: sqrt(105)*I/8} on both
+PASS Ex16: Moebius common point null and incident
+PASS Ex16: Moebius common point null and incident
+PASS Ex16: finite Moebius points = pt(finite common points)
+   Ex16: Q=4,4 ip=-11 kappa=121/16 star=[1, -88/15, 0, 128/15] pts=[{x: 13/8, y: -sqrt(105)*I/8}, {x: 13/8, y: sqrt(105)*I/8}] nature=conjugate pair moebius=[[1, -13/4, sqrt(105)*I/4, 1], [1, -13/4, -sqrt(105)*I/4, 1]]
+PASS Ex1: stated kappa 1/4
+PASS Ex1: stated image [1, -2, 0, 0]
+PASS Ex1: stated nature 'two real'
+PASS Ex2: stated kappa 4
+PASS Ex2: stated image [1, -8, 0, 15]
+PASS Ex2: stated nature 'conjugate pair'
+PASS Ex3: stated kappa 1
+PASS Ex3: stated image [1, -2*sqrt(2), -2*sqrt(2), 3]
+PASS Ex3: stated nature 'one double point (real)'
+PASS Ex4: stated kappa 0
+PASS Ex4: stated image [1, 0, 0, -1]
+PASS Ex4: stated nature 'two real'
+PASS Ex5: stated kappa 25/16
+PASS Ex5: stated image [1, 0, 0, -16]
+PASS Ex5: stated nature 'no finite point'
+PASS Ex6: stated kappa 1/4
+PASS Ex6: stated image [0, 1, sqrt(3)/3, 0]
+PASS Ex7: stated kappa 4
+PASS Ex7: stated image [1, -1/2, 0, 0]
+PASS Ex7: stated nature 'conjugate pair'
+PASS Ex8: stated kappa -1
+PASS Ex8: stated image [1, 2*I, 0, -2]
+PASS Ex8: stated nature 'two real'
+PASS Ex9: stated kappa -1/4
+PASS Ex9: stated image [0, 1, 0, 1/2]
+PASS Ex9: stated nature 'conjugate pair'
+PASS Ex10: stated kappa 0
+PASS Ex10: stated image [1, 0, 0, -1]
+PASS Ex10: stated nature 'two complex, not conjugate'
+PASS Ex11: stated image [1, -1, -1, 1/2]
+PASS Ex11: stated nature 'conjugate pair'
+PASS Ex12: stated kappa 9/4
+PASS Ex12: stated image [1, -3*I, 0, -5/2]
+PASS Ex13: stated kappa 4
+PASS Ex13: stated image [0, 1, 7*sqrt(3)*I/12, 0]
+PASS Ex15: stated kappa 1
+PASS Ex15: stated image [1, 8*sqrt(3)/3, 4*sqrt(3)*I/3, 3]
+PASS Ex16: stated kappa 121/16
+PASS Ex16: stated nature 'conjugate pair'
+PASS Ex11: Q(P)=0 and kappa undefined
+PASS Ex5: kappa = ((r1^2+r2^2-d^2)/(2 r1 r2))^2
+PASS Ex5: moebius points [0:1:+-i:0]
+PASS Ex1: kappa(K, x=t)=t^2
+PASS Ex2: image passes through hidden points
+PASS Ex3: image centre (sqrt2,sqrt2) radius 1 and tangent at same point
+PASS Ex9: reflection in x^2+y^2=-1 is p -> -p/|p|^2
+PASS Ex9: <K,S>=0 so K*S=K
+PASS Ex10: y=ix has Q=0
+PASS Ex10: y=ix+1 has Q=0
+PASS Ex10: y=ix meets K in no finite point
+PASS Ex10: y=ix is itself a null vector with <K,L>=0 (double Moebius point)
+PASS Ex10: y=ix+1 meets K only at (0,1); that is its only real point
+PASS Ex10: y=ix+1 second Moebius point is [0:1:i:0]
+PASS Ex11: <P,K> = -2 K(1,1)
+PASS Ex11: P*K = point-circle at (1/2,1/2)
+PASS Ex11: common points at zero distance from (1,1)
+PASS Ex12: real trace of K*M is (0,+-sqrt(5/2))
+PASS Ex12: K*M centre (3i/2,0), radius^2 1/4
+PASS Ex8: real trace of C is (0,+-sqrt2)
+PASS Ex8b: <C,x-axis>=0, C*M'=C, points (+-1+i,0) not conjugate
+PASS Ex13: 90 deg: kappa=0, (R2R1)^2=I exactly and not before
+PASS Ex13: 60 deg: kappa=1/4, (R2R1)^3=I exactly and not before
+PASS Ex13: 45 deg: kappa=1/2, (R2R1)^4=I exactly and not before
+PASS Ex13: parallel x=0,x=1: kappa=1, composition = translation by 2 (or -2)
+PASS Ex13: complex angle: u->lam u, v->v/lam, lam=7 - 4*sqrt(3)
+PASS Ex13: (2+sqrt3)^2 = 7+4sqrt3
+PASS Ex13: slope of L1*L2 = tan(2 theta)= 4sqrt3 i/7
+PASS Ex13: boost sends real point (1,0) to non-real
+PASS Ex14: A*A = -A
+PASS Ex14: (A*L)*L=A
+PASS Ex14: (A*B)*L = (A*L)*(B*L)
+PASS Ex14: not associative: (A*B)*L != A*(B*L)
+   Ex14: {'AB': [1, -2, 0, 0], 'AL': [1, -8/5, -16/5, 11/5], 'BL': [0, 1, -4/3, 1/2], 'lhs': [1, -14/5, -8/5, 8/5], 'rhs': [1, -14/5, -8/5, 8/5], 'ass': [1, 18/25, -24/25, -16/25]}
+PASS Ex15: kappa(K, y=mx+c) = c^2/(1+m^2)
+PASS Ex15: double point (-2/sqrt3, -i/sqrt3)
+PASS Ex15: K*L tangent to K (kappa=1) at the same point
+PASS Ex16: Q(C2')=Q(K)=4
+PASS Ex16: K*(K-C2') ~ C2' and K*(K+C2') ~ C2'
+PASS Ex16: K-C2' is (x+4)^2+y^2=30
+PASS Ex16: K+C2' is (x-4/3)^2+y^2=-14/9
+PASS Ex16: the two mirrors are orthogonal
+PASS Ex16: both mirrors pass through the hidden points K∩C2
+PASS Ex16: no other mirrors in the pencil K - lam C2' (solutions lam=[-1, 1])
+PASS Ex16 remark: tangent case (x-3)^2+y^2=4: K+C2' is a point-circle at (1,0)
+
+FAILURES: none

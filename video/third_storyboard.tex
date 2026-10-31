@@ -1,0 +1,290 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.5cm]{geometry}\usepackage{graphicx,amsmath,amssymb,xcolor,hyperref,booktabs,longtable}
+\usepackage{fontspec}
+\setlength{\parindent}{0pt}\sloppy
+\begin{document}
+{\LARGE\bfseries Third storyboard: ``Always two, over $\mathbb C$''}\\[3pt]
+Reply Short to Inigo Quilez: \url{https://www.youtube.com/shorts/cc-Z_igk4Lo}. A third, independent story (story first). v4 and alternative v2 are unchanged.\\[6pt]
+\textbf{Format.} YouTube Short, 9:16 (1080$\times$1920). \textbf{178\,s}, 30 scenes, 469 words of voiceover ($\approx$2.6 words/s). No audio or MP4 at this stage.\\
+\textbf{Look.} Same chalkboard as v4 and alt v2. Mirrors chalk-white, circles \textcolor[HTML]{4DA3FF}{\textbf{blue}} (dashed = image), \textcolor[HTML]{FF9A3C}{\textbf{orange = imaginary}}, grey = a pencil of circles. In the 3D plots colour blends blue$\to$orange with $|\mathrm{Im}\,y|/(|\mathrm{Re}\,y|+|\mathrm{Im}\,y|)$.\\
+\textbf{Opening.} First person (Carlo): ``Inigo Quilez's video is lovely, with many directions to explore. I chose one\ldots'', with the credit caption on screen.\\
+\textbf{Through-line.} A circle is four complex numbers $[a:b:c:d]\in\mathbb P^3(\mathbb C)$. Reflecting a circle in a circle, $C\star L=C-\tfrac{2\langle C,L\rangle}{Q(L)}L$, is closed (a kei; the mirrors generate the complex Möbius group $PO(4,\mathbb C)$). $C\star L$ meets $C$ exactly where $L$ does, so ``where a circle meets a line'' is a question inside the algebra: always two points (with I and J, four). One invariant, $\kappa=\langle C,L\rangle^2/(Q(C)Q(L))$, decides tangency ($\kappa=1$). Realness is not invariant; ``hidden'' is what a real slice does to one symmetric picture.\\[4pt]
+\textbf{Guardrails.} (1) \emph{Convention.} Our line $x=t$ slides perpendicular to itself and we place the points at its foot: $(t,\pm\sqrt{1-t^2})$, $(t,\pm is)$, $t^2-s^2=1$. Quilez's line translates and rotates and his orange dots sit at $\mathbf o\pm\sqrt{h^2-r^2}\,\mathbf d$, centred on his moving point $\mathbf o$; his second formula only inserts an orange $i$ (radicand unchanged). We do not reproduce his picture (scenes 3, 5 say so). (2) $C\star L$ needs $Q(L)\neq0$ (no point-circles or isotropic lines as mirrors); $C\cap(C\star L)=C\cap L$ needs $\langle C,L\rangle\neq0$ (else $C\star L=C$). (3) ``Always two'': with multiplicity, $a\neq0$, $Q(L)\neq0$; an isotropic line meets a circle in one finite point. (4) The invariant is named $\kappa$ because $I,J$ denote the circular points. (5) $PO(4,\mathbb C)$ generation is Cartan--Dieudonné (cited, not computed); $\kappa$ invariance and equivariance are checked numerically. (6) A complex circle's real points are $C_1\cap C_2$; two/one/none by the sign of $\Delta_{\mathbb R}$, or a whole circle if $C$ is real up to scale. (7) For $x^2+y^2+i\varepsilon x=1$ the two points never merge for real $t$ (tangency at $t=\pm0.989-0.15i$) and are both real only at $t=0$.\\[4pt]
+\textbf{3D choice.} Used: $(t,\mathrm{Re}\,y,\mathrm{Im}\,y)$ for the sweep (scenes 8, 24--27): the circle lies in the plane $\mathrm{Im}\,y=0$, the hyperbola in $\mathrm{Re}\,y=0$, and they join at $t=\pm1$; nudged by $\varepsilon$ the joints visibly come apart, which 2D cannot show. Not used: points of $\mathbb C^2$ as three real coordinates plus colour for the fourth (hard to read in a still or a 5\,s beat), and colour = $\kappa$ (along the real sweep $\kappa=t^2$ is just a function of the $t$ axis, so it adds nothing; scene 20 shows it as a 2D parabola instead).\\[4pt]
+Files: frames \texttt{alt3\_frames/} by \texttt{alt3\_frames.py}, numbers in \texttt{alt3\_frames/check\_log.txt}; claims checked by \texttt{alt3\_verify.py} (\texttt{alt3\_verify\_log.txt}, all PASS); review passes in \texttt{alt3\_review\_log.txt}.\\[4pt]
+{\small\begin{tabular}{lll}\toprule act & scenes & time\\\midrule Opening (first person, credit) & 1--2 & 0:00--0:10 \\ His move, our slice, one curve (3D) & 3--8 & 0:10--0:47 \\ Circles in $\mathbb P^3(\mathbb C)$: the operation, a kei & 9--14 & 0:47--1:25 \\ Always two; four, really & 15--17 & 1:25--1:48 \\ The invariant $\kappa$, tangency, not realness & 18--21 & 1:48--2:12 \\ A complex circle's real trace & 22--23 & 2:12--2:25 \\ Nudge off the reals (3D) & 24--27 & 2:25--2:45 \\ Recap and thanks & 28--30 & 2:45--2:58 \\\bottomrule\end{tabular}}\\[4pt]
+{\scriptsize\begin{longtable}{rllp{0.55\textwidth}}\toprule \# & time & beat & voiceover\\\midrule
+1 & 0:00--0:04 & A lovely video & \emph{Inigo Quilez's video is lovely, with many directions to explore.}\\
+2 & 0:04--0:10 & The one I chose & \emph{I chose one: circles acting on circles, with complex numbers everywhere. One closed operation, one invariant.}\\
+3 & 0:10--0:15 & His move & \emph{His move: when the square root goes negative, the intersection points turn complex.}\\
+4 & 0:15--0:21 & Our slice & \emph{Our slice: a unit circle and a vertical line, x equals t, sliding without turning.}\\
+5 & 0:21--0:28 & Not his picture & \emph{His orange dots hang on his moving point o; ours sit at the foot of the perpendicular. Our version, not his.}\\
+6 & 0:28--0:34 & Real, then hidden & \emph{Inside, the points are t, plus or minus a real root. Outside, they're plus or minus i s.}\\
+7 & 0:34--0:40 & A hyperbola & \emph{Drop the i, plot s, and you get a hyperbola: t squared minus s squared equals one.}\\
+8 & 0:40--0:47 & One curve & \emph{Better: give the imaginary part its own axis. Circle and hyperbola join into one curve, meeting where the line touches.}\\
+9 & 0:47--0:54 & Four complex numbers & \emph{A circle is four numbers: a, b, c, d. Let them be complex; only ratios matter, and lines have a zero.}\\
+10 & 0:54--1:00 & Its Q & \emph{Each circle carries one number, Q. For a real circle it's four times the radius squared.}\\
+11 & 1:00--1:05 & The operation & \emph{The operation: reflect C in L by subtracting just the right multiple of L.}\\
+12 & 1:05--1:12 & Familiar, and closed & \emph{For real circles, that's reflection in a line, or inversion in a circle. Circle in, circle out, even over C.}\\
+13 & 1:12--1:18 & One exception & \emph{The only forbidden mirrors have Q equal to zero: point-circles, and lines through the circular points.}\\
+14 & 1:18--1:25 & Three rules: a kei & \emph{The rules: a mirror fixes itself, reflecting twice brings you back, and mirrors carry relations along. That makes a kei.}\\
+15 & 1:25--1:33 & Always two & \emph{Where does circle C meet line L? Substituting gives a quadratic with leading term a times Q of L: always two points.}\\
+16 & 1:33--1:40 & Through the mirror & \emph{Reflect C in L: C star L is C minus a multiple of L, so it meets C where L does.}\\
+17 & 1:40--1:48 & Four, really & \emph{As curves, two circles meet four times: twice at the circular points I and J, shared by every circle, and twice on our line.}\\
+18 & 1:48--1:55 & The invariant & \emph{Chain mirrors and you get the complex Möbius group. One number survives all of it: kappa.}\\
+19 & 1:55--2:00 & Tangency & \emph{Kappa equals one exactly when the two points merge: tangency.}\\
+20 & 2:00--2:06 & In our slice & \emph{In our slice, kappa is just t squared: below one they cross, above one they hide.}\\
+21 & 2:06--2:12 & Not realness & \emph{Complex maps keep the two points, tangency and kappa, but not whether the points are real.}\\
+22 & 2:12--2:19 & A complex circle & \emph{A complex circle splits into two real circles: its real and imaginary parts. Its real points are where they cross.}\\
+23 & 2:19--2:25 & Two or none & \emph{So it has two real points, one, or none, and a similar test decides.}\\
+24 & 2:25--2:30 & Nudge the circle & \emph{Now nudge our unit circle off the reals, and sweep the line again.}\\
+25 & 2:30--2:36 & They come apart & \emph{The junctions come apart: tangency now happens at complex t, so the real sweep never splits.}\\
+26 & 2:36--2:40 & Two, all the way & \emph{Two points all the way. No switch, no branching.}\\
+27 & 2:40--2:45 & Hidden is a slice & \emph{Hidden is just what a real slice does to one symmetric picture.}\\
+28 & 2:45--2:50 & Recap & \emph{One operation, circle star circle. One invariant, kappa, with tangency at one.}\\
+29 & 2:50--2:54 & Always two, over C & \emph{Always two points, real or not.}\\
+30 & 2:54--2:58 & Thanks & \emph{Thanks, Inigo, for the spark.}\\\bottomrule\end{longtable}}
+\newpage
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s01.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 1: A lovely video}\hfill 0:00--0:04 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Inigo Quilez's video is lovely, with many directions to explore.}\\[2pt]
+\textbf{On screen:} ``Reply to Inigo Quilez --- youtube.com/shorts/cc-Z\_igk4Lo''\\[2pt]
+\textbf{Animation:} His setup, schematic: a circle, a tilted line that misses it, two orange hidden dots. Credit caption fades in. First person, Carlo.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s02.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 2: The one I chose}\hfill 0:04--0:10 (6\,s)\\[2pt]
+\textbf{VO:} \emph{I chose one: circles acting on circles, with complex numbers everywhere. One closed operation, one invariant.}\\[2pt]
+\textbf{On screen:} circle $\star$ circle over $\mathbb C$ $\cdot$ one invariant $\kappa$\\[2pt]
+\textbf{Animation:} A mirror circle flips a blue circle into its dashed image.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s03.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 3: His move}\hfill 0:10--0:15 (5\,s)\\[2pt]
+\textbf{VO:} \emph{His move: when the square root goes negative, the intersection points turn complex.}\\[2pt]
+\textbf{On screen:} $\mathbf p=\mathbf o-\mathbf d\bigl(\mathbf o\cdot\mathbf d\pm i\sqrt{|\Delta|}\bigr)$\\[2pt]
+\textbf{Animation:} His formula, rewritten with $\sqrt{|\Delta|}$ (on his screen the orange $i$ is inserted and the radicand left unchanged); orange dots on his line, centred on his point $\mathbf o$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s04.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 4: Our slice}\hfill 0:15--0:21 (6\,s)\\[2pt]
+\textbf{VO:} \emph{Our slice: a unit circle and a vertical line, x equals t, sliding without turning.}\\[2pt]
+\textbf{On screen:} $x=t$\\[2pt]
+\textbf{Animation:} The vertical line slides left to right; two blue dots ride the circle.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s05.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 5: Not his picture}\hfill 0:21--0:28 (7\,s)\\[2pt]
+\textbf{VO:} \emph{His orange dots hang on his moving point o; ours sit at the foot of the perpendicular. Our version, not his.}\\[2pt]
+\textbf{On screen:} his: $\mathbf o\pm s\,\mathbf d$ $\;|\;$ ours: foot $\pm s$\\[2pt]
+\textbf{Animation:} Split screen: left his convention, right ours.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s06.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 6: Real, then hidden}\hfill 0:28--0:34 (6\,s)\\[2pt]
+\textbf{VO:} \emph{Inside, the points are t, plus or minus a real root. Outside, they're plus or minus i s.}\\[2pt]
+\textbf{On screen:} $(t,\pm\sqrt{1-t^2})$ $\;|\;$ $(t,\pm is)$, $s=\sqrt{t^2-1}$\\[2pt]
+\textbf{Animation:} Left $t=0.6$: blue dots. Right $t=1.6$: orange rings, labelled $\pm is$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s07.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 7: A hyperbola}\hfill 0:34--0:40 (6\,s)\\[2pt]
+\textbf{VO:} \emph{Drop the i, plot s, and you get a hyperbola: t squared minus s squared equals one.}\\[2pt]
+\textbf{On screen:} $t^2-s^2=1$\\[2pt]
+\textbf{Animation:} The orange rings leave a trail: two hyperbola branches beside the blue circle.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s08.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 8: One curve}\hfill 0:40--0:47 (7\,s)\\[2pt]
+\textbf{VO:} \emph{Better: give the imaginary part its own axis. Circle and hyperbola join into one curve, meeting where the line touches.}\\[2pt]
+\textbf{On screen:} axes $t$, $\mathrm{Re}\,y$, $\mathrm{Im}\,y$\\[2pt]
+\textbf{Animation:} 3D: all points $(t,y)$ of $x^2+y^2=1$ with $x=t$ real. Then $y^2$ is real, so $y$ is real or purely imaginary: the circle (plane $\mathrm{Im}\,y=0$) plus the hyperbola (plane $\mathrm{Re}\,y=0$), meeting at $t=\pm1$. Colour: blue = real, orange = imaginary. Slow orbit.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s09.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 9: Four complex numbers}\hfill 0:47--0:54 (7\,s)\\[2pt]
+\textbf{VO:} \emph{A circle is four numbers: a, b, c, d. Let them be complex; only ratios matter, and lines have a zero.}\\[2pt]
+\textbf{On screen:} $a(x^2+y^2)+bx+cy+d=0$, $[a:b:c:d]\in\mathbb P^3(\mathbb C)$; lines: $a=0$\\[2pt]
+\textbf{Animation:} Three real circles and a line, each tagged with its four numbers; the tags turn complex and a common factor $\lambda$ is crossed out.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s10.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 10: Its Q}\hfill 0:54--1:00 (6\,s)\\[2pt]
+\textbf{VO:} \emph{Each circle carries one number, Q. For a real circle it's four times the radius squared.}\\[2pt]
+\textbf{On screen:} $Q=b^2+c^2-4ad$; real circle: $Q/a^2=4r^2$\\[2pt]
+\textbf{Animation:} Radius drawn; $Q$ computed.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s11.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 11: The operation}\hfill 1:00--1:05 (5\,s)\\[2pt]
+\textbf{VO:} \emph{The operation: reflect C in L by subtracting just the right multiple of L.}\\[2pt]
+\textbf{On screen:} $C\star L=C-\frac{2\langle C,L\rangle}{Q(L)}\,L$\\[2pt]
+\textbf{Animation:} Formula slams in over a mirror circle $L$ and blue $C$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s12.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 12: Familiar, and closed}\hfill 1:05--1:12 (7\,s)\\[2pt]
+\textbf{VO:} \emph{For real circles, that's reflection in a line, or inversion in a circle. Circle in, circle out, even over C.}\\[2pt]
+\textbf{On screen:} line: reflection $\;|\;$ circle: inversion $\;\Rightarrow\;$ $C\star L\in\mathbb P^3(\mathbb C)$\\[2pt]
+\textbf{Animation:} Two panels: a circle reflected in a line; a circle and a line inverted in a circle.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s13.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 13: One exception}\hfill 1:12--1:18 (6\,s)\\[2pt]
+\textbf{VO:} \emph{The only forbidden mirrors have Q equal to zero: point-circles, and lines through the circular points.}\\[2pt]
+\textbf{On screen:} $Q(L)=0$: no mirror (point-circles, centre anywhere in $\mathbb C^2$ or at $\infty$; lines with $b^2+c^2=0$)\\[2pt]
+\textbf{Animation:} A point-circle with a no-entry mark; text: lines with $b^2+c^2=0$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s14.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 14: Three rules: a kei}\hfill 1:18--1:25 (7\,s)\\[2pt]
+\textbf{VO:} \emph{The rules: a mirror fixes itself, reflecting twice brings you back, and mirrors carry relations along. That makes a kei.}\\[2pt]
+\textbf{On screen:} $L\star L\sim L$ (it is $-L$); $(C\star L)\star L=C$; $(A\star B)\star L=(A\star L)\star(B\star L)$; a kei (Takasaki 1943)\\[2pt]
+\textbf{Animation:} Rules type on one per beat; the word kei lands last.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s15.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 15: Always two}\hfill 1:25--1:33 (8\,s)\\[2pt]
+\textbf{VO:} \emph{Where does circle C meet line L? Substituting gives a quadratic with leading term a times Q of L: always two points.}\\[2pt]
+\textbf{On screen:} $a\,Q(L)\,u^2+\dots=0$\\[2pt]
+\textbf{Animation:} A circle and a crossing line; the quadratic writes on; two blue dots.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s16.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 16: Through the mirror}\hfill 1:33--1:40 (7\,s)\\[2pt]
+\textbf{VO:} \emph{Reflect C in L: C star L is C minus a multiple of L, so it meets C where L does.}\\[2pt]
+\textbf{On screen:} $C\star L=C-kL$ $\Rightarrow$ $C\cap(C\star L)=C\cap L$ (if $k\neq0$; $k=0$ means $C\star L=C$)\\[2pt]
+\textbf{Animation:} $C\star L$ appears dashed through the same two dots; the family $C-kL$ fans out through them.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s17.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 17: Four, really}\hfill 1:40--1:48 (8\,s)\\[2pt]
+\textbf{VO:} \emph{As curves, two circles meet four times: twice at the circular points I and J, shared by every circle, and twice on our line.}\\[2pt]
+\textbf{On screen:} $2\cdot2=4$: $I=[1:i:0]$, $J=[1:-i:0]$, and two on $L$\\[2pt]
+\textbf{Animation:} Bézout count; two arrows off to infinity labelled $I$, $J$; then $L$ glows between $C$ and $C\star L$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s18.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 18: The invariant}\hfill 1:48--1:55 (7\,s)\\[2pt]
+\textbf{VO:} \emph{Chain mirrors and you get the complex Möbius group. One number survives all of it: kappa.}\\[2pt]
+\textbf{On screen:} $\langle\text{mirrors}\rangle=PO(4,\mathbb C)$; $\kappa=\frac{\langle C,L\rangle^2}{Q(C)Q(L)}$\\[2pt]
+\textbf{Animation:} A circle bounces through three mirrors; then the formula for $\kappa$, with the same value on both configurations.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s19.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 19: Tangency}\hfill 1:55--2:00 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Kappa equals one exactly when the two points merge: tangency.}\\[2pt]
+\textbf{On screen:} $\kappa=1\iff$ tangent\\[2pt]
+\textbf{Animation:} Three panels $\kappa<1$, $=1$, $>1$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s20.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 20: In our slice}\hfill 2:00--2:06 (6\,s)\\[2pt]
+\textbf{VO:} \emph{In our slice, kappa is just t squared: below one they cross, above one they hide.}\\[2pt]
+\textbf{On screen:} $\kappa=t^2$\\[2pt]
+\textbf{Animation:} Parabola $\kappa(t)$ with the crossing band.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s21.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 21: Not realness}\hfill 2:06--2:12 (6\,s)\\[2pt]
+\textbf{VO:} \emph{Complex maps keep the two points, tangency and kappa, but not whether the points are real.}\\[2pt]
+\textbf{On screen:} random $g\in PO(4,\mathbb C)$: $\kappa$ $0.360\to0.360$; still two points, now with complex coordinates (points on the Möbius quadric, $\infty$ included)\\[2pt]
+\textbf{Animation:} Checklist.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s22.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 22: A complex circle}\hfill 2:12--2:19 (7\,s)\\[2pt]
+\textbf{VO:} \emph{A complex circle splits into two real circles: its real and imaginary parts. Its real points are where they cross.}\\[2pt]
+\textbf{On screen:} $C=C_1+iC_2$; real points of $C$ $=C_1\cap C_2$\\[2pt]
+\textbf{Animation:} $C_1$ and $C_2$ drawn; their crossings glow.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s23.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 23: Two or none}\hfill 2:19--2:25 (6\,s)\\[2pt]
+\textbf{VO:} \emph{So it has two real points, one, or none, and a similar test decides.}\\[2pt]
+\textbf{On screen:} $\langle C_1,C_2\rangle^2-Q(C_1)Q(C_2)$: $<0$ two, $=0$ one, $>0$ none (whole circle if $C$ is real up to scale)\\[2pt]
+\textbf{Animation:} Three panels.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s24.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 24: Nudge the circle}\hfill 2:25--2:30 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Now nudge our unit circle off the reals, and sweep the line again.}\\[2pt]
+\textbf{On screen:} $x^2+y^2+i\varepsilon x=1$\\[2pt]
+\textbf{Animation:} 3D curves for $\varepsilon=0.3$, ghost of $\varepsilon=0$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s25.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 25: They come apart}\hfill 2:30--2:36 (6\,s)\\[2pt]
+\textbf{VO:} \emph{The junctions come apart: tangency now happens at complex t, so the real sweep never splits.}\\[2pt]
+\textbf{On screen:} $\kappa(t)=1$ at $t=\pm0.989-0.15i$\\[2pt]
+\textbf{Animation:} Zoom on the gap near $t=1$.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s26.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 26: Two, all the way}\hfill 2:36--2:40 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Two points all the way. No switch, no branching.}\\[2pt]
+\textbf{On screen:} 2 points for every real $t$; real only at $t=0$\\[2pt]
+\textbf{Animation:} 3D orbit.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s27.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 27: Hidden is a slice}\hfill 2:40--2:45 (5\,s)\\[2pt]
+\textbf{VO:} \emph{Hidden is just what a real slice does to one symmetric picture.}\\[2pt]
+\textbf{On screen:} real plane $\mathrm{Im}\,y=0$\\[2pt]
+\textbf{Animation:} Back to $\varepsilon=0$; the real plane is shaded.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s28.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 28: Recap}\hfill 2:45--2:50 (5\,s)\\[2pt]
+\textbf{VO:} \emph{One operation, circle star circle. One invariant, kappa, with tangency at one.}\\[2pt]
+\textbf{On screen:} $C\star L$ $\cdot$ $\kappa$ $\cdot$ $\kappa=1\iff$ tangent\\[2pt]
+\textbf{Animation:} Recap.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s29.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 29: Always two, over C}\hfill 2:50--2:54 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Always two points, real or not.}\\[2pt]
+\textbf{On screen:} $\#(C\cap L)=2$ (with multiplicity; $a\neq0$, $Q(L)\neq0$)\\[2pt]
+\textbf{Animation:} Recap.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\begin{minipage}[t]{0.17\textwidth}\vspace{0pt}\includegraphics[width=\linewidth]{alt3_frames/s30.png}\end{minipage}\hfill
+\begin{minipage}[t]{0.80\textwidth}\vspace{0pt}\small
+{\bfseries Scene 30: Thanks}\hfill 2:54--2:58 (4\,s)\\[2pt]
+\textbf{VO:} \emph{Thanks, Inigo, for the spark.}\\[2pt]
+\textbf{On screen:} reply to @InigoQuilez\\[2pt]
+\textbf{Animation:} Final hold.
+\end{minipage}\par\vspace{4pt}\hrule\vspace{4pt}
+\newpage
+{\large\bfseries Full voiceover script} (178\,s, 469 words)\\[6pt]
+1. [0:00--0:04] Inigo Quilez's video is lovely, with many directions to explore.\\
+2. [0:04--0:10] I chose one: circles acting on circles, with complex numbers everywhere. One closed operation, one invariant.\\
+3. [0:10--0:15] His move: when the square root goes negative, the intersection points turn complex.\\
+4. [0:15--0:21] Our slice: a unit circle and a vertical line, x equals t, sliding without turning.\\
+5. [0:21--0:28] His orange dots hang on his moving point o; ours sit at the foot of the perpendicular. Our version, not his.\\
+6. [0:28--0:34] Inside, the points are t, plus or minus a real root. Outside, they're plus or minus i s.\\
+7. [0:34--0:40] Drop the i, plot s, and you get a hyperbola: t squared minus s squared equals one.\\
+8. [0:40--0:47] Better: give the imaginary part its own axis. Circle and hyperbola join into one curve, meeting where the line touches.\\
+9. [0:47--0:54] A circle is four numbers: a, b, c, d. Let them be complex; only ratios matter, and lines have a zero.\\
+10. [0:54--1:00] Each circle carries one number, Q. For a real circle it's four times the radius squared.\\
+11. [1:00--1:05] The operation: reflect C in L by subtracting just the right multiple of L.\\
+12. [1:05--1:12] For real circles, that's reflection in a line, or inversion in a circle. Circle in, circle out, even over C.\\
+13. [1:12--1:18] The only forbidden mirrors have Q equal to zero: point-circles, and lines through the circular points.\\
+14. [1:18--1:25] The rules: a mirror fixes itself, reflecting twice brings you back, and mirrors carry relations along. That makes a kei.\\
+15. [1:25--1:33] Where does circle C meet line L? Substituting gives a quadratic with leading term a times Q of L: always two points.\\
+16. [1:33--1:40] Reflect C in L: C star L is C minus a multiple of L, so it meets C where L does.\\
+17. [1:40--1:48] As curves, two circles meet four times: twice at the circular points I and J, shared by every circle, and twice on our line.\\
+18. [1:48--1:55] Chain mirrors and you get the complex Möbius group. One number survives all of it: kappa.\\
+19. [1:55--2:00] Kappa equals one exactly when the two points merge: tangency.\\
+20. [2:00--2:06] In our slice, kappa is just t squared: below one they cross, above one they hide.\\
+21. [2:06--2:12] Complex maps keep the two points, tangency and kappa, but not whether the points are real.\\
+22. [2:12--2:19] A complex circle splits into two real circles: its real and imaginary parts. Its real points are where they cross.\\
+23. [2:19--2:25] So it has two real points, one, or none, and a similar test decides.\\
+24. [2:25--2:30] Now nudge our unit circle off the reals, and sweep the line again.\\
+25. [2:30--2:36] The junctions come apart: tangency now happens at complex t, so the real sweep never splits.\\
+26. [2:36--2:40] Two points all the way. No switch, no branching.\\
+27. [2:40--2:45] Hidden is just what a real slice does to one symmetric picture.\\
+28. [2:45--2:50] One operation, circle star circle. One invariant, kappa, with tangency at one.\\
+29. [2:50--2:54] Always two points, real or not.\\
+30. [2:54--2:58] Thanks, Inigo, for the spark.
+\end{document}

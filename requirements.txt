@@ -1,0 +1,9 @@
+# verification scripts and figure generators
+numpy>=1.26
+sympy>=1.12
+mpmath>=1.3
+scipy>=1.11
+matplotlib>=3.8
+# video pipeline only (frames, render, narration); not needed for verify
+pillow>=10.0
+edge-tts>=6.1

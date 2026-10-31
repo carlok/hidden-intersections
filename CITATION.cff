@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite it as below."
+title: "Hidden intersections: circles as a complex kei, mirrors and invariants"
+abstract: "Closing Quilez's hidden intersections: circles as a complex kei, mirrors, invariants. Theory, exercises, storyboards and an interactive explorer."
+type: software
+authors:
+  - family-names: Perassi
+    given-names: Carlo
+repository-code: "https://github.com/carlok/hidden-intersections"
+url: "https://carlok.github.io/hidden-intersections/"
+license: MIT
+date-released: "2026-10-31"
+keywords:
+  - mathematics
+  - complex geometry
+  - inversive geometry
+  - Möbius transformations
+  - quandle
+  - kei
+references:
+  - type: video
+    title: "Hidden intersections"
+    authors:
+      - family-names: Quilez
+        given-names: Inigo
+    url: "https://www.youtube.com/shorts/cc-Z_igk4Lo"

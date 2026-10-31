@@ -1,0 +1,48 @@
+Storyboard v4 voiceover — 46 scenes, 176 s, 419 words
+
+1. [0:00-0:03] Quilez says: they're just hidden.
+2. [0:03-0:07] When the root goes negative, he goes complex.
+3. [0:07-0:10] Plus or minus i: two orange dots.
+4. [0:10-0:14] Move the line freely, and the dots tangle.
+5. [0:14-0:18] Slide it without turning: a clean hyperbola.
+6. [0:18-0:21] In symbols: t goes to i t.
+7. [0:21-0:25] But it bends the circle into a hyperbola: out of the family.
+8. [0:25-0:29] We need a family that stays closed. Write a circle out.
+9. [0:29-0:33] Four numbers, a, b, c, d. Scale them: same circle.
+10. [0:33-0:36] Set a to zero: you get a line.
+11. [0:36-0:40] Invert a line in a circle: a circle through the centre.
+12. [0:40-0:43] So a line is a circle through infinity.
+13. [0:43-0:47] One number, Q, sorts them by its sign.
+14. [0:47-0:51] For our circle, Q is four. Positive: a real circle.
+15. [0:51-0:54] For the line, Q is one. Positive too.
+16. [0:54-0:57] Radius zero: Q is zero. A point.
+17. [0:57-1:01] Push below zero: an imaginary circle, with no real points.
+18. [1:01-1:05] Q comes with a dot product between any two circles.
+19. [1:05-1:10] Every circle is also a mirror: inversion, built from the same dot product.
+20. [1:10-1:14] Pair a point with a circle: minus twice the circle's equation.
+21. [1:14-1:17] On the circle, that's zero. On means orthogonal.
+22. [1:17-1:21] For two circles, the dot product measures their angle.
+23. [1:21-1:24] I below one: two real crossings.
+24. [1:24-1:27] I equal to one: they touch.
+25. [1:27-1:30] Above one: the crossings go hidden.
+26. [1:30-1:33] Circle and line: distance squared over radius squared.
+27. [1:33-1:37] Mix the circle and the line: a whole pencil of circles.
+28. [1:37-1:41] Line cuts: every member passes through both points.
+29. [1:41-1:44] Line misses: members share only the hidden pair.
+30. [1:44-1:48] Two members shrink to points: the limiting points.
+31. [1:48-1:53] The crossing pair is an object too: the plane orthogonal to the pencil.
+32. [1:53-1:57] For a real pair, Q takes both signs on that plane.
+33. [1:57-2:01] For a hidden pair, Q stays positive.
+34. [2:01-2:06] Now swap: take the pencil instead. The hidden pair becomes the limiting points.
+35. [2:06-2:11] Check: the heights multiply to exactly one. Inverse in the circle.
+36. [2:11-2:15] Quilez's dots? The same pair, turned ninety degrees.
+37. [2:15-2:19] Sweep: the pair merges at tangency, then splits along the axis.
+38. [2:19-2:22] Nothing vanishes. It swaps.
+39. [2:22-2:26] Is the swap just our coordinates? Invert the whole picture.
+40. [2:26-2:30] The squares are still the limiting points: the swap survives.
+41. [2:30-2:35] Only four maps fix the picture. None makes a hidden point real.
+42. [2:35-2:39] The swap moves nothing. It changes what counts as real.
+43. [2:39-2:43] Old rule: x, y real. New rule: x imaginary, y real.
+44. [2:43-2:48] Euclidean: this is a circle. Lorentzian, like spacetime: the hyperbola is the circle.
+45. [2:48-2:52] One closed family. Every circle pair: always two points.
+46. [2:52-2:56] Not hidden. The same circle, with a different real.

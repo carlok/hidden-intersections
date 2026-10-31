@@ -1,0 +1,11 @@
+examples16 review log
+Pass 1 (math):
+- Re-derived by hand: Ex5 kappa via ((r1^2+r2^2-d^2)/(2r1r2))^2 with r2=2 -> 25/16; Ex13 slope of L1*L2 = tan(2θ) = 4√3 i/7 with tanθ = i√3/2, cos^2θ = 4; Ex15 double point lies on both curves; Ex16 M- = (x+4)^2+y^2=30 passes through (13/8, ±i√105/8), M+ radius^2 = -14/9; Ex12 real traces.
+- Fixed: line-line pairs were labelled "one double point"; now "one finite point (and ∞)" (Ex6, Ex13).
+- Fixed: Ex14 mirror x+y=1 fixed A*B, so the kei check was trivial; changed to x+2y=2 (non-trivial both sides, still non-associative).
+- Strengthened: Ex16 uniqueness holds globally (K*M = K - kM forces M into the pencil), not only within the pencil.
+- Re-ran examples16.py: 247 checks, FAILURES none.
+Pass 2 (clarity):
+- Split the displayed definitions over two lines and fixed the summary table (no overfull boxes).
+- needspace before each example so headings are not orphaned; figures shrunk to 0.31 textwidth; widened the Ex2 view so the image circle is not clipped.
+- Every figure caption says "Real picture" or names the slice/real trace; Ex15 states that it has no real picture.
